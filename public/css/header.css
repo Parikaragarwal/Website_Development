@@ -125,6 +125,7 @@ nav#site_head>a.header_logo {
     position: relative;
     z-index: 10;
     height: 12vh;
+    overflow: hidden;
     width: 6vw;
     display: flex;
     align-items: center;
@@ -140,7 +141,11 @@ nav#siteHead>a.home_icon:hover
     border: none;
 }
 
-nav#site_head>a>img.header_logo {
+nav#site_head>a.header_logo:hover {
+    border-bottom: none;
+}
+
+nav#site_head>a.header_logo>img {
     height: 8vh;
     width: 4vw;
 }
@@ -456,7 +461,7 @@ a.Placements:hover+.Placements_dropDown,
 a.Alumni:hover+.Alumni_dropDown,
 .Alumni_dropDown:hover {
     display: block;
-    animation: dropDown_appear_small 0.25s ease-in-out;
+    animation: dropDown_appear_very_small 0.25s ease-in-out;
 }
 
 
