@@ -42,7 +42,7 @@ nav#siteHead {
     margin-top: 1.5vh;
     float: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background: rgb(0, 0, 0);
         background: linear-gradient(277deg, rgba(0, 0, 0, 0.3248949237898284) 0%, rgba(0, 0, 0, 0.26887251482624297) 100%);
@@ -62,7 +62,7 @@ nav#site_head {
 }
 
 nav#siteHead>a>img {
-    height: 5vh;
+    height: 3.5vh;
     width: 3vw;
     margin: 0px;
     padding: 0px;
@@ -73,9 +73,17 @@ nav#siteHead>a {
     display: flex;
     align-items: center;
     height: 100%;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
     color: rgb(255, 255, 255);
     font-weight: 500;
     font-size: 2.5vh;
+}
+
+nav#siteHead>a.home_icon {
+    width: 1.5vw;
+    margin-right: 1vw;
 }
 
 nav#siteHead>a:hover {
@@ -100,12 +108,17 @@ nav#site_head>a>img {
 
 nav#site_head>a {
     display: flex;
-        align-items: center;
-        height: 100%;
+    align-items: center;
+    height: 100%;
     margin: 0px 1.5vw;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.683);
     font-size: 2.5vh;
+}
+
+nav#site_head>a:hover
+{
+    border-bottom: 1vh solid rgba(0, 0, 0, 0.616);
 }
 
 nav#site_head>a.header_logo {
@@ -144,13 +157,13 @@ nav#site_head>a>img.header_logo {
     width: 85vw;
     overflow: hidden;
     position: absolute;
-    top: 19.5vh;
+    top: 19.4vh;
     left: 0vw;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     background-color: rgba(245, 245, 245);
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .Institute_dropDown > .category {
@@ -179,7 +192,7 @@ nav#site_head>a>img.header_logo {
 .Institute_dropDown>.category>ul>li>a {
     text-decoration: none;
     color: black;
-    font-size: 1.5vh;
+    font-size: 2.15vh;
     font-size: 2vh;
 }
 
@@ -204,13 +217,13 @@ a.Institute:hover+.Institute_dropDown,
     width: 15vw;
     overflow: hidden;
     position: absolute;
-    top: 19.5vh;
-    left: 27.5vw;
+    top: 19.4vh;
+    left: 26.5vw;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     background-color: rgb(245, 245, 245);
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .Admissions_dropDown>ul {
@@ -223,7 +236,7 @@ a.Institute:hover+.Institute_dropDown,
 
 .Admissions_dropDown>ul>li>a {
     text-decoration: none;
-        font-size: 2vh;
+    font-size: 2.15vh;
     color: black;
 }
 
@@ -239,6 +252,7 @@ a.Admissions:hover + .Admissions_dropDown,
 
 
 
+
 .Academics_dropDown {
     display: none;
     grid-template: 1fr / 1fr 1fr 1fr;
@@ -246,13 +260,13 @@ a.Admissions:hover + .Admissions_dropDown,
     width: 85vw;
     overflow: hidden;
     position: absolute;
-    top: 19.5vh;
+    top: 19.4vh;
     left: 0vw;
     z-index: 5;
     background-color: rgba(245, 245, 245);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .Academics_dropDown > .column {
@@ -281,7 +295,7 @@ a.Admissions:hover + .Admissions_dropDown,
 .Academics_dropDown>.column>ul>li>a {
     text-decoration: none;
     color: black;
-    font-size: 1.5vh;
+    font-size: 2.15vh;
     font-size: 2vh;
 }
 
@@ -297,6 +311,153 @@ a.Academics:hover + .Academics_dropDown,
     animation: dropDown_appear 0.25s ease-in-out;
 }
 
+
+
+
+.Faculty_dropDown
+{
+    display: none;
+        grid-template: 1fr / 1fr 1fr 1fr 1fr;
+        height: 40vh;
+        width: 85vw;
+        overflow: hidden;
+        position: absolute;
+        top: 19.4vh;
+        left: 0vw;
+        z-index: 5;
+        background-color: rgba(245, 245, 245);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+}
+
+.Faculty_dropDown>.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.Faculty_dropDown>.column>div {
+    align-self: center;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 3vh 0px;
+    background-color: darkorange;
+    font-size: 4vh;
+}
+
+.Faculty_dropDown>.column>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    list-style: none;
+}
+
+.Faculty_dropDown>.column>ul>li>a {
+    text-decoration: none;
+    color: black;
+    font-size: 2.15vh;
+    font-size: 2vh;
+}
+
+.Faculty_dropDown>.column>ul>li>a:hover {
+    width: 100%;
+    color: rgb(255, 89, 0);
+}
+
+
+a.Faculty:hover+.Faculty_dropDown,
+.Faculty_dropDown:hover {
+    display: grid;
+    animation: dropDown_appear_mid 0.25s ease-in-out;
+}
+
+
+
+
+.Placements_dropDown {
+    display: none;
+    height: 54vh;
+    width: 15vw;
+    overflow: hidden;
+    position: absolute;
+    top: 19.4vh;
+    left: 46.5vw;
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgb(245, 245, 245);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.Placements_dropDown>ul {
+    display: flex;
+    list-style: none;
+    padding: 3vh;
+    padding-top: 2vh;
+    gap: 3vh;
+    flex-direction: column;
+}
+
+.Placements_dropDown>ul>li>a {
+    text-decoration: none;
+    font-size: 2.15vh;
+    color: black;
+}
+
+.Placements_dropDown>ul>li>a:hover {
+    color: rgb(255, 89, 0);
+}
+
+a.Placements:hover+.Placements_dropDown,
+.Placements_dropDown:hover {
+    display: block;
+    animation: dropDown_appear_mid_high 0.25s ease-in-out;
+}
+
+
+
+
+
+.Alumni_dropDown {
+    display: none;
+    height: 25vh;
+    width: 15vw;
+    overflow: hidden;
+    position: absolute;
+    top: 19.4vh;
+    left: 56.3vw;
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgb(245, 245, 245);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.Alumni_dropDown>ul {
+    display: flex;
+    list-style: none;
+    padding: 3vh;
+    gap: 3vh;
+    flex-direction: column;
+}
+
+.Alumni_dropDown>ul>li>a {
+    text-decoration: none;
+    font-size: 2.15vh;
+    color: black;
+}
+
+.Alumni_dropDown>ul>li>a:hover {
+    color: rgb(255, 89, 0);
+}
+
+a.Alumni:hover+.Alumni_dropDown,
+.Alumni_dropDown:hover {
+    display: block;
+    animation: dropDown_appear_small 0.25s ease-in-out;
+}
 
 
 
@@ -339,11 +500,38 @@ a.Academics:hover + .Academics_dropDown,
 } 
 
 
+@keyframes dropDown_appear_mid_high {
+    0% {
+        height: 0vh;
+    } 100% {
+        height: 50vh;
+    }
+    
+}
+
+@keyframes dropDown_appear_mid {
+    0% {
+        height: 0vh;
+    } 100% {
+        height: 40vh;
+    }
+    
+}
+
 @keyframes dropDown_appear_small {
     0% {
         height: 0vh;
     } 100% {
         height: 30vh;
+    }
+    
+}
+
+@keyframes dropDown_appear_very_small {
+    0% {
+        height: 0vh;
+    } 100% {
+        height: 25vh;
     }
     
 }

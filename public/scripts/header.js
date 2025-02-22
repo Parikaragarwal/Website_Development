@@ -13,6 +13,9 @@ function setNewHeights() {
     const institute = document.querySelector(".Institute_dropDown");
     const Academics = document.querySelector(".Academics_dropDown");
     const Admissions = document.querySelector(".Admissions_dropDown");
+    const Faculty = document.querySelector(".Faculty_dropDown");
+    const Placements = document.querySelector(".Placements_dropDown");
+    const Alumni = document.querySelector(".Alumni_dropDown");
 
 
     institute.style.top = '9vh';
@@ -23,22 +26,43 @@ function setNewHeights() {
 
     Admissions.style.top = '9vh';
     Admissions.style.left = '31vw';
+
+    Faculty.style.top = '9vh';
+    Faculty.style.left = '7.5vw';
+
+    Placements.style.top = '9vh';
+    Placements.style.left = '61vw';
+
+    Alumni.style.top = '9vh';
+    Alumni.style.left = '69vw';
 }
 
 function removeNewHeight() {
     const institute = document.querySelector(".Institute_dropDown");
     const Academics = document.querySelector(".Academics_dropDown");
     const Admissions = document.querySelector(".Admissions_dropDown");
+    const Faculty = document.querySelector(".Faculty_dropDown");
+    const Placements = document.querySelector(".Placements_dropDown");
+    const Alumni = document.querySelector(".Alumni_dropDown");
 
 
-    institute.style.top = '19.5vh';
+    institute.style.top = '19.4vh';
     institute.style.left = '0vw';
 
-    Academics.style.top = '19.5vh';
+    Academics.style.top = '19.4vh';
     Academics.style.left = '0vw';
 
-    Admissions.style.top = '19.5vh';
-    Admissions.style.left = '27.5vw';
+    Admissions.style.top = '19.4vh';
+    Admissions.style.left = '26.5vw';
+    
+    Faculty.style.top = '19.4vh';
+    Faculty.style.left = '0vw';
+
+    Placements.style.top = '19.4vh';
+    Placements.style.left = '46.5vw';
+
+    Alumni.style.top = '19.4vh';
+    Alumni.style.left = '56.3vw';
 }
 
 window.onscroll = () => {
