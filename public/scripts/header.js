@@ -46,22 +46,22 @@ function removeNewHeight() {
     const Alumni = document.querySelector(".Alumni_dropDown");
 
 
-    institute.style.top = '19.4vh';
+    institute.style.top = '7vh';
     institute.style.left = '0vw';
 
-    Academics.style.top = '19.4vh';
+    Academics.style.top = '7vh';
     Academics.style.left = '0vw';
 
-    Admissions.style.top = '19.4vh';
+    Admissions.style.top = '7vh';
     Admissions.style.left = '26.5vw';
     
-    Faculty.style.top = '19.4vh';
+    Faculty.style.top = '7vh';
     Faculty.style.left = '0vw';
 
-    Placements.style.top = '19.4vh';
+    Placements.style.top = '7vh';
     Placements.style.left = '46.5vw';
 
-    Alumni.style.top = '19.4vh';
+    Alumni.style.top = '7vh';
     Alumni.style.left = '56.3vw';
 }
 

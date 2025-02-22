@@ -1,9 +1,7 @@
-
-
 /* Header for the file */
 div#college_name {
     position: absolute;
-    top: 1vh;
+    top: 0vh;
     left: 7.25vw;
     z-index: 12;
     /* height: 8vh; */
@@ -11,20 +9,24 @@ div#college_name {
 }
 
 div#college_name .college_header>a>img {
-    height: 10vh;
+    height: 11vh;
     width: 7vw;
-    margin-right: 1.25vw;
+    margin-right: 1vw;
     float: left;
 }
 
 div#college_name .college_header > div > h2 {
+    font-size: 1.8vw;
+    margin-top: 3vh;
+    margin-bottom: 0.3vh;
     font-family: 'Merriweather', sans-serif, 'Times New Roman';
-    color: darkblue;
-    font-weight: bold;
+    color: rgb(0, 28, 99);
+    font-weight: 900;
 }
 
 div#college_name .college_header > div > h6 {
-    color: brown;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0px;
 }
 
 
@@ -36,16 +38,19 @@ div.title {
 }
 
 nav#siteHead {
+    position: absolute;
     height: 7vh;
     width: 85vw;
     /* left: 50; */
-    margin-top: 1.5vh;
+    z-index: 9999;
+    top: 12vh;
+    left: 7.25vw;
+    margin-top: 2.5vh;
     float: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(0, 0, 0);
-        background: linear-gradient(277deg, rgba(0, 0, 0, 0.3248949237898284) 0%, rgba(0, 0, 0, 0.26887251482624297) 100%);
+    background-color: rgba(255, 255, 255, 0.379);
 }
 
 nav#site_head {
@@ -54,6 +59,7 @@ nav#site_head {
     left: 0;
     height: 9vh;
     width: 100vw;
+    z-index: 9999;
     float: none;
     background-color: darkorange;
     display: flex;
@@ -76,9 +82,10 @@ nav#siteHead>a {
     width: 10vw;
     display: flex;
     justify-content: center;
-    color: rgb(255, 255, 255);
+    color: rgb(195, 84, 15);
     font-weight: 500;
     font-size: 2.5vh;
+    animation: back_and_forth 0.25s forwards ease-in-out;
 }
 
 nav#siteHead>a.home_icon {
@@ -87,7 +94,7 @@ nav#siteHead>a.home_icon {
 }
 
 nav#siteHead>a:hover {
-    border-bottom: 1vh solid white;
+    border-bottom: 1vh solid rgb(195, 84, 15);;
     /* animation: appear_border 1s; */
 }
 
@@ -112,6 +119,7 @@ nav#site_head>a {
     height: 100%;
     margin: 0px 1.5vw;
     text-decoration: none;
+    font-weight: 500;
     color: rgba(0, 0, 0, 0.683);
     font-size: 2.5vh;
 }
@@ -150,6 +158,14 @@ nav#site_head>a.header_logo>img {
     width: 4vw;
 }
 
+#site_head a.start {
+    animation: start 0.25s forwards ease-in-out;
+}
+
+#site_head a.back {
+    animation: back 0.25s forwards ease-in-out;
+}
+
 
 
 
@@ -162,11 +178,11 @@ nav#site_head>a.header_logo>img {
     width: 85vw;
     overflow: hidden;
     position: absolute;
-    top: 19.4vh;
+    top: 7vh;
     left: 0vw;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    background-color: rgba(245, 245, 245);
+    background-color: whitesmoke;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -222,7 +238,7 @@ a.Institute:hover+.Institute_dropDown,
     width: 15vw;
     overflow: hidden;
     position: absolute;
-    top: 19.4vh;
+    top: 7vh;
     left: 26.5vw;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
@@ -265,7 +281,7 @@ a.Admissions:hover + .Admissions_dropDown,
     width: 85vw;
     overflow: hidden;
     position: absolute;
-    top: 19.4vh;
+    top: 7vh;
     left: 0vw;
     z-index: 5;
     background-color: rgba(245, 245, 245);
@@ -327,7 +343,7 @@ a.Academics:hover + .Academics_dropDown,
         width: 85vw;
         overflow: hidden;
         position: absolute;
-        top: 19.4vh;
+        top: 7vh;
         left: 0vw;
         z-index: 5;
         background-color: rgba(245, 245, 245);
@@ -387,7 +403,7 @@ a.Faculty:hover+.Faculty_dropDown,
     width: 15vw;
     overflow: hidden;
     position: absolute;
-    top: 19.4vh;
+    top: 7vh;
     left: 46.5vw;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
@@ -431,7 +447,7 @@ a.Placements:hover+.Placements_dropDown,
     width: 15vw;
     overflow: hidden;
     position: absolute;
-    top: 19.4vh;
+    top: 7vh;
     left: 56.3vw;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
@@ -539,4 +555,22 @@ a.Alumni:hover+.Alumni_dropDown,
         height: 25vh;
     }
     
+}
+
+@keyframes start {
+    0% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes back {
+    0% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
