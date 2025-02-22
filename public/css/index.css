@@ -1057,6 +1057,7 @@ h2 {
   background-image: url('/images/image.jpg'); /* Background image */
   background-size: cover; /* Cover full width and height */
   background-position: center; /* Center the image */
+  box-shadow: 50px 80px 80px inset;
 }
 
 /* Club Heading */
