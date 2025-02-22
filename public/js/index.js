@@ -1,11 +1,14 @@
 const wrapper = document.querySelector(".researchSlider");
 const carousel = document.querySelector(".research_list");
 const arrowBtn = document.querySelectorAll(".researchSlider > i");
+const eventsData = document.getElementById("events-data").dataset.events;
+const events = JSON.parse(eventsData);
+
 const cardWidth = document.querySelector(
   ".research_list > .research_item"
 ).offsetWidth;
 const carouselChildren = [...carousel.children];
-
+console.log("Events",events);
 //getting all the cards that can fit on the screen at a time
 let cardPerView = Math.round(carousel.offsetWidth / cardWidth);
 
@@ -85,57 +88,9 @@ carousel.addEventListener("scroll", infiniteScroll);
 
 //updates
 document.addEventListener("DOMContentLoaded", function () {
-  // Events Data
-  const eventsData = [
-    {
-      title: "Online Five-day GIAN course on Hybrid Renewable Energy",
-      date: "20-25 February 2025",
-      description: "Systems in Microgrids",
-      courseId: "241236",
-      image: "/api/placeholder/400/300",
-      link: "#",
-    },
-    {
-      title: "Workshop on Advanced Materials",
-      date: "1-3 March 2025",
-      description: "Exploring latest developments in material science",
-      courseId: "241237",
-      image: "/api/placeholder/400/300",
-      link: "#",
-    },
-    {
-      title: "International Conference on Sustainable Technology",
-      date: "15-17 March 2025",
-      description: "Global perspectives on sustainable engineering",
-      courseId: "241238",
-      image: "/api/placeholder/400/300",
-      link: "#",
-    },
-  ];
-
+ 
   // Awards Data
-  const awardsData = [
-    {
-      title: "AICTE Financial Grant",
-      description:
-        "AICTE has awarded Prof. Manjaraj M (ME) a financial grant to attend the Fraunhofer Direct Digital Manufacturing Conference DDMC, Germany (12 March, 2025 to 13 March, 2025)",
-    },
-    {
-      title: "Best Young Scientist Award",
-      description:
-        "Prof. Ashish Prabhu, Assistant Professor, Department of Biotechnology, has been awarded the Best Young Scientist Award at the 4th International Conference on Bioprocess for Sustainable Environment and Energy, held at NIT Rourkela.",
-    },
-    {
-      title: "WARI Fellowship Program",
-      description:
-        "Prof Jew Das (CE) has been chosen for the esteemed Water Advanced Research and Innovation (WARI) Fellowship Program, sponsored by the Indo-US Science and Technology Forum (IUSSTF)",
-    },
-    {
-        title: "WARI Fellowship Program",
-        description:
-          "Prof Jew Das (CE) has been chosen for the esteemed Water Advanced Research and Innovation (WARI) Fellowship Program, sponsored by the Indo-US Science and Technology Forum (IUSSTF)",
-      },
-  ];
+ 
 
   // Initialize Events Section
   function initializeEvents() {
@@ -144,106 +99,109 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.querySelector(".next");
     let currentSlide = 0;
 
-    // Create event cards
-    eventsData.forEach((event, index) => {
-      const eventCard = document.createElement("div");
-      eventCard.className = "event-card";
-      eventCard.style.display = index === 0 ? "block" : "none";
-      eventCard.innerHTML = `
-                <img src="${event.image}" alt="${event.title}">
-                <h3>${event.title}</h3>
-                <p class="event-date">${event.date}</p>
-                <p class="course-id">Course ID: ${event.courseId}</p>
-                <p>${event.description}</p>
-            `;
-      eventSlider.appendChild(eventCard);
+    // Ensure eventSlider is empty before adding events
+    eventSlider.innerHTML = "";
+
+    // Create event cards dynamically
+    events.forEach((event, index) => {
+        const eventCard = document.createElement("div");
+        eventCard.className = "event-card";
+        eventCard.style.display = index === 0 ? "block" : "none"; // Show only first event
+        eventCard.innerHTML = `
+            <img src="${event.image}" alt="${event.title}">
+            <h3>${event.title}</h3>
+            <p class="event-date">${event.date}</p>
+            <p class="course-id">Course ID: ${event.courseId}</p>
+            <p>${event.description}</p>
+        `;
+        eventSlider.appendChild(eventCard);
     });
 
-    // Event Navigation
+    // Function to show a specific slide
     function showSlide(index) {
-      const slides = document.querySelectorAll(".event-card");
-      slides.forEach((slide) => (slide.style.display = "none"));
-      slides[index].style.display = "block";
-      slides[index].style.animation = "fadeIn 0.5s";
+        const slides = document.querySelectorAll(".event-card");
+        slides.forEach(slide => (slide.style.display = "none")); // Hide all events
+        slides[index].style.display = "block"; // Show the current event
+        slides[index].style.animation = "fadeIn 0.5s"; // Apply animation
     }
 
     function nextSlide() {
-      currentSlide = (currentSlide + 1) % eventsData.length;
-      showSlide(currentSlide);
+        currentSlide = (currentSlide + 1) % events.length;
+        showSlide(currentSlide);
     }
 
     function prevSlide() {
-      currentSlide = (currentSlide - 1 + eventsData.length) % eventsData.length;
-      showSlide(currentSlide);
+        currentSlide = (currentSlide - 1 + events.length) % events.length;
+        showSlide(currentSlide);
     }
 
-    // Auto-scroll events
+    // Auto-scroll events every 5 seconds
     let autoScrollInterval = setInterval(nextSlide, 5000);
 
-    // Event listeners
+    // Event listeners for buttons
     prevBtn.addEventListener("click", () => {
-      clearInterval(autoScrollInterval);
-      prevSlide();
-      autoScrollInterval = setInterval(nextSlide, 5000);
+        clearInterval(autoScrollInterval);
+        prevSlide();
+        autoScrollInterval = setInterval(nextSlide, 5000);
     });
 
     nextBtn.addEventListener("click", () => {
-      clearInterval(autoScrollInterval);
-      nextSlide();
-      autoScrollInterval = setInterval(nextSlide, 5000);
+        clearInterval(autoScrollInterval);
+        nextSlide();
+        autoScrollInterval = setInterval(nextSlide, 5000);
     });
 
-    // Pause on hover
-    eventSlider.addEventListener("mouseenter", () =>
-      clearInterval(autoScrollInterval)
-    );
+    // Pause auto-scroll on hover
+    eventSlider.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
     eventSlider.addEventListener("mouseleave", () => {
-      autoScrollInterval = setInterval(nextSlide, 5000);
+        autoScrollInterval = setInterval(nextSlide, 5000);
     });
-  }
+}
 
-  // Initialize Awards Section
-  function initializeAwards() {
-    const awardsScroll = document.querySelector(".awards-scroll");
-
-    // Create award cards
-    const createAwardCards = () => {
-      return awardsData
-        .map(
-          (award) => `
-                <div class="award-card">
-                    <h3>${award.title}</h3>
-                    <p>${award.description}</p>
-                </div>
-            `
-        )
-        .join("");
-    };
-
-    // Add original and duplicate awards for continuous scroll
-    awardsScroll.innerHTML = createAwardCards() + createAwardCards();
-
-    // Reset animation when it ends
-    awardsScroll.addEventListener("animationend", () => {
-      awardsScroll.style.animation = "none";
-      awardsScroll.offsetHeight; // Trigger reflow
-      awardsScroll.style.animation = "scrollUp 20s linear infinite";
-    });
-
-    // Pause on hover
-    const awardsContainer = document.querySelector(".awards-container");
-    awardsContainer.addEventListener("mouseenter", () => {
-      awardsScroll.style.animationPlayState = "paused";
-    });
-    awardsContainer.addEventListener("mouseleave", () => {
-      awardsScroll.style.animationPlayState = "running";
-    });
-  }
-
-  // Initialize both sections
-  initializeEvents();
-  initializeAwards();
+// Initialize the events slider when the page loads
+initializeEvents();
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const awardsScroll = document.querySelector(".awards-scroll");
+  const awardsDataElement = document.getElementById("awards-data");
+
+  // Parse awards data from hidden div
+  const awardsData = JSON.parse(awardsDataElement.getAttribute("data-awards"));
+
+  // Function to create award cards
+  const createAwardCards = () => {
+    return awardsData
+      .map(
+        (award) => `
+              <div class="award-card">
+                  <h3>${award.title}</h3>
+                  <p>${award.description}</p>
+              </div>
+          `
+      )
+      .join("");
+  };
+
+  // Add original and duplicate awards for continuous scrolling
+  awardsScroll.innerHTML = createAwardCards() + createAwardCards();
+
+  // Reset animation when it ends
+  awardsScroll.addEventListener("animationend", () => {
+    awardsScroll.style.animation = "none";
+    awardsScroll.offsetHeight; // Trigger reflow
+    awardsScroll.style.animation = "scrollUp 20s linear infinite";
+  });
+
+  // Pause on hover
+  const awardsContainer = document.querySelector(".awards-container");
+  awardsContainer.addEventListener("mouseenter", () => {
+    awardsScroll.style.animationPlayState = "paused";
+  });
+  awardsContainer.addEventListener("mouseleave", () => {
+    awardsScroll.style.animationPlayState = "running";
+  });
+});
+
 
 
 

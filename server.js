@@ -4,9 +4,13 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv"; 
 import researchRoutes from "./routes/research.js";
-import adminRoutes from "./routes/admin.js"; // Ensure the path is correct
+import adminRoutes from "./routes/admin.js";
+import awardRoutes from "./routes/awards.js"
 import { authMiddleware } from "./middlewares/auth.js";
-import Research from "./models/research.js"; // Use import instead of require
+import Research from "./models/research.js";
+import Event from "./models/Events.js";
+import Award from "./models/Award.js"
+import eventsRouter from "./routes/Events.js";
 
 dotenv.config(); // Load environment variables
 
@@ -32,12 +36,16 @@ mongoose
 // Routes
 app.use("/admin", adminRoutes);
 app.use("/admin/research", authMiddleware, researchRoutes);
+app.use("/admin/Events", authMiddleware ,eventsRouter);
+app.use("/admin/awards", authMiddleware ,awardRoutes);
 
 // Home Page Route
 app.get("/", async (req, res) => {
     try {
+        const events= await Event.find({});
+        const awards = await Award.find({});
         const researchItems = await Research.find({}); // Fetch Research data
-        res.render("index", { researchItems }); // Pass data to index.ejs
+        res.render("index", { researchItems,events,awards }); // Pass data to index.ejs
     } catch (err) {
         console.error(err);
         res.status(500).send("Server Error");

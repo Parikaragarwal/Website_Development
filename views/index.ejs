@@ -33,9 +33,11 @@
     </script>
   </head>
   
-  
-  
   <body>
+
+    <div id="events-data" data-events='<%- JSON.stringify(events) %>' hidden></div>
+    <div id="awards-data" data-awards='<%- JSON.stringify(awards) %>'></div>
+
 
     <div class="top_head">
       <div class="text">
@@ -93,15 +95,24 @@
 
 
     <div class="container">
+      <!-- 🔹 Upcoming Events Section -->
       <section class="section events-section">
-        <h2 class="section-title">Upcoming Events</h2>
-        <div class="event-container">
-          <button class="nav-btn prev">❮</button>
-          <div class="event-slider">
-            <!-- Events will be inserted here by JavaScript -->
+          <h2 class="section-title">Upcoming Events</h2>
+          <div class="event-container">
+              <button class="nav-btn prev">❮</button>
+              <div class="event-slider">
+                  <% events.forEach(event => { %>
+                      <div class="event-card">
+                          <img src="<%= event.image %>" alt="<%= event.title %>">
+                          <h3><%= event.title %></h3>
+                          <p class="event-date"><%= event.date %></p>
+                          <p class="course-id">Course ID: <%= event.courseId %></p>
+                          <p><%= event.description %></p>
+                      </div>
+                  <% }); %>
+              </div>
+              <button class="nav-btn next">❯</button>
           </div>
-          <button class="nav-btn next">❯</button>
-        </div>
       </section>
 
       <!-- Awards Section -->
@@ -291,7 +302,7 @@
 
   <!-- Right Side: Button -->
   <div class="button-container">
-    <button class="experience-button" onclick="window.open('https://youtu.be/eOnJjASnSY0?si=jlkR43cl-7vvI5pL', '_blank')">
+    <button class="experience-button" onclick="window.open(`https:/youtu.be/eOnJjASnSY0?si=jlkR43cl-7vvI5pL`, '_blank')">
       Experience IIITN
     </button>
   </div>
