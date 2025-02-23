@@ -687,19 +687,30 @@ h2 {
 */
 
 /* Research Section Styling */
+/* Research Section Styling */
 .research {
   padding: 2.5vw;
-  background: linear-gradient(
-    277deg,
-    rgba(28, 121, 218, 0.7) 0%,
-    rgba(136, 194, 240, 0.8) 46%,
-    rgba(72, 164, 250, 0.7) 100%
-  );
+  background: url("/images/image3.jpg"); /* Set new background image */
+  background-size: cover; /* Cover full width and height */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Parallax scrolling effect */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
+
+/* Styling for Research & Innovation Heading */
+.research h2 {
+  color: white; /* Change text color to white */
+  font-family: 'Poppins', sans-serif; /* Stylish font */
+  font-weight: bold; /* Make it bold */
+  font-size: 2.5rem; /* Adjust size for better visibility */
+  text-transform: uppercase; /* Optional: Make text uppercase */
+  letter-spacing: 1.5px; /* Slight spacing for better readability */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add slight shadow for contrast */
+}
+
 
 .researchSlider {
   width: 100%;
@@ -1063,13 +1074,13 @@ h2 {
 
 
 */
-
 /* Club Section */
 .club-section {
   padding: 40px 20px; /* Space above and below */
   background-image: url("/images/image.jpg"); /* Background image */
   background-size: cover; /* Cover full width and height */
   background-position: center; /* Center the image */
+  background-attachment: fixed; /* Parallax effect */
   box-shadow: 50px 80px 80px inset;
 }
 
@@ -1080,7 +1091,7 @@ h2 {
 }
 
 .club-heading h1 {
-  font-family: "Playfair Display", serif; /* Classic UK font */
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: bold;
   color: white;
@@ -1088,41 +1099,41 @@ h2 {
 }
 
 .club-heading .quote {
-  font-family: "Playfair Display", serif; /* Classic UK font */
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   font-style: italic;
   color: white;
-  opacity: 0.8; /* Slightly transparent */
+  opacity: 0.8;
 }
 
 /* Club Grid */
 .club-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columns */
-  gap: 20px; /* Slight gaps between cards */
-  max-width: 1200px; /* Limit width for better readability */
-  margin: 0 auto; /* Center the grid */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Flip Card */
 .flip-card {
-  perspective: 1000px; /* Enable 3D perspective */
-  width: 100%; /* Full width of the grid cell */
-  height: 300px; /* Fixed height */
+  perspective: 1000px;
+  width: 100%;
+  height: 300px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s; /* Smooth flip animation */
-  transform-style: preserve-3d; /* Enable 3D transformations */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  border-radius: 15px; /* Curved edges */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg); /* Flip effect on hover */
+  transform: rotateY(180deg);
 }
 
 .flip-card-front,
@@ -1130,7 +1141,7 @@ h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hide the back face initially */
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1138,117 +1149,118 @@ h2 {
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
-  border-radius: 15px; /* Curved edges */
+  border-radius: 15px;
 }
 
-/* Front Side */
-.flip-card-front.bg-orange {
-  background: rgba(255, 140, 0, 0.75); /* Orange with 75% opacity */
-}
-
-.flip-card-front.bg-dark-blue {
-  background: rgba(0, 56, 168, 0.75); /* Dark blue with 75% opacity */
-}
-
-/* Back Side */
+/* Front and Back Backgrounds */
+.flip-card-front.bg-orange,
 .flip-card-back.bg-orange {
-  background: rgba(255, 140, 0, 0.75); /* Orange with 75% opacity */
-  transform: rotateY(180deg); /* Initially hidden */
+  background: rgba(255, 140, 0, 0.75);
 }
 
+.flip-card-front.bg-dark-blue,
 .flip-card-back.bg-dark-blue {
-  background: rgba(0, 56, 168, 0.75); /* Dark blue with 75% opacity */
-  transform: rotateY(180deg); /* Initially hidden */
+  background: rgba(0, 56, 168, 0.75);
 }
 
-/* Logo and Text Styling */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Logo and Text */
 .flip-card img {
-  width: 100px; /* Logo size */
+  width: 100px;
   height: 100px;
-  object-fit: cover; /* Ensure the logo fits */
-  margin-bottom: 15px; /* Space between logo and text */
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
 .flip-card h3 {
-  font-family: "Playfair Display", serif; /* Classic UK font */
-  font-size: 1.5rem; /* Club name size */
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
-  color: white; /* Ensure text is fully opaque */
+  color: white;
 }
 
 .flip-card p {
-  font-family: "Playfair Display", serif; /* Classic UK font */
-  font-size: 1rem; /* Description size */
-  line-height: 1.5; /* Improve readability */
-  color: white; /* Ensure text is fully opaque */
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
   .club-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for smaller screens */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 992px) {
   .club-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .club-heading h1 {
-    font-size: 2.5rem; /* Smaller heading for tablets */
+    font-size: 2.5rem;
   }
 
   .club-heading .quote {
-    font-size: 1rem; /* Smaller quote for tablets */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .club-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .club-heading h1 {
-    font-size: 2rem; /* Smaller heading for smaller tablets */
+    font-size: 2rem;
   }
 
   .club-heading .quote {
-    font-size: 0.9rem; /* Smaller quote for smaller tablets */
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 576px) {
   .club-grid {
-    grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .club-heading h1 {
-    font-size: 1.8rem; /* Smaller heading for mobile */
+    font-size: 1.8rem;
   }
 
   .club-heading .quote {
-    font-size: 0.8rem; /* Smaller quote for mobile */
+    font-size: 0.8rem;
   }
 
   .flip-card {
-    height: 250px; /* Smaller height for mobile */
+    height: 250px;
   }
 
   .flip-card img {
-    width: 80px; /* Smaller logo for mobile */
+    width: 80px;
     height: 80px;
   }
 
   .flip-card h3 {
-    font-size: 1.2rem; /* Smaller club name for mobile */
+    font-size: 1.2rem;
   }
 
   .flip-card p {
-    font-size: 0.9rem; /* Smaller description for mobile */
+    font-size: 0.9rem;
+  }
+
+  /* Fix background issue on mobile */
+  .club-section {
+    background-attachment: scroll;
   }
 }
+
 
 /* Student and Faculty slots */
 
@@ -1660,15 +1672,38 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .combined-section {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .headlines-container {
+    width: 45%;
+  }
+
+  .image-container {
+    width: 45%;
+  }
+
+  .stats-container {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .combined-section {
     flex-direction: column;
+    align-items: center;
     gap: 30px;
   }
 
-  .text-container,
+  .headlines-container,
   .image-container,
   .stats-container {
     width: 100%;
@@ -1682,5 +1717,22 @@ h2 {
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .headline-item {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .headlines-title {
+    font-size: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-text {
+    font-size: 0.9rem;
   }
 }
