@@ -1,6 +1,8 @@
 /* Header for the file */
 div#college_name {
     position: absolute;
+    display: grid;
+    grid-template: 1fr/ 1fr 0.5fr;
     top: 0vh;
     left: 7.25vw;
     z-index: 12;
@@ -13,6 +15,7 @@ div#college_name .college_header>a>img {
     width: 7vw;
     margin-right: 1vw;
     float: left;
+    margin-top: 1vh;
 }
 
 div#college_name .college_header > div > div>h2 {
@@ -188,6 +191,22 @@ nav#site_head>a.header_logo>img {
     animation: back 0.25s forwards ease-in-out;
 }
 
+div.header_images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+div.header_images>img {
+    height: 8vh;
+    width: 15vh;
+}
+
+div.header_images>img.const_image {
+    background-color: rgba(240, 248, 255, 0.237);
+    border-radius: 50%;
+}
 
 
 
