@@ -1,6 +1,7 @@
 /* Footer Styling */
 footer {
     background-color: #060049;
+    transform: translateY(5vh);
     color: #fff;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
