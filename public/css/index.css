@@ -178,7 +178,7 @@ div#carouselExampleAutoplaying {
   grid-template-columns: repeat(3, 1fr); /* Three equal columns */
   gap: 2rem; /* Decent gap between items */
   align-items: start; /* Align items to the top for consistency */
-  background-color: #f0f0f0;
+  background-color: rgb(154, 198, 188);
 }
 
 .section {
@@ -203,8 +203,6 @@ h2 {
   overflow: hidden;
   min-height: 400px;
   border-radius: 8px;
-  border-bottom: 1px solidrgb(199, 221, 235);
-  border-top: 1px solidrgb(199, 221, 235);
 }
 
 .event-card {
@@ -328,55 +326,123 @@ h2 {
 /* Seminars Section */
 .seminar-card {
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e2e8f0;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.seminar-outer-container {
+  background: linear-gradient(135deg, #f6f8ff 0%, #e9f0ff 100%);
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.seminar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .profile-container {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-top: 1.5rem;
 }
 
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
+  border: 4px solid white;
+  box-shadow: 0 0 0 2px #63a4ff;
+  transition: transform 0.2s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .seminar-badge {
   display: inline-block;
-  background: #63a4ff; /* Light blue */
+  background: linear-gradient(135deg, #63a4ff 0%, #83b6ff 100%);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
   font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  box-shadow: 0 2px 4px rgba(99, 164, 255, 0.3);
 }
 
 .seminar-content {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .seminar-topic {
-  color: #4a5568;
-  margin: 1rem 0;
+  color: #2d3748;
+  margin: 1.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .seminar-details {
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 .detail-item {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
 }
 
 .label {
-  color: #718096;
-  font-weight: 500;
-  min-width: 100px;
+  color: #64748b;
+  font-weight: 600;
+  min-width: 120px;
+  font-size: 0.925rem;
+}
+
+/* Add responsive design */
+@media (max-width: 640px) {
+  .seminar-content {
+    padding: 1.5rem;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .label {
+    min-width: auto;
+  }
 }
 
 /* Animations */
@@ -701,9 +767,10 @@ h2 {
 }
 
 /* Styling for Research & Innovation Heading */
+
 .research h2 {
   color: white; /* Change text color to white */
-  font-family: 'Poppins', sans-serif; /* Stylish font */
+  font-family: "Poppins", sans-serif; /* Stylish font */
   font-weight: bold; /* Make it bold */
   font-size: 2.5rem; /* Adjust size for better visibility */
   text-transform: uppercase; /* Optional: Make text uppercase */
@@ -711,13 +778,13 @@ h2 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add slight shadow for contrast */
 }
 
-
 .researchSlider {
   width: 100%;
   height: 50vh;
   position: relative;
   overflow: hidden;
 }
+
 
 /* Left and Right Scroll Icons */
 .researchSlider i {
@@ -784,7 +851,7 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background: white; /* Background color */
+  background-color: darkorange; /* Background color */
   cursor: pointer;
   overflow: hidden;
   scroll-snap-align: start;
@@ -872,7 +939,6 @@ h2 {
     width: 80vw; /* 1 card visible at a time */
   }
 }
-
 
 /* Video Slogan Section */
 .video-slogan-section {
@@ -1261,7 +1327,6 @@ h2 {
   }
 }
 
-
 /* Student and Faculty slots */
 
 .notice-container {
@@ -1505,19 +1570,6 @@ h2 {
   align-items: flex-start; /* Align boxes at the top */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Combined Section Styling */
 .combined-section {
   display: flex;
@@ -1541,7 +1593,7 @@ h2 {
 }
 
 .headlines-title {
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   font-size: 1.8rem;
   font-weight: bold;
   color: #002147;
@@ -1557,7 +1609,7 @@ h2 {
 }
 
 .headline-item {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #333;
   padding: 10px;
@@ -1627,7 +1679,6 @@ h2 {
   border-radius: 10px;
   transition: opacity 0.5s ease-in-out;
 }
-
 
 /* Column 3: Stats Section */
 .stats-container {
@@ -1736,3 +1787,31 @@ h2 {
     font-size: 0.9rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.carousel-quote {
+  position: absolute;
+  top: 30%; /* Lifted slightly more */
+  right: 5%;
+  width: auto;
+  text-align: right;
+  color: white;
+  font-size: 3.3vw; /* Slightly reduced for better fit */
+  font-family: "Cinzel", serif; /* Premium, stylish UK-based font */
+  font-weight: 900; /* Extra bold */
+  text-transform: uppercase;
+  z-index: 10;
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 1); /* Stronger shadow for visibility */
+  letter-spacing: 1.2px;
+}
+ 

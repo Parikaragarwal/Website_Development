@@ -7,20 +7,6 @@ const names = ["भारतीय सूचना प्रौद्योग�
 let index = 0;
 
 
-//JavaScript code to chnage H2 fron hindi to english
-
-if (index === 0) {
-    nameDisplay.classList.add("change");
-    index = (index + 1) % names.length;
-    nameDisplay.innerHTML = names[index];
-}
-
-setInterval(() => {
-            index = (index + 1) % names.length;
-            nameDisplay.innerHTML = names[index];
-        }, 2500);
-
-
 onHover.forEach(element => {
     element.addEventListener('mouseenter', () => {
         // console.log("wow");
