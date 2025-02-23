@@ -137,7 +137,30 @@ app.get("/others/equal-opportunity", (req, res) => { res.render("faculty&staff/o
 app.get("/others/internal-committee", (req, res) => { res.render("faculty&staff/others/internal-committee.ejs") });
 app.get("/others/mental-wellbeing", (req, res) => { res.render("faculty&staff/others/mental-wellbeing.ejs") });
 
+//about iitn
+app.get("/about/former-directors", (req, res) => { res.render("institute/about/former-directors.ejs") });
+app.get("/about/ranking-recognition", (req, res) => { res.render("institute/about/ranking.ejs") });
+app.get("/about/vision-mission", (req, res) => { res.render("institute/about/vision-mission.ejs") });
+app.get("/about/campus-facilities", (req, res) => { res.render("institute/about/campus-facilities.ejs") });
+app.get("/about/campus-map", (req, res) => { res.render("institute/about/campus-map.ejs") });
+app.get("/about/gallery", (req, res) => { res.render("institute/about/gallery.ejs") });
+app.get("/about/contact", (req, res) => { res.render("institute/about/contact.ejs") });
 
+// Administration
+app.get("/administration/council", (req, res) => { res.render("institute/administration/council.ejs") });
+app.get("/administration/governors", (req, res) => { res.render("institute/administration/governor.ejs") });
+app.get("/administration/senate", (req, res) => { res.render("institute/administration/senate.ejs") });
+app.get("/administration/chairperson", (req, res) => { res.render("institute/administration/chairperson.ejs") });
+app.get("/administration/director", (req, res) => { res.render("institute/administration/director.ejs") });
+app.get("/administration/administration", (req, res) => { res.render("institute/administration/administration.ejs") });
+app.get("/administration/finance-committee", (req, res) => { res.render("institute/administration/finance-committee.ejs") });
+app.get("/administration/building-work-committee", (req, res) => { res.render("institute/administration/building-work-committee.ejs") });
+
+// Accreditation
+app.get("/accreditation/nirf", (req, res) => { res.render("institute/accreditation/nirf.ejs") });
+app.get("/accreditation/nba", (req, res) => { res.render("institute/accreditation/nba.ejs") });
+app.get("/accreditation/ariia", (req, res) => { res.render("institute/accreditation/ariia.ejs") });
+app.get("/accreditation/qs", (req, res) => { res.render("institute/accreditation/qs.ejs") });
 
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);
