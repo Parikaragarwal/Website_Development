@@ -40,11 +40,18 @@ router.post("/login", async (req, res) => {
         // Set cookies and redirect
         res.cookie("email", admin.email);
         res.cookie("fullName", admin.fullname);
-        res.cookie("token", token).redirect("/admin/research");
+        res.cookie("token", token).redirect("/admin/dashboard");
     } catch (error) {
         console.log(error);
         return res.render("signIn", { error: "Something went wrong. Please try again." });
     }
 });
 
+router.get("/logout", (req, res) => {
+    res.clearCookie("email");
+    res.clearCookie("fullName");
+    res.clearCookie("token");
+
+    res.redirect("/admin/login"); // Redirect to login page after logout
+});
 export default router;

@@ -6,6 +6,7 @@ const eventSchema = new mongoose.Schema({
     description: { type: String, required: true },
     courseId: { type: String, required: true },
     image: { type: String, required: true }, // Cloudinary URL
+    publicId: { type: String, required: true },
     link: { type: String, required: true },
 });
 

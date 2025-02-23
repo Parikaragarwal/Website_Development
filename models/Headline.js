@@ -16,7 +16,11 @@ const headlineSchema = new mongoose.Schema(
     {
         type: String, // Cloudinary URL
         required: true
-    }
+    },
+    publicId: 
+    { 
+        type: String, required: true 
+    },
 },
 { timestamps: true });
 
