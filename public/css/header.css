@@ -196,7 +196,7 @@ nav#site_head>a.header_logo>img {
 .Institute_dropDown {
     display: none;
     grid-template: 1fr / 1fr 1fr 1fr;
-    height: 60vh;
+    height: 65vh;
     width: 85vw;
     overflow: hidden;
     position: absolute;
@@ -240,8 +240,7 @@ nav#site_head>a.header_logo>img {
     color: black;
     border-bottom: 0.2vh solid grey;
     width: 100%;
-    font-size: 2.15vh;
-    font-size: 2vh;
+    font-size: 2.2vh;
     font-weight: 600;
 }
 
@@ -309,7 +308,7 @@ a.Admissions:hover + .Admissions_dropDown,
 .Academics_dropDown {
     display: none;
     grid-template: 1fr / 1fr 1fr 1fr;
-    height: 60vh;
+    height: 65vh;
     width: 85vw;
     padding: 1.5vh;
     overflow: hidden;
@@ -353,8 +352,8 @@ a.Admissions:hover + .Admissions_dropDown,
     color: black;
     border-bottom: 0.2vh solid grey;
     width: 100%;
-    font-size: 2.15vh;
     font-size: 2vh;
+    font-size: 2.2vh;
     font-weight: 600;
 }
 
@@ -421,8 +420,7 @@ a.Academics:hover + .Academics_dropDown,
     display: block;
     border-bottom: 0.2vh solid grey;
     width: 100%;
-    font-size: 2.15vh;
-    font-size: 2vh;
+    font-size: 2.2vh;
     font-weight: 600;
 }
 
@@ -556,7 +554,7 @@ a.Alumni:hover+.Alumni_dropDown,
     
         to {
             /* opacity: 1; */
-            height: 60vh;
+            height: 65vh;
         }
 }
 
