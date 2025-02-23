@@ -580,23 +580,25 @@ document.addEventListener("DOMContentLoaded", () =>
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const headlines = document.querySelectorAll(".headline-item");
-  const displayImage = document.getElementById("display-image");
-
-  const images = ["/images/aa.jpg", "/images/bb.jpg", "/images/cc.jpg", "/images/dd.jpg", "/images/ee.jpg"];
-  const defaultImage = "/images/oo.jpg"; // Default image
-
-  // Set default image on page load
-  displayImage.src = defaultImage;
-
-  headlines.forEach((headline, index) => {
-    headline.addEventListener("mouseover", function () {
-      displayImage.src = images[index % images.length];
-    });
-
-    headline.addEventListener("mouseout", function () {
-      displayImage.src = defaultImage;
+  document.addEventListener("DOMContentLoaded", function () {
+    const headlines = document.querySelectorAll(".headline-item");
+    const displayImage = document.getElementById("display-image");
+  
+    const defaultImage = "/images/Updates.jpg"; // Default image
+  
+    // Set default image on page load
+    displayImage.src = defaultImage;
+    headlines.forEach((headline) => {
+      headline.addEventListener("mouseover", function () {
+        const imageSrc = headline.getAttribute("data-image");
+        if (imageSrc) {
+          displayImage.src = `${imageSrc}`;
+        }
+      });
+  
+      headline.addEventListener("mouseout", function () {
+        displayImage.src = defaultImage;
+      });
     });
   });
-});
+  

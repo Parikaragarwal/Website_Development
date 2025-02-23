@@ -34,7 +34,7 @@
   </head>
   
   <body>
-    
+
     <div id="facultynotices-data" data-facultynotices='<%- JSON.stringify(facultynotices) %>' hidden></div>
     <div id="events-data" data-events='<%- JSON.stringify(events) %>' hidden></div>
     <div id="awards-data" data-awards='<%- JSON.stringify(awards) %>'></div>
@@ -192,17 +192,13 @@
       <div class="headlines-container">
         <h2 class="headlines-title">Latest IIIT Nagpur Headlines</h2>
         <div class="headlines-list">
-          <a href="/" class="headline-item" data-image="aa.jpg">IIIT Nagpur announces new AI research lab in collaboration with industry leaders.</a>
-          <a href="/" class="headline-item" data-image="bb.jpg">Campus placements hit a record high with 95% of students placed in top companies.</a>
-          <a href="/" class="headline-item" data-image="cc.jpg">New course on Quantum Computing introduced for BTech students.</a>
-          <a href="/" class="headline-item" data-image="dd.jpg">IIIT Nagpur hosts its annual tech fest 'TechVista 2023' with over 500 participants.</a>
-          <a href="/" class="headline-item" data-image="ee.jpg">Faculty members publish groundbreaking research in IEEE journals.</a>
-          <a href="/" class="headline-item" data-image="aa.jpg">IIIT Nagpur signs MoU with a leading international university for student exchange programs.</a>
-          <a href="/" class="headline-item" data-image="bb.jpg">New hostel facilities inaugurated to accommodate growing student population.</a>
-          <a href="/" class="headline-item" data-image="cc.jpg">IIIT Nagpur students win national hackathon with an innovative healthcare solution.</a>
-          <a href="/" class="headline-item" data-image="dd.jpg">Campus Wi-Fi upgraded to 10 Gbps for seamless connectivity.</a>
-          <a href="/" class="headline-item" data-image="ee.jpg">Alumni meet 2023 sees record turnout with over 200 alumni attending.</a>
-        </div>
+          <% headlines.forEach(headline => { %>
+              <a href="<%= headline.link %>" class="headline-item" data-image="<%= headline.imageUrl %>">
+                  <%= headline.text %>
+              </a>
+          <% }) %>
+      </div>
+      
       </div>
     
       <!-- Column 2: Image -->
