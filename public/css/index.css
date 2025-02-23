@@ -170,6 +170,8 @@ div#carouselExampleAutoplaying {
   /* Ensures the image covers the carousel area */
 }
 
+
+
 /* Get the news and Updates */
 .container_class {
   /* max-width: 1500px; Restored to 1200px to utilize more space */
@@ -198,22 +200,59 @@ div#carouselExampleAutoplaying {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.section.awards-section {
-  margin-bottom: 2vh;
-  margin-right: 2vh;
+section.event_section.appear {
+  animation: translate_appear 1s forwards ease-in-out;
+}
+
+section.director_section.appear {
   width: 60vw;
+  height: 70vh;
+  margin-top: 2.5vh;
+  border-radius: 20px;
+  margin-right: 1vw;
+  overflow: hidden;
+  background-color: rgb(233, 121, 76);
+  animation: translate_appear 1s forwards ease-in-out;
 }
 
-.section.events-section {
-  width: 30vw;
-  margin-left: 1vw;
+section.director_section>h2 {
+  height: 6vh;
+  margin-top: 1vh;
+  margin-left: 0.5vh;
+  margin-bottom: 1vh;
+  border-bottom: 1px solid black;
+
 }
 
-section.section h2 {
-  color: #333;
-  font-size: 1.5rem;
-  border-bottom: 2px solid darkblue;
-  margin-bottom: 2vh;
+section.director_section>div>img {
+  height: 35vh;
+  width: 25vw;
+  margin: 2vh;
+  /* padding: 1vh; */
+  float: right;
+  border: 0.5vh solid black;
+  border-radius: 20px;
+}
+
+section.director_section>div>p {
+  font-size: 2.4vh;
+  /* line-height: 3.5vh; */
+  font-weight: 600;
+  text-align: justify;
+  padding: 2vh;
+  margin: 0px;
+}
+
+section.director_section>div>p>a {
+  font-size: 2.5vh;
+  text-decoration: none;
+  color: white;
+  margin-top: 100vh;
+  margin-left: 0vh;
+}
+
+section.director_section>div>p>a:hover {
+  color: #007bff;
 }
 
 /* Events Section */
@@ -1161,6 +1200,7 @@ section.section h2 {
 
 
 */
+
 /* Club Section */
 .club-section {
   padding: 40px 20px; /* Space above and below */
@@ -1347,6 +1387,9 @@ section.section h2 {
     background-attachment: scroll;
   }
 }
+
+
+
 
 /* Student and Faculty slots */
 
@@ -1898,4 +1941,15 @@ h1 {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+
+@keyframes translate_appear {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  } 100% {
+    opacity: 1;
+      transform: translateY(0px);
+  }
 }
