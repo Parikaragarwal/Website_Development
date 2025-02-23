@@ -170,9 +170,6 @@ div#carouselExampleAutoplaying {
   /* Ensures the image covers the carousel area */
 }
 
-
-
-
 /* Get the news and Updates */
 .container_class {
   /* max-width: 1500px; Restored to 1200px to utilize more space */
@@ -187,6 +184,10 @@ div#carouselExampleAutoplaying {
   box-shadow: 10px 20px 5px rgba(0, 0, 0, 0.1),
     -10px 20px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.274);
+  display:flex;
+  justify-content: space-around; 
+    align-items: center;
+
 }
 
 .section {
@@ -207,7 +208,6 @@ div#carouselExampleAutoplaying {
   width: 30vw;
   margin-left: 1vw;
 }
-
 
 section.section h2 {
   color: #333;
@@ -807,7 +807,6 @@ section.section h2 {
   position: relative;
   overflow: hidden;
 }
-
 
 /* Left and Right Scroll Icons */
 .researchSlider i {
@@ -1815,7 +1814,6 @@ section.section h2 {
   }
 }
 
-
 .carousel-quote {
   position: absolute;
   top: 30%; /* Lifted slightly more */
@@ -1831,4 +1829,74 @@ section.section h2 {
   text-shadow: 6px 6px 12px rgba(0, 0, 0, 1); /* Stronger shadow for visibility */
   letter-spacing: 1.2px;
 }
+//director
+.d-container {
+  background-color: #cb4f38;
+  color: white;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  height: 400px;
+  width: 200px;
  
+}
+
+.d-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row; /* Ensure row direction */
+}
+
+.d-text-content {
+  flex: 1;
+  max-width: 60%;
+  padding-right: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.d-message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.director-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width:200px;
+  heght:100px;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.learn-more::after {
+  content: "→";
+  margin-left: 0.5rem;
+}
+
+.image-container {
+  flex: 0 0 40%;
+  max-width: 500px;
+}
+
+.director-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

@@ -99,26 +99,51 @@
 
 
     <div class="container_class">
-      <!-- 🔹 Upcoming Events Section -->
-      <section class="section events-section">
-          <h2 class="section-title">Upcoming Events</h2>
-          <div class="event-container">
-              <button class="nav-btn prev">❮</button>
-              <div class="event-slider">
-                  <% events.forEach(event => { %>
-                      <div class="event-card">
-                          <img src="<%= event.image %>" alt="<%= event.title %>">
-                          <h3><%= event.title %></h3>
-                          <p class="event-date"><%= event.date %></p>
-                          <p class="course-id">Course ID: <%= event.courseId %></p>
-                          <p><%= event.description %></p>
-                      </div>
-                  <% }); %>
-              </div>
-              <button class="nav-btn next">❯</button>
-          </div>
-      </section>
+        <!-- Upcoming Events Section -->
+        <section class="events-section" style="border-radius: 20px;background-color:antiquewhite;">
+            <h2 class="section-title" style="text-align: center;">Upcoming Events</h2>
+            <div class="event-container" style="border-top:1px solid black;">
+              
+                <div class="event-slider" style="width:650px;height: max-content;padding: 20px;">
+                    <!-- Example Event Card -->
+                    <div class="event-card">
+                        <img src="/api/placeholder/300/200]" alt="Event">
+                        <h3>Sample Event</h3>
+                        <p class="event-date">February 24, 2025</p>
+                        <p class="course-id">Course ID: CS101</p>
+                        <p>Event description goes here...</p>
+                    </div>
+                    <!-- Add more event cards as needed -->
+                </div>
+                <div class="nav-btn-container" style="display: flex; justify-content:space-between;">
+                  <button class="nav-btn prev">❮</button>
+                  <button class="nav-btn next">❯</button>
+                </div
+             
+            </div>
+        </section>
 
+        <!-- Director's Message Section -->
+        <section>
+            <div class="d-container" style=" border: 1px solid black;width: 800px; background-color: antiquewhite;border-radius: 20px;padding: 20px;">
+                <div class="d-content">
+                    <div class="d-text-content">
+                        <h1 style="width: max-content;text-align: center;">Message from Director</h1>
+                        <div class="d-m">
+                        <p class="d-message">
+                            It is a privilege for me to have assumed the position of Director, NIT Rourkela, on 18th February 2022. NIT Rourkela has a rich legacy of sixty dedicated years of service to the nation and is the pride of Odisha. Excellence in teaching and high-quality research are the pillars on which the Institute is built. The Institute aims to foster 21st-century skills and competencies supported by defined learning frameworks and industrial internships for the students as part of Industry 4.0. With these skillsets, our students are future-ready to make an impact at work in general and society in particular.
+                        </p>
+                      </div>
+                        <p class="director-name" style="width: max-content;";">Prof. K. Umamaheshwar Rao </p>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="d-image-container">
+                        <img src="/images/director.jpg" alt="Director" class="director-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
       <!-- Awards Section -->
       <section class="section awards-section">
         
@@ -342,3 +367,8 @@
     <%- include('./partials/footer') %>
   </body>
 </html>
+
+
+
+//Director
+
