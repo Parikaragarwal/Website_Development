@@ -1,5 +1,20 @@
 const navbar = document.querySelector("#siteHead");
+const onHover = document.querySelectorAll(".main_dropDown");
+const onHoverLinks = document.querySelectorAll(".siteHead>a");
 
+onHover.forEach(element => {
+    element.addEventListener("mouseover", () => {
+        console.log("wow");
+        element.previousElementSibling.style.borderBottom = "1vh solid black";
+    })
+});
+
+    onHover.forEach(element => {
+        element.addEventListener("mouseout", () => {
+            console.log("wow");
+            element.previousElementSibling.style.borderBottom = "0px";
+        })
+    });
 
 function vhToPixels(vh) {
     return Math.round(window.innerHeight * (vh / 100));
