@@ -57,13 +57,13 @@ body {
 
 .top_head > a {
   text-decoration: none;
-  margin: 0 5px;
+  margin: 0px 5px;
   display: flex;
 }
 
 .top_head a {
   margin: 0 5px;
-  color: rgb(0, 47, 255);
+  color: rgb(255, 255, 255);
   font-size: 1.2rem; /* Reduced for better spacing */
 }
 
