@@ -3,6 +3,7 @@ body {
   font-family: "Atma", serif;
   min-height: 100vh;
   min-width: 100vw;
+  background-color: darkblue;
 }
 @keyframes typing {
   from {
