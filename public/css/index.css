@@ -767,6 +767,7 @@ h2 {
 }
 
 /* Styling for Research & Innovation Heading */
+
 .research h2 {
   color: white; /* Change text color to white */
   font-family: "Poppins", sans-serif; /* Stylish font */
@@ -783,6 +784,7 @@ h2 {
   position: relative;
   overflow: hidden;
 }
+
 
 /* Left and Right Scroll Icons */
 .researchSlider i {
@@ -849,7 +851,7 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background: white; /* Background color */
+  background-color: darkorange; /* Background color */
   cursor: pointer;
   overflow: hidden;
   scroll-snap-align: start;

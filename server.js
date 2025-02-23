@@ -9,8 +9,12 @@ import awardRoutes from "./routes/awards.js"
 import { authMiddleware } from "./middlewares/auth.js";
 import Research from "./models/research.js";
 import Event from "./models/Events.js";
+import SNotice from "./models/studentnotice.js";
 import Award from "./models/Award.js"
 import eventsRouter from "./routes/Events.js";
+import FacultyNotice from "./models/facultynotice.js";
+import studentnoticeRouter from "./routes/studentnotice.js";
+import facultynoticeRouter from "./routes/facultynotice.js"
 
 dotenv.config(); // Load environment variables
 
@@ -38,14 +42,18 @@ app.use("/admin", adminRoutes);
 app.use("/admin/research", authMiddleware, researchRoutes);
 app.use("/admin/Events", authMiddleware ,eventsRouter);
 app.use("/admin/awards", authMiddleware ,awardRoutes);
+app.use("/admin/studentnotice",authMiddleware,studentnoticeRouter);
+app.use("/admin/facultynotice",authMiddleware,facultynoticeRouter);
 
 // Home Page Route
 app.get("/", async (req, res) => {
     try {
+        const studentnotices = await SNotice.find({});
+        const facultynotices = await FacultyNotice.find({});
         const events= await Event.find({});
         const awards = await Award.find({});
         const researchItems = await Research.find({}); // Fetch Research data
-        res.render("index", { researchItems,events,awards }); // Pass data to index.ejs
+        res.render("index", { researchItems,events,awards,studentnotices,facultynotices }); // Pass data to index.ejs
     } catch (err) {
         console.error(err);
         res.status(500).send("Server Error");
@@ -115,6 +123,27 @@ app.get("/centres/nano", (req,res) => { res.render("academics/centres/nano.ejs")
 app.get("/centres/polymer", (req,res) => { res.render("academics/centres/polymer.ejs") })
 app.get("/centres/water", (req,res) => { res.render("academics/centres/water.ejs") })
 
+
+// For Faculty
+app.get("/faculty/all", (req, res) => { res.render("faculty&staff/faculty/all.ejs") });
+app.get("/faculty/forum", (req, res) => { res.render("faculty&staff/faculty/forum.ejs") });
+app.get("/faculty/retired", (req, res) => { res.render("faculty&staff/faculty/retired.ejs") });
+app.get("/faculty/current-openings", (req, res) => { res.render("faculty&staff/faculty/current-openings.ejs") });
+app.get("/faculty/awards", (req, res) => { res.render("faculty&staff/faculty/awards.ejs") });
+
+// For Staff
+app.get("/staff/all", (req, res) => { res.render("faculty&staff/staff/all.ejs") });
+app.get("/staff/retired", (req, res) => { res.render("faculty&staff/staff/retired.ejs") });
+app.get("/staff/current-openings", (req, res) => { res.render("faculty&staff/staff/current-openings.ejs") });
+
+// Facilities
+app.get("/facilities/housing", (req, res) => { res.render("faculty&staff/facilities/housing.ejs") });
+app.get("/facilities/healthcare", (req, res) => { res.render("faculty&staff/facilities/healthcare.ejs") });
+
+// Others
+app.get("/others/equal-opportunity", (req, res) => { res.render("faculty&staff/others/equal-opportunity.ejs") });
+app.get("/others/internal-committee", (req, res) => { res.render("faculty&staff/others/internal-committee.ejs") });
+app.get("/others/mental-wellbeing", (req, res) => { res.render("faculty&staff/others/mental-wellbeing.ejs") });
 
 
 

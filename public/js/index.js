@@ -301,80 +301,6 @@ document.querySelectorAll('.box').forEach(box => {
 });
 
 //Student Notices
-const notices = [
-  {
-    title: "Summer Internship Programme 2025",
-    date: "18 Feb 2025",
-    link: "#",
-    isNew: true,
-  },
-  {
-    title: "Corrigendum to Notice for Admission to MBA 25-27",
-    date: "22 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Advertisement for Admission to MBA 2025-27",
-    date: "02 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Campus Placement Drive 2025",
-    date: "15 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Annual Sports Meet Registration",
-    date: "10 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Advertisement for Admission to MBA 2025-27",
-    date: "02 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Summer Internship Programme 2025",
-    date: "18 Feb 2025",
-    link: "#",
-    isNew: true,
-  },
-  {
-    title: "Corrigendum to Notice for Admission to MBA 25-27",
-    date: "22 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Advertisement for Admission to MBA 2025-27",
-    date: "02 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Campus Placement Drive 2025",
-    date: "15 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Annual Sports Meet Registration",
-    date: "10 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Advertisement for Admission to MBA 2025-27",
-    date: "02 Jan 2025",
-    link: "#",
-    isNew: false,
-  },
-];
 
 class NoticeBoard {
   constructor() {
@@ -441,172 +367,194 @@ class NoticeBoard {
     this.startAnimation();
   }
 }
+function formatDate(isoString) 
+{
+    const date = new Date(isoString);
+    return date.toLocaleDateString('en-GB', 
+    { 
+        day: '2-digit', 
+        month: 'long', 
+        year: 'numeric' 
+    });
+}
 
 // Initialize the notice board
 document.addEventListener("DOMContentLoaded", () => {
+  const studentNoticesElement = document.getElementById("studentnotices-data");
+  const notices = JSON.parse(studentNoticesElement.dataset.studentnotices || "[]");
+
+  class NoticeBoard {
+    constructor() {
+      this.currentIndex = 0;
+      this.wrapper = document.getElementById("noticeWrapper");
+      this.pauseBtn = document.getElementById("pauseBtn");
+      this.resumeBtn = document.getElementById("resumeBtn");
+      this.isPaused = false;
+      this.interval = null;
+
+      this.init();
+    }
+
+    init() {
+      this.renderNotices();
+      this.startAnimation();
+      this.setupEventListeners();
+    }
+
+    renderNotices() {
+      this.wrapper.innerHTML = notices
+        .map(
+          (notice) => `
+            <a href="${notice.link}" class="notice-item">
+                <div class="notice-title">
+                    ${notice.title}
+                    ${notice.isNew ? '<span class="new-badge">NEW</span>' : ""}
+                </div>
+                <div class="notice-date">${new Date(notice.date).toLocaleDateString()}
+                </div>
+            </a>
+        `
+        )
+        .join("");
+    }
+
+    moveNotices() {
+      if (notices.length === 0) return;
+      this.currentIndex = (this.currentIndex + 1) % notices.length;
+      this.wrapper.style.transform = `translateY(-${this.currentIndex * 60}px)`;
+    }
+
+    startAnimation() {
+      if (notices.length > 1) {
+        this.interval = setInterval(() => this.moveNotices(), 3000);
+      }
+    }
+
+    setupEventListeners() {
+      this.pauseBtn.addEventListener("click", () => this.pauseAnimation());
+      this.resumeBtn.addEventListener("click", () => this.resumeAnimation());
+
+      this.wrapper.addEventListener("mouseenter", () => this.pauseAnimation());
+      this.wrapper.addEventListener("mouseleave", () => {
+        if (!this.isPaused) {
+          this.resumeAnimation();
+        }
+      });
+    }
+
+    pauseAnimation() {
+      this.isPaused = true;
+      clearInterval(this.interval);
+    }
+
+    resumeAnimation() {
+      this.isPaused = false;
+      this.startAnimation();
+    }
+  }
+
+  // Initialize the notice board with dynamic data
   new NoticeBoard();
 });
 
-const facultyNotices = [
-  {
-    title: "Faculty Development Program on Advanced Teaching Methods",
-    date: "18 Feb 2025",
-    department: "All Departments",
-    link: "#",
-    isNew: true,
-  },
-  {
-    title: "Research Grant Proposals Due",
-    date: "22 Jan 2025",
-    department: "Research Cell",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Annual Faculty Performance Review Schedule",
-    date: "15 Jan 2025",
-    department: "HR Department",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Department Heads Meeting",
-    date: "12 Jan 2025",
-    department: "Administration",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Workshop on Innovative Teaching Technologies",
-    date: "10 Jan 2025",
-    department: "IT Department",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Faculty Development Program on Advanced Teaching Methods",
-    date: "18 Feb 2025",
-    department: "All Departments",
-    link: "#",
-    isNew: true,
-  },
-  {
-    title: "Research Grant Proposals Due",
-    date: "22 Jan 2025",
-    department: "Research Cell",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Annual Faculty Performance Review Schedule",
-    date: "15 Jan 2025",
-    department: "HR Department",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Department Heads Meeting",
-    date: "12 Jan 2025",
-    department: "Administration",
-    link: "#",
-    isNew: false,
-  },
-  {
-    title: "Workshop on Innovative Teaching Technologies",
-    date: "10 Jan 2025",
-    department: "IT Department",
-    link: "#",
-    isNew: false,
-  },
-];
+class FacultyNoticeBoard 
+{
+    constructor(facultyNotices) 
+    {
+        this.facultyNotices = facultyNotices;
+        this.currentFacultyIndex = 0;
+        this.facultyWrapper = document.getElementById("facultyNoticeWrapper");
+        this.facultyPauseBtn = document.getElementById("facultyPauseBtn");
+        this.facultyResumeBtn = document.getElementById("facultyResumeBtn");
+        this.isFacultyPaused = false;
+        this.facultyInterval = null;
 
-class FacultyNoticeBoard {
-  constructor() {
-    this.currentFacultyIndex = 0;
-    this.facultyWrapper = document.getElementById("facultyNoticeWrapper");
-    this.facultyPauseBtn = document.getElementById("facultyPauseBtn");
-    this.facultyResumeBtn = document.getElementById("facultyResumeBtn");
-    this.isFacultyPaused = false;
-    this.facultyInterval = null;
+        this.initFacultyBoard();
+    }
 
-    this.initFacultyBoard();
-  }
+    initFacultyBoard() 
+    {
+        this.renderFacultyNotices();
+        this.startFacultyAnimation();
+        this.setupFacultyEventListeners();
+    }
 
-  initFacultyBoard() {
-    this.renderFacultyNotices();
-    this.startFacultyAnimation();
-    this.setupFacultyEventListeners();
-  }
+    renderFacultyNotices() 
+    {
+        this.facultyWrapper.innerHTML = this.facultyNotices
+            .map(
+                (notice) => `
+                <a href="${notice.link}" class="faculty-notice-item">
+                    <div class="faculty-notice-title">
+                        ${notice.title}
+                        ${notice.isNew ? '<span class="faculty-new-badge">NEW</span>' : ""}
+                        <span class="faculty-department-tag">${notice.department}</span>
+                    </div>
+                    <div class="faculty-notice-date">${formatDate(notice.date)}</div>
+                </a>
+            `
+            )
+            .join("");
+    }
 
-  renderFacultyNotices() {
-    this.facultyWrapper.innerHTML = facultyNotices
-      .map(
-        (notice) => `
-          <a href="${notice.link}" class="faculty-notice-item">
-              <div class="faculty-notice-title">
-                  ${notice.title}
-                  ${
-                    notice.isNew
-                      ? '<span class="faculty-new-badge">NEW</span>'
-                      : ""
-                  }
-                  <span class="faculty-department-tag">${
-                    notice.department
-                  }</span>
-              </div>
-              <div class="faculty-notice-date">${notice.date}</div>
-          </a>
-      `
-      )
-      .join("");
-  }
+    moveFacultyNotices() 
+    {
+        this.currentFacultyIndex =
+            (this.currentFacultyIndex + 1) % this.facultyNotices.length;
+        this.facultyWrapper.style.transform = `translateY(-${
+            this.currentFacultyIndex * 60
+        }px)`;
+    }
 
-  moveFacultyNotices() {
-    this.currentFacultyIndex =
-      (this.currentFacultyIndex + 1) % facultyNotices.length;
-    this.facultyWrapper.style.transform = `translateY(-${
-      this.currentFacultyIndex * 60
-    }px)`;
-  }
+    startFacultyAnimation() 
+    {
+        this.facultyInterval = setInterval(() => this.moveFacultyNotices(), 3000);
+    }
 
-  startFacultyAnimation() {
-    this.facultyInterval = setInterval(() => this.moveFacultyNotices(), 3000);
-  }
+    setupFacultyEventListeners() 
+    {
+        this.facultyPauseBtn.addEventListener("click", () =>
+            this.pauseFacultyAnimation()
+        );
+        this.facultyResumeBtn.addEventListener("click", () =>
+            this.resumeFacultyAnimation()
+        );
 
-  setupFacultyEventListeners() {
-    this.facultyPauseBtn.addEventListener("click", () =>
-      this.pauseFacultyAnimation()
-    );
-    this.facultyResumeBtn.addEventListener("click", () =>
-      this.resumeFacultyAnimation()
-    );
+        this.facultyWrapper.addEventListener("mouseenter", () =>
+            this.pauseFacultyAnimation()
+        );
+        this.facultyWrapper.addEventListener("mouseleave", () => {
+            if (!this.isFacultyPaused) {
+                this.resumeFacultyAnimation();
+            }
+        });
+    }
 
-    this.facultyWrapper.addEventListener("mouseenter", () =>
-      this.pauseFacultyAnimation()
-    );
-    this.facultyWrapper.addEventListener("mouseleave", () => {
-      if (!this.isFacultyPaused) {
-        this.resumeFacultyAnimation();
-      }
-    });
-  }
+    pauseFacultyAnimation() 
+    {
+        this.isFacultyPaused = true;
+        clearInterval(this.facultyInterval);
+    }
 
-  pauseFacultyAnimation() {
-    this.isFacultyPaused = true;
-    clearInterval(this.facultyInterval);
-  }
-
-  resumeFacultyAnimation() {
-    this.isFacultyPaused = false;
-    this.startFacultyAnimation();
-  }
+    resumeFacultyAnimation() 
+    {
+        this.isFacultyPaused = false;
+        this.startFacultyAnimation();
+    }
 }
 
-// Initialize the faculty notice board
-document.addEventListener("DOMContentLoaded", () => {
-  new FacultyNoticeBoard();
-});
 
+// Initialize the faculty notice board
+document.addEventListener("DOMContentLoaded", () => 
+  {
+      // Get faculty notices from EJS data
+      const facultyNoticesData = document.getElementById("facultynotices-data").dataset.facultynotices;
+      const facultyNotices = JSON.parse(facultyNoticesData);
+  
+      // Initialize the faculty notice board with fetched notices
+      new FacultyNoticeBoard(facultyNotices);
+  });
+  
 
 
 
