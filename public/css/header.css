@@ -217,7 +217,7 @@ div.header_images>img.emblem_image {
 .Institute_dropDown {
     display: none;
     grid-template: 1fr / 1fr 1fr 1fr;
-    height: 65vh;
+    height: 55vh;
     width: 85vw;
     overflow: hidden;
     position: absolute;
@@ -575,7 +575,7 @@ a.Alumni:hover+.Alumni_dropDown,
     
         to {
             /* opacity: 1; */
-            height: 65vh;
+            height: 55vh;
         }
 }
 
