@@ -34,7 +34,7 @@
   </head>
   
   <body>
-    
+
     <div id="facultynotices-data" data-facultynotices='<%- JSON.stringify(facultynotices) %>' hidden></div>
     <div id="events-data" data-events='<%- JSON.stringify(events) %>' hidden></div>
     <div id="awards-data" data-awards='<%- JSON.stringify(awards) %>'></div>
@@ -162,17 +162,13 @@
       <div class="headlines-container">
         <h2 class="headlines-title">Latest Updates</h2>
         <div class="headlines-list">
-          <a href="/" class="headline-item" data-image="aa.jpg">Parikhsa pe charcha 2025</a>
-          <a href="/" class="headline-item" data-image="bb.png">Third convocation</a>
-          <a href="/" class="headline-item" data-image="cc.png">Tree plantation</a>
-          <a href="/" class="headline-item" data-image="dd.png">HCL foundation signed MOU for afforestation.</a>
-          <a href="/" class="headline-item" data-image="ee.png">SNCICON</a>
-          <a href="/" class="headline-item" data-image="ff.png">Delegates from French Embassy visit IIITN</a>
-          <a href="/" class="headline-item" data-image="gg.png">Inter IIIT</a>
-          <a href="/" class="headline-item" data-image="hh.png">Press conference at NEP</a>
-          <a href="/" class="headline-item" data-image="ii.png">Empowering entrepreneurship with AI</a>
-          
-        </div>
+          <% headlines.forEach(headline => { %>
+              <a href="<%= headline.link %>" class="headline-item" data-image="<%= headline.imageUrl %>">
+                  <%= headline.text %>
+              </a>
+          <% }) %>
+      </div>
+      
       </div>
     
       <!-- Column 2: Image -->
