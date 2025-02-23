@@ -1,6 +1,7 @@
 const navbar = document.querySelector("#siteHead");
 const onHover = document.querySelectorAll(".main_dropDown");
 const onHoverLinks = document.querySelectorAll(".siteHead>a");
+const onHoverAfterLinks = document.querySelectorAll("#site_head a.behind_logo");
 
 // border-bottom: 1vh solid rgb(0, 0, 0);
 // onHoverLinks.forEach(element => {
@@ -12,14 +13,14 @@ const onHoverLinks = document.querySelectorAll(".siteHead>a");
 
 onHover.forEach(element => {
     element.addEventListener('mouseenter', () => {
-        console.log("wow");
+        // console.log("wow");
         element.previousElementSibling.style.borderBottom = "1vh solid black";
     })
 });
 
     onHover.forEach(element => {
         element.addEventListener('mouseleave', () => {
-            console.log("wow");
+            // console.log("wow");
             element.previousElementSibling.style.borderBottom = ""; //This thing resets the inline style
         })
     });
@@ -28,7 +29,7 @@ function vhToPixels(vh) {
     return Math.round(window.innerHeight * (vh / 100));
 }
 
-const headerHeight = 20;
+const headerHeight = 22;
 
 const pxHeight = vhToPixels(headerHeight);
 
@@ -94,9 +95,33 @@ window.onscroll = () => {
         setNewHeights();
         navbar.removeAttribute("id");
         navbar.setAttribute("id", "site_head");
+
+        setTimeout(function () {
+        document.querySelectorAll("#site_head a.behind_logo").forEach(element => {
+            element.classList.remove("start");
+        });
+        }, 250);
+
+        setTimeout(function () {
+        document.querySelectorAll("#site_head a.after_logo").forEach(element => {
+            element.classList.remove("back");
+        });
+        }, 250);
     } else {
+
+        document.querySelectorAll("#site_head a.behind_logo").forEach(element => {
+            if (!element.classList.contains("start"))
+                element.classList.add("start");
+        });
+
+        document.querySelectorAll("#site_head a.after_logo").forEach(element => {
+            if (!element.classList.contains("back"))
+                element.classList.add("back");
+        });
+        
         removeNewHeight();
         navbar.removeAttribute("id");
         navbar.setAttribute("id", "siteHead");
+
     }
 } 

@@ -86,7 +86,6 @@ nav#siteHead>a {
     color: black;
     font-weight: 500;
     font-size: 2.5vh;
-    animation: back_and_forth 0.25s forwards ease-in-out;
 }
 
 nav#siteHead>a.home_icon {
@@ -128,6 +127,7 @@ nav#site_head>a {
 nav#site_head>a:hover
 {
     border-bottom: 1vh solid rgba(0, 0, 0, 0.616);
+    animation: sidewise_appear 0.25s forwards ease-in-out;
 }
 
 nav#site_head>a.header_logo {
