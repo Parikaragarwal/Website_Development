@@ -24,6 +24,10 @@ div#college_name .college_header > div > h2 {
     font-weight: 900;
 }
 
+div#college_name .college_header>div>h2.change {
+    animation: fade 2.5s infinite;
+}
+
 div#college_name .college_header > div > h6 {
     color: rgb(0, 0, 0);
     margin-bottom: 0px;
@@ -598,4 +602,34 @@ a.Alumni:hover+.Alumni_dropDown,
     100% {
         border-bottom-width: 1vh;
     }
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes fade {
+    0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        } 
 }
