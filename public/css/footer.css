@@ -5,7 +5,6 @@ footer {
     padding: 40px 20px;
     font-family: Arial, sans-serif;
 }
-
 .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +23,7 @@ footer {
 }
 
 /* Footer Sections */
-.footer-explore, .footer-contact, .footer-social {
+.footer-explore, .footer-contact, .footer-socials {
     flex: 1;
     min-width: 250px;
     margin: 10px 0;
@@ -38,7 +37,7 @@ footer {
 }
 
 /* Section Titles */
-.footer-explore h3, .footer-contact h3, .footer-social h3 {
+.footer-explore h3, .footer-contact h3, .footer-socials h3 {
     color: #f8b400;
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -124,29 +123,29 @@ footer {
 }
 
 /* Social Media */
-.footer-social {
+.footer-socials {
    margin-left: 100px;
 } 
-.footer-social .social-icons {
+.footer-socials .social_icons {
     display: flex;
     gap: 15px;
     margin-top: 10px;
 
 }
 
-.footer-social .social-icons a {
+.footer-socials .social_icons a {
     color: #ddd;
     font-size: 1.5rem;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.footer-social .social-icons a:hover {
+.footer-socials .social_icons a:hover {
     color: #f8b400;
     transform: scale(1.1);
 }
 
 /* Social Icon Styling */
-.social-icon {
+.social_icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +156,7 @@ footer {
     text-align: center;
 }
 
-.social-icon i {
+.social_icon i {
     color: white;
     font-size: 1.2rem;
 }

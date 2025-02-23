@@ -2,17 +2,25 @@ const navbar = document.querySelector("#siteHead");
 const onHover = document.querySelectorAll(".main_dropDown");
 const onHoverLinks = document.querySelectorAll(".siteHead>a");
 
+// border-bottom: 1vh solid rgb(0, 0, 0);
+// onHoverLinks.forEach(element => {
+//     element.addEventListener("mouseover", () => {
+//         console.log("wow");
+//         element.previousElementSibling.style.borderBottom = "1vh solid rgb(0, 0, 0)";
+//     })
+// });
+
 onHover.forEach(element => {
-    element.addEventListener("mouseover", () => {
+    element.addEventListener('mouseenter', () => {
         console.log("wow");
         element.previousElementSibling.style.borderBottom = "1vh solid black";
     })
 });
 
     onHover.forEach(element => {
-        element.addEventListener("mouseout", () => {
+        element.addEventListener('mouseleave', () => {
             console.log("wow");
-            element.previousElementSibling.style.borderBottom = "0px";
+            element.previousElementSibling.style.borderBottom = ""; //This thing resets the inline style
         })
     });
 
