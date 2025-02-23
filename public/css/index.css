@@ -1736,3 +1736,31 @@ h2 {
     font-size: 0.9rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.carousel-quote {
+  position: absolute;
+  top: 30%; /* Lifted slightly more */
+  right: 5%;
+  width: auto;
+  text-align: right;
+  color: white;
+  font-size: 3.3vw; /* Slightly reduced for better fit */
+  font-family: "Cinzel", serif; /* Premium, stylish UK-based font */
+  font-weight: 900; /* Extra bold */
+  text-transform: uppercase;
+  z-index: 10;
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 1); /* Stronger shadow for visibility */
+  letter-spacing: 1.2px;
+}
+ 
