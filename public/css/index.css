@@ -10,7 +10,7 @@ body {
     width: 0;
   }
   to {
-    width: 13%; /* Expand fully */
+    width: 15%; /* Expand fully */
   }
 }
 
@@ -972,7 +972,7 @@ section.section h2 {
   justify-content: space-between;
   overflow: hidden;
   padding: 30px 0; /* Add 30px padding to top and bottom */
-  background-color: white; /* Add white background for padding */
+  background-color: rgba(6, 19, 95, 0.922); /* Add white background for padding */
 }
 
 /* Video Background */

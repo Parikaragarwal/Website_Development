@@ -14,9 +14,11 @@ import Award from "./models/Award.js"
 import eventsRouter from "./routes/Events.js";
 import FacultyNotice from "./models/facultynotice.js";
 import Headline from "./models/Headline.js";
+import Carousel from "./models/carousel.js";
 import studentnoticeRouter from "./routes/studentnotice.js";
 import facultynoticeRouter from "./routes/facultynotice.js"
 import headlineRouter from "./routes/Headline.js"
+import carouselRouter from "./routes/carousel.js"
 
 dotenv.config(); // Load environment variables
 
@@ -47,17 +49,22 @@ app.use("/admin/awards", authMiddleware ,awardRoutes);
 app.use("/admin/studentnotice",authMiddleware,studentnoticeRouter);
 app.use("/admin/facultynotice",authMiddleware,facultynoticeRouter);
 app.use("/admin/headlines",authMiddleware,headlineRouter);
+app.use("/admin/carousel",authMiddleware,carouselRouter);
 
+app.get("/admin/dashboard",authMiddleware,(req,res)=>{
+   res.render("dashboard");
+});
 // Home Page Route
 app.get("/", async (req, res) => {
     try {
+        const carouselimages = await Carousel.find({});
         const headlines = await Headline.find({});
         const studentnotices = await SNotice.find({});
         const facultynotices = await FacultyNotice.find({});
         const events= await Event.find({});
         const awards = await Award.find({});
         const researchItems = await Research.find({}); // Fetch Research data
-        res.render("index", { researchItems,events,awards,studentnotices,facultynotices,headlines }); // Pass data to index.ejs
+        res.render("index", { researchItems,events,awards,studentnotices,facultynotices,headlines,carouselimages }); // Pass data to index.ejs
     } catch (err) {
         console.error(err);
         res.status(500).send("Server Error");
@@ -173,6 +180,22 @@ app.get("/accreditation/nirf", (req, res) => { res.render("institute/accreditati
 app.get("/accreditation/nba", (req, res) => { res.render("institute/accreditation/nba.ejs") });
 app.get("/accreditation/ariia", (req, res) => { res.render("institute/accreditation/ariia.ejs") });
 app.get("/accreditation/qs", (req, res) => { res.render("institute/accreditation/qs.ejs") });
+
+// Training & Placement (T&P)
+app.get("/tnp/about-us", (req, res) => { res.render("tnp/about-us.ejs") });
+app.get("/tnp/recruit-from-iiitn", (req, res) => { res.render("tnp/recruit-from-iiitn.ejs") });
+app.get("/tnp/nagpur", (req, res) => { res.render("tnp/nagpur.ejs") });
+app.get("/tnp/placement-statistics", (req, res) => { res.render("tnp/placement-statistics.ejs") });
+app.get("/tnp/for-companies", (req, res) => { res.render("tnp/for-companies.ejs") });
+app.get("/tnp/for-students", (req, res) => { res.render("tnp/for-students.ejs") });
+app.get("/tnp/contact-tp", (req, res) => { res.render("tnp/contact-tp.ejs") });
+app.get("/tnp/internships", (req, res) => { res.render("tnp/internships.ejs") });
+
+
+//Admisssions
+app.get("/admissions/ug", (req, res) => { res.render("admissions/ug.ejs") });
+app.get("/admissions/pg", (req, res) => { res.render("admissions/pg.ejs") });
+app.get("/admissions/ug-rule-book", (req, res) => { res.render("admissions/ug-rule-book.ejs") });
 
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);
