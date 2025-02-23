@@ -174,6 +174,22 @@ app.get("/accreditation/nba", (req, res) => { res.render("institute/accreditatio
 app.get("/accreditation/ariia", (req, res) => { res.render("institute/accreditation/ariia.ejs") });
 app.get("/accreditation/qs", (req, res) => { res.render("institute/accreditation/qs.ejs") });
 
+// Training & Placement (T&P)
+app.get("/tnp/about-us", (req, res) => { res.render("tnp/about-us.ejs") });
+app.get("/tnp/recruit-from-iiitn", (req, res) => { res.render("tnp/recruit-from-iiitn.ejs") });
+app.get("/tnp/nagpur", (req, res) => { res.render("tnp/nagpur.ejs") });
+app.get("/tnp/placement-statistics", (req, res) => { res.render("tnp/placement-statistics.ejs") });
+app.get("/tnp/for-companies", (req, res) => { res.render("tnp/for-companies.ejs") });
+app.get("/tnp/for-students", (req, res) => { res.render("tnp/for-students.ejs") });
+app.get("/tnp/contact-tp", (req, res) => { res.render("tnp/contact-tp.ejs") });
+app.get("/tnp/internships", (req, res) => { res.render("tnp/internships.ejs") });
+
+
+//Admisssions
+app.get("/admissions/ug", (req, res) => { res.render("admissions/ug.ejs") });
+app.get("/admissions/pg", (req, res) => { res.render("admissions/pg.ejs") });
+app.get("/admissions/ug-rule-book", (req, res) => { res.render("admissions/ug-rule-book.ejs") });
+
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);
 });
