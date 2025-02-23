@@ -149,30 +149,32 @@
 
 
 
+
+
     <section class="combined-section">
-      <!-- Column 1: Latest IIIT Nagpur Headlines -->
-      <div class="headlines-container">
-        <h2 class="headlines-title">Latest Updates</h2>
-        <div class="headlines-list">
-          <% headlines.forEach(headline => { %>
-              <a href="<%= headline.link %>" class="headline-item" data-image="<%= headline.imageUrl %>">
-                  <%= headline.text %>
-              </a>
-          <% }) %>
-      </div>
-      
-      </div>
-    
-      <!-- Column 2: Image -->
-      <div class="image-container">
-        <div class="border-container">
-          <div class="inner-border">
-            <img id="display-image" src="/images/oo.png" alt="Hover Image">
+      <!-- Merged Column (Stacked Image + Headlines) -->
+      <div class="merged-column">
+        <!-- Column 2: Image (Now on Top) -->
+        <div class="square-box image-container">
+          <img id="display-image" src="/images/oo.png" alt="Hover Image">
+        </div>
+        
+        <!-- Column 1: Headlines (Now Below Image) -->
+        <div class="square-box headlines-container">
+          <h2 class="headlines-title">Latest Updates</h2>
+          <div class="headlines-list">
+            <a href="/" class="headline-item" data-image="aa.jpg">Parikhsa pe charcha 2025</a>
+            <a href="/" class="headline-item" data-image="bb.png">Third convocation</a>
+            <a href="/" class="headline-item" data-image="dd.png">HCL foundation signed MOU for afforestation.</a>
+            <a href="/" class="headline-item" data-image="ee.png">SNCICON</a>
+            <a href="/" class="headline-item" data-image="ff.png">Delegates from French Embassy visit IIITN</a>
+            <a href="/" class="headline-item" data-image="gg.png">Inter IIIT</a>
+            <a href="/" class="headline-item" data-image="hh.png">Press conference at NEP</a>
+            <a href="/" class="headline-item" data-image="ii.png">Empowering entrepreneurship with AI</a>
           </div>
         </div>
-        <div class="loading-line-image"></div>
-      </div>    
-      
+      </div>
+    
       <!-- Column 3: Stats Section -->
       <div class="stats-container">
         <div class="stats-grid">
@@ -195,8 +197,6 @@
         </div>
       </div>
     </section>
-    
-    
     
     
   <div class="Notice-Box">
