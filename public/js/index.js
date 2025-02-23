@@ -584,16 +584,15 @@ document.addEventListener("DOMContentLoaded", () =>
     const headlines = document.querySelectorAll(".headline-item");
     const displayImage = document.getElementById("display-image");
   
-    const defaultImage = "/images/Updates.jpg"; // Default image
+    const images = ["/images/aa.jpg", "/images/bb.png",  "/images/dd.png", "/images/ee.png" , "/images/ff.png", "/images/gg.png", "/images/hh.png", "/images/ii.png"];
+    const defaultImage = "/images/oo.png"; // Default image
   
     // Set default image on page load
     displayImage.src = defaultImage;
-    headlines.forEach((headline) => {
+  
+    headlines.forEach((headline, index) => {
       headline.addEventListener("mouseover", function () {
-        const imageSrc = headline.getAttribute("data-image");
-        if (imageSrc) {
-          displayImage.src = `${imageSrc}`;
-        }
+        displayImage.src = images[index % images.length];
       });
   
       headline.addEventListener("mouseout", function () {
