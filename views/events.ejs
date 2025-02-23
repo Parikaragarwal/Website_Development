@@ -24,7 +24,7 @@
                                 <p><strong>Course ID:</strong> <%= event.courseId %></p>
                                 <p><%= event.description %></p>
                                 <a href="<%= event.link %>" target="_blank" class="btn btn-sm btn-primary">View Event</a>
-                                <form action="/events/delete/<%= event._id %>" method="POST" class="d-inline">
+                                <form action="/admin/Events/<%= event._id %>" method="POST" class="d-inline">
                                     <button type="submit" class="btn btn-sm btn-danger">🗑 Delete</button>
                                 </form>
                             </div>
