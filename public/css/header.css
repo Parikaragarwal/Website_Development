@@ -15,7 +15,7 @@ div#college_name .college_header>a>img {
     float: left;
 }
 
-div#college_name .college_header > div > h2 {
+div#college_name .college_header > div > div>h2 {
     font-size: 1.8vw;
     margin-top: 3vh;
     margin-bottom: 0.3vh;
@@ -24,9 +24,20 @@ div#college_name .college_header > div > h2 {
     font-weight: 900;
 }
 
+div#college_name .college_header>div>div {
+    overflow: hidden;
+    margin-top: 3vh;
+    height: 5vh;
+}
+
+div#college_name .college_header>div>div>h2:nth-child(1) {
+    animation: animate 5s linear infinite;
+}
+
+/* 
 div#college_name .college_header>div>h2.change {
     animation: fade 3s infinite;
-}
+} */
 
 div#college_name .college_header > div > h6 {
     color: rgb(0, 0, 0);
@@ -632,4 +643,15 @@ a.Alumni:hover+.Alumni_dropDown,
         100% {
             opacity: 0;
         } 
+}
+
+@keyframes animate {
+    0%{ margin-top: -10vh; }
+    5%{ margin-top: -7vh; }
+    33%{ margin-top: -7vh; }
+    50% { margin-top: -7vh;}
+    55% { margin-top: 0.5vh;}
+    71% { margin-top: 0.5vh; }
+    99.99% { margin-top: 0.5vh;}
+    100% { margin-top: -10vh;}
 }
