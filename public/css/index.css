@@ -9,7 +9,7 @@ body {
       width: 0;
   }
   to {
-      width: 12.5%; /* Expand fully */
+      width: 13%; /* Expand fully */
   }
 }
 
@@ -38,7 +38,7 @@ body {
   border-right: 2px solid white;
   max-width: 25%px; /* Prevents overflow */
   text-align:left;
-  animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+  animation: typing 3s steps(20, end) infinite alternate, blink 0.7s infinite;
 }
 .social-icons {
   display: flex;
