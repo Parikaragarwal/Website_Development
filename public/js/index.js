@@ -332,6 +332,48 @@ const notices = [
     link: "#",
     isNew: false,
   },
+  {
+    title: "Advertisement for Admission to MBA 2025-27",
+    date: "02 Jan 2025",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Summer Internship Programme 2025",
+    date: "18 Feb 2025",
+    link: "#",
+    isNew: true,
+  },
+  {
+    title: "Corrigendum to Notice for Admission to MBA 25-27",
+    date: "22 Jan 2025",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Advertisement for Admission to MBA 2025-27",
+    date: "02 Jan 2025",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Campus Placement Drive 2025",
+    date: "15 Jan 2025",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Annual Sports Meet Registration",
+    date: "10 Jan 2025",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Advertisement for Admission to MBA 2025-27",
+    date: "02 Jan 2025",
+    link: "#",
+    isNew: false,
+  },
 ];
 
 class NoticeBoard {
@@ -406,6 +448,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const facultyNotices = [
+  {
+    title: "Faculty Development Program on Advanced Teaching Methods",
+    date: "18 Feb 2025",
+    department: "All Departments",
+    link: "#",
+    isNew: true,
+  },
+  {
+    title: "Research Grant Proposals Due",
+    date: "22 Jan 2025",
+    department: "Research Cell",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Annual Faculty Performance Review Schedule",
+    date: "15 Jan 2025",
+    department: "HR Department",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Department Heads Meeting",
+    date: "12 Jan 2025",
+    department: "Administration",
+    link: "#",
+    isNew: false,
+  },
+  {
+    title: "Workshop on Innovative Teaching Technologies",
+    date: "10 Jan 2025",
+    department: "IT Department",
+    link: "#",
+    isNew: false,
+  },
   {
     title: "Faculty Development Program on Advanced Teaching Methods",
     date: "18 Feb 2025",
