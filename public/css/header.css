@@ -25,7 +25,7 @@ div#college_name .college_header > div > h2 {
 }
 
 div#college_name .college_header>div>h2.change {
-    animation: fade 2.5s infinite;
+    animation: fade 3s infinite;
 }
 
 div#college_name .college_header > div > h6 {

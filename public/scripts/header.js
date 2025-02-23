@@ -18,7 +18,7 @@ if (index === 0) {
 setInterval(() => {
             index = (index + 1) % names.length;
             nameDisplay.innerHTML = names[index];
-        }, 2500);
+        }, 3000);
 
 
 onHover.forEach(element => {
