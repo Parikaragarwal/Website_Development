@@ -178,7 +178,7 @@ div#carouselExampleAutoplaying {
   grid-template-columns: repeat(3, 1fr); /* Three equal columns */
   gap: 2rem; /* Decent gap between items */
   align-items: start; /* Align items to the top for consistency */
-  background-color: #f0f0f0;
+  background-color: rgb(154, 198, 188);
 }
 
 .section {
@@ -218,7 +218,6 @@ h2 {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
- 
 }
 
 .event-content {
