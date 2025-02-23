@@ -636,8 +636,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const headlines = document.querySelectorAll(".headline-item");
   const displayImage = document.getElementById("display-image");
 
-  const images = ["/images/aa.jpg", "/images/bb.jpg", "/images/cc.jpg", "/images/dd.jpg", "/images/ee.jpg"];
-  const defaultImage = "/images/oo.jpg"; // Default image
+  const images = ["/images/aa.jpg", "/images/bb.png", "/images/cc.png", "/images/dd.png", "/images/ee.png" , "/images/ff.png", "/images/gg.png", "/images/hh.png", "/images/ii.png"];
+  const defaultImage = "/images/oo.png"; // Default image
 
   // Set default image on page load
   displayImage.src = defaultImage;
