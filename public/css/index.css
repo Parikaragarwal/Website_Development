@@ -170,28 +170,50 @@ div#carouselExampleAutoplaying {
   /* Ensures the image covers the carousel area */
 }
 
+
+
+
 /* Get the news and Updates */
-.container {
-  max-width: 1500px; /* Restored to 1200px to utilize more space */
-  margin: 2rem auto;
-  padding: 0 1rem;
+.container_class {
+  /* max-width: 1500px; Restored to 1200px to utilize more space */
+  margin: 5vh 0vh;
+  padding: 0 1vh;
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  gap: 2rem; /* Decent gap between items */
+  gap: 1rem; /* Decent gap between items */
   align-items: start; /* Align items to the top for consistency */
-  background-color: rgb(154, 198, 188);
+  border-radius: 20px;
+  box-shadow: 10px 20px 5px rgba(0, 0, 0, 0.1),
+    -10px 20px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.274);
 }
 
 .section {
+  margin-top: 3vh;
   background: white;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.section.awards-section {
+  margin-bottom: 2vh;
+  margin-right: 2vh;
+  width: 60vw;
+}
+
+.section.events-section {
+  width: 30vw;
+  margin-left: 1vw;
+}
+
+
+section.section h2 {
   color: #333;
   font-size: 1.5rem;
+  border-bottom: 2px solid darkblue;
+  margin-bottom: 2vh;
 }
 
 /* Events Section */
