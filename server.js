@@ -14,9 +14,11 @@ import Award from "./models/Award.js"
 import eventsRouter from "./routes/Events.js";
 import FacultyNotice from "./models/facultynotice.js";
 import Headline from "./models/Headline.js";
+import Carousel from "./models/carousel.js";
 import studentnoticeRouter from "./routes/studentnotice.js";
 import facultynoticeRouter from "./routes/facultynotice.js"
 import headlineRouter from "./routes/Headline.js"
+import carouselRouter from "./routes/carousel.js"
 
 dotenv.config(); // Load environment variables
 
@@ -47,17 +49,22 @@ app.use("/admin/awards", authMiddleware ,awardRoutes);
 app.use("/admin/studentnotice",authMiddleware,studentnoticeRouter);
 app.use("/admin/facultynotice",authMiddleware,facultynoticeRouter);
 app.use("/admin/headlines",authMiddleware,headlineRouter);
+app.use("/admin/carousel",authMiddleware,carouselRouter);
 
+app.get("/admin/dashboard",authMiddleware,(req,res)=>{
+   res.render("dashboard");
+});
 // Home Page Route
 app.get("/", async (req, res) => {
     try {
+        const carouselimages = await Carousel.find({});
         const headlines = await Headline.find({});
         const studentnotices = await SNotice.find({});
         const facultynotices = await FacultyNotice.find({});
         const events= await Event.find({});
         const awards = await Award.find({});
         const researchItems = await Research.find({}); // Fetch Research data
-        res.render("index", { researchItems,events,awards,studentnotices,facultynotices,headlines }); // Pass data to index.ejs
+        res.render("index", { researchItems,events,awards,studentnotices,facultynotices,headlines,carouselimages }); // Pass data to index.ejs
     } catch (err) {
         console.error(err);
         res.status(500).send("Server Error");

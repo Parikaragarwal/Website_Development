@@ -21,6 +21,19 @@ const storage = new CloudinaryStorage({
     }
 });
 
+// Function to delete an image from Cloudinary
+const deleteFromCloudinary = async (publicId) => {
+    try {
+        if (!publicId) return false; // Ensure there's a valid publicId
+        await cloudinary.uploader.destroy(publicId);
+        console.log(`✅ Deleted image: ${publicId}`);
+        return true;
+    } catch (error) {
+        console.error(`❌ Error deleting image: ${error.message}`);
+        return false;
+    }
+};
+
 const upload = multer({ storage });
 
-export { cloudinary, upload }; // ✅ Use ES module export
+export { cloudinary, upload ,  deleteFromCloudinary}; // ✅ Use ES module export
