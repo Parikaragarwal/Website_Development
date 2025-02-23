@@ -2,14 +2,24 @@ const navbar = document.querySelector("#siteHead");
 const onHover = document.querySelectorAll(".main_dropDown");
 const onHoverLinks = document.querySelectorAll(".siteHead>a");
 const onHoverAfterLinks = document.querySelectorAll("#site_head a.behind_logo");
+const nameDisplay = document.querySelector("div#college_name .college_header > div > h2");
+const names = ["भारतीय सूचना प्रौद्योगिकी संस्थान, नागपुर", "Indian Institute of Information Technology, Nagpur"];
+let index = 0;
 
-// border-bottom: 1vh solid rgb(0, 0, 0);
-// onHoverLinks.forEach(element => {
-//     element.addEventListener("mouseover", () => {
-//         console.log("wow");
-//         element.previousElementSibling.style.borderBottom = "1vh solid rgb(0, 0, 0)";
-//     })
-// });
+
+//JavaScript code to chnage H2 fron hindi to english
+
+if (index === 0) {
+    nameDisplay.classList.add("change");
+    index = (index + 1) % names.length;
+    nameDisplay.innerHTML = names[index];
+}
+
+setInterval(() => {
+            index = (index + 1) % names.length;
+            nameDisplay.innerHTML = names[index];
+        }, 2500);
+
 
 onHover.forEach(element => {
     element.addEventListener('mouseenter', () => {
