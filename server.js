@@ -116,6 +116,27 @@ app.get("/centres/polymer", (req,res) => { res.render("academics/centres/polymer
 app.get("/centres/water", (req,res) => { res.render("academics/centres/water.ejs") })
 
 
+// For Faculty
+app.get("/faculty/all", (req, res) => { res.render("faculty&staff/faculty/all.ejs") });
+app.get("/faculty/forum", (req, res) => { res.render("faculty&staff/faculty/forum.ejs") });
+app.get("/faculty/retired", (req, res) => { res.render("faculty&staff/faculty/retired.ejs") });
+app.get("/faculty/current-openings", (req, res) => { res.render("faculty&staff/faculty/current-openings.ejs") });
+app.get("/faculty/awards", (req, res) => { res.render("faculty&staff/faculty/awards.ejs") });
+
+// For Staff
+app.get("/staff/all", (req, res) => { res.render("faculty&staff/staff/all.ejs") });
+app.get("/staff/retired", (req, res) => { res.render("faculty&staff/staff/retired.ejs") });
+app.get("/staff/current-openings", (req, res) => { res.render("faculty&staff/staff/current-openings.ejs") });
+
+// Facilities
+app.get("/facilities/housing", (req, res) => { res.render("faculty&staff/facilities/housing.ejs") });
+app.get("/facilities/healthcare", (req, res) => { res.render("faculty&staff/facilities/healthcare.ejs") });
+
+// Others
+app.get("/others/equal-opportunity", (req, res) => { res.render("faculty&staff/others/equal-opportunity.ejs") });
+app.get("/others/internal-committee", (req, res) => { res.render("faculty&staff/others/internal-committee.ejs") });
+app.get("/others/mental-wellbeing", (req, res) => { res.render("faculty&staff/others/mental-wellbeing.ejs") });
+
 
 
 app.listen(port, () => {
