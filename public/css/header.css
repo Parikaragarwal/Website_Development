@@ -203,8 +203,10 @@ div.header_images>img {
     width: 15vh;
 }
 
-div.header_images>img.const_image {
-    background-color: rgba(240, 248, 255, 0.237);
+div.header_images>img.emblem_image {
+    margin-top: 2vh;
+    width: 5vw;
+    height: 8vh;
     border-radius: 50%;
 }
 
