@@ -206,7 +206,7 @@ section.event_section.appear {
   animation: translate_appear 1s forwards ease-in-out;
 }
 
-section.director_section.appear {
+section.director_section {
   width: 60vw;
   height: 70vh;
   margin-top: 2.5vh;
@@ -214,6 +214,9 @@ section.director_section.appear {
   margin-right: 1vw;
   overflow: hidden;
   background-color: rgb(233, 121, 76);
+}
+
+section.director_section.appear {
   animation: translate_appear 1s forwards ease-in-out;
 }
 
