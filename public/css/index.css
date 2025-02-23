@@ -862,25 +862,28 @@ h2 {
   }
 }
 
+
 /* Video Slogan Section */
 .video-slogan-section {
   width: 100%;
-  height: 400px; /* Increased height */
+  height: 510px; /* Increased height (450px + 60px padding) */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  padding: 30px 0; /* Add 30px padding to top and bottom */
+  background-color: white; /* Add white background for padding */
 }
 
 /* Video Background */
 .video-background {
   position: absolute;
-  top: 0;
+  top: 30px; /* Adjust top to account for padding */
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1; /* Place video behind content */
+  height: calc(100% - 60px); /* Adjust height to account for padding */
+  z-index: 0; /* Ensure video is above the white padding */
 }
 
 .video-strip {
@@ -894,6 +897,7 @@ h2 {
   width: 50%;
   padding: 20px;
   margin-left: 20px; /* Add some spacing */
+  z-index: 1; /* Ensure slogan is above the video */
 }
 
 .slogan {
@@ -912,6 +916,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1; /* Ensure button is above the video */
 }
 
 .experience-button {
@@ -937,8 +942,13 @@ h2 {
 @media (max-width: 768px) {
   .video-slogan-section {
     flex-direction: column;
-    height: auto;
-    padding: 20px;
+    height: auto; /* Allow height to adjust based on content */
+    padding: 30px 20px; /* Add 30px padding to top and bottom, 20px to sides */
+  }
+
+  .video-background {
+    top: 30px; /* Adjust top for padding */
+    height: calc(100% - 60px); /* Adjust height for padding */
   }
 
   .slogan-container,
@@ -1483,6 +1493,19 @@ h2 {
   align-items: flex-start; /* Align boxes at the top */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Combined Section Styling */
 .combined-section {
   display: flex;
@@ -1494,45 +1517,71 @@ h2 {
   gap: 20px;
 }
 
-/* Column 1: Sentences */
-.text-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* Headlines Container */
+.headlines-container {
+  width: 40%;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+  border: 4px solid #002147;
 }
 
-.hover-item {
-  font-size: 1.2rem;
+.headlines-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
   font-weight: bold;
-  cursor: pointer;
+  color: #002147;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Headlines List */
+.headlines-list {
+  height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.headline-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
   padding: 10px;
-  position: relative;
-  transition: color 0.3s ease;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+  text-decoration: none;
 }
 
-.hover-item:hover {
-  color: #007bff; /* Change color on hover */
+.headline-item:hover {
+  background: #e0f7ff;
 }
 
-.loading-line {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 0%;
-  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: -1;
-  padding-left: 10px;
+/* Scrollbar Styling */
+.headlines-list::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Column 2: Image */
+.headlines-list::-webkit-scrollbar-thumb {
+  background: #002147;
+  border-radius: 4px;
+}
+
+.headlines-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Image Container */
 .image-container {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
   position: relative;
   overflow: hidden;
 }
@@ -1541,10 +1590,11 @@ h2 {
   width: 100%;
   height: 100%;
   padding: 10px;
-  transition: background-color 0.2s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 4px solid #002147;
+  border-radius: 15px;
 }
 
 .inner-border {
@@ -1555,6 +1605,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 
 #display-image {
@@ -1565,14 +1616,6 @@ h2 {
   transition: opacity 0.5s ease-in-out;
 }
 
-.loading-line-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-}
 
 /* Column 3: Stats Section */
 .stats-container {
