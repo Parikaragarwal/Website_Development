@@ -110,27 +110,20 @@
           </div>
     
           <div class="ev-news-grid">
-            <article class="ev-news-card" style="width:500px">
-              <div class="ev-news-image">
-                <img src="/api/placeholder/400/250" alt="Event 1">
-              </div>
-              <div class="ev-news-content">
-                <span class="ev-date">20 FEB 2025</span>
-                <h3><a href="#">Professor Sue Iversen (1940-2025)</a></h3>
-              </div>
-            </article>
-    
-            <article class="ev-news-card" style="width:500px">
-              <div class="ev-news-image">
-                <img src="/api/placeholder/400/250" alt="Event 2">
-              </div>
-              <div class="ev-news-content">
-                <span class="ev-date">20 FEB 2025</span>
-                <h3><a href="#">Lifestyle and environmental factors affect health and ageing more than our genes</a></h3>
-              </div>
-            </article>
-    
-          </div>
+            <% events.forEach(event => { %>
+                <article class="ev-news-card" style="width:500px">
+                    <div class="ev-news-image">
+                        <img src="<%= event.image %>" alt="<%= event.title %>">
+                    </div>
+                    <div class="ev-news-content">
+                        <span class="ev-date"><%= event.date %></span>
+                        <h3><a href="<%= event.link %>"><%= event.title %></a></h3>
+                        <p><%= event.description %></p>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
+        
         </div>
     
         <!-- Events Section -->
