@@ -261,6 +261,52 @@
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="campus-container">
+    <h2 class="campus-heading">IIITN at a Glance</h2>
+    <div class="gallery">
+      <% let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split(''); %>
+  
+      <% for (let i = 0; i < alphabet.length; i++) { %>
+        <% if (i < 3) { %> 
+          <!-- Large grid items with videos -->
+          <div class="gallery-item big">
+            <video src="/images/<%= alphabet[i] %>1.mp4" autoplay loop muted></video>
+          </div>
+        <% } else { %> 
+          <!-- Normal grid items with images -->
+          <div class="gallery-item">
+            <img src="/images/<%= alphabet[i] %>2.jpg" alt="Campus Image">
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
   
   <div class="club-section">
     <div class="club-heading">
