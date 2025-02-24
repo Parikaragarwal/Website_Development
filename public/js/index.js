@@ -927,3 +927,66 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // First, add the carousel-mode class to the news grid
+  const newsGrid = document.querySelector(".ev-news-grid");
+  if (!newsGrid) return;
+
+  // Add carousel-mode class to enable the carousel styles
+  newsGrid.classList.add("carousel-mode");
+
+  // Initialize the carousel
+  initCarousel(newsGrid);
+
+  // Set up pause on hover functionality
+  setupPauseOnHover(newsGrid);
+});
+
+function initCarousel(carousel) {
+  // Get all original cards
+  const cards = Array.from(carousel.querySelectorAll(".ev-news-card"));
+  if (cards.length === 0) return;
+
+  // Calculate total width (all cards + gaps)
+  const cardWidth = cards[0].offsetWidth;
+  const cardGap = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") ||
+      "20px"
+  );
+  const totalWidth = cards.reduce(
+    (width, card) => width + card.offsetWidth + cardGap,
+    0
+  );
+
+  // Clone cards to create the continuous loop effect
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("clone");
+    carousel.appendChild(clone);
+  });
+
+  // Set animation width based on original cards
+  document.documentElement.style.setProperty(
+    "--carousel-width",
+    `-${totalWidth}px`
+  );
+
+  // Start the animation
+  setTimeout(() => {
+    carousel.classList.add("animate");
+  }, 100);
+}
+
+function setupPauseOnHover(carousel) {
+  // Pause animation on hover
+  carousel.addEventListener("mouseenter", () => {
+    carousel.classList.add("paused");
+  });
+
+  // Resume animation when mouse leaves
+  carousel.addEventListener("mouseleave", () => {
+    carousel.classList.remove("paused");
+  });
+}

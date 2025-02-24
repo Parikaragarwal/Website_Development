@@ -2006,20 +2006,74 @@ h1 {
 }
 
 /* Container adjustments to make it smaller */
+/* Body and container styles */
+.ev-body {
+  display: flex;
+  background-color: #ffd2a5;
+  overflow: hidden;
+}
+
 .ev-container {
   margin: 0 auto;
   padding: 20px;
-  overflow: hidden; /* Critical: prevents content from going outside container */
-  background-color: var(--primary-color);
-  border-radius: 12px;
+  overflow: hidden;
+  /* Critical: prevents content from going outside container */
+  background-color: #ffd2a5;
 }
 
-/* Carousel specific styles - keeping functionality intact */
+/* Section headers */
+.ev-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ev-section-header h2 {
+  color: var(--text-color);
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  margin-left: 3vw;
+  font-weight: 500;
+}
+
+.ev-section-header h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
+
+.ev-view-all {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.ev-view-all:hover {
+  color: var(--text-color);
+}
+
+/* News Section */
+.ev-news-section {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+/* Carousel specific styles */
 .ev-news-grid.carousel-mode {
   display: flex;
   flex-wrap: nowrap;
   gap: var(--card-gap);
-  overflow: visible; /* Let cards overflow for continuous effect */
+  overflow: visible;
+  /* Let cards overflow for continuous effect */
   width: 100%;
   padding: 15px 0;
   position: relative;
@@ -2033,79 +2087,18 @@ h1 {
   animation-play-state: paused;
 }
 
-/* Animation keyframes */
+/* Animation keyframes for right to left movement */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(var(--carousel-width));
   }
 }
 
-/* Elegant card styles for carousel */
-.ev-news-grid.carousel-mode .ev-news-card {
-  flex: 0 0 auto;
-  width: 250px;
-  margin-right: var(--card-gap);
-  transform: translateX(0) rotate(0) !important;
-  opacity: 1 !important;
-  transition: all 0.3s ease;
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: linear-gradient(145deg, #ffffff, #fff6eb);
-}
-
-/* Adjust hover effect for moving cards */
-.ev-news-grid.carousel-mode .ev-news-card:hover {
-  transform: translateY(-5px) !important;
-  z-index: 10;
-  box-shadow: var(--hover-shadow);
-  border-color: var(--accent-color);
-}
-
-/* Make sure cloned cards look identical */
-.ev-news-card.clone {
-  opacity: 1;
-}
-
-/* Refined gradient masks for elegant fading at edges */
-.ev-news-section {
-  position: relative;
-  padding: 10px 0;
-}
-
-.ev-news-section::before,
-.ev-news-section::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 40px;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.ev-news-grid.carousel-mode .ev-news-card:hover {
-  transform: translateY(-5px) !important;
-  z-index: 10;
-  box-shadow: var(--hover-shadow);
-  border-color: var(--accent-color);
-}
-
-/* Make sure cloned cards look identical */
-.ev-news-card.clone {
-  opacity: 1;
-}
-
-/* Refined gradient masks for elegant fading at edges */
-.ev-news-section {
-  position: relative;
-  padding: 10px 0;
-}
-
+/* Edge gradients for fading effect */
 .ev-news-section::before,
 .ev-news-section::after {
   content: "";
@@ -2119,15 +2112,15 @@ h1 {
 
 .ev-news-section::before {
   left: 0;
-  background: linear-gradient(to right, var(--primary-color), rgba(255, 210, 165, 0));
+  background: linear-gradient(to right, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-news-section::after {
   right: 0;
-  background: linear-gradient(to left, var(--primary-color), rgba(255, 210, 165, 0));
+  background: linear-gradient(to left, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
-/* Elegant News Section */
+/* News Grid and Cards */
 .ev-news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2144,15 +2137,31 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.ev-news-grid.carousel-mode .ev-news-card {
+  flex: 0 0 auto;
+  width: 350px;
+  margin-right: var(--card-gap);
+  transform: translateX(0) rotate(0) !important;
+  opacity: 1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: white;
+}
+
 .ev-news-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--hover-shadow);
 }
 
+.ev-news-grid.carousel-mode .ev-news-card:hover {
+  transform: translateY(-5px) !important;
+  z-index: 10;
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-color);
+}
+
 .ev-news-image {
   width: 100%;
   height: 200px;
-  border-bottom: 1px solid rgba(255, 210, 165, 0.3);
   overflow: hidden;
 }
 
@@ -2161,6 +2170,7 @@ h1 {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  border-radius: 20px;
 }
 
 .ev-news-card:hover .ev-news-image img {
@@ -2170,11 +2180,16 @@ h1 {
 .ev-news-content {
   padding: 20px;
   flex-grow: 1;
-  background: linear-gradient(145deg, #ffffff, #fff6eb);
+}
+
+.ev-date {
+  color: #7d6e5d;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .ev-news-content h3 {
-  margin: 8px 0 12px;
+  margin: 8px 0 0;
 }
 
 .ev-news-content h3 a {
@@ -2190,13 +2205,11 @@ h1 {
   color: var(--accent-color);
 }
 
-.ev-date {
-  color: #7d6e5d;
-  font-size: 14px;
-  font-style: italic;
+/* Events Section */
+.ev-events-section {
+  padding: 10px 0;
 }
 
-/* Events Section - Elegant styling */
 .ev-events-grid {
   display: flex;
   flex-direction: column;
@@ -2204,7 +2217,7 @@ h1 {
 }
 
 .ev-event-card {
-  background: linear-gradient(145deg, #ffffff, #fff6eb);
+  background: white;
   border-radius: 12px;
   padding: 18px;
   display: flex;
@@ -2268,43 +2281,21 @@ h1 {
   color: #7d6e5d;
   font-size: 14px;
   margin-bottom: 6px;
-  display: flex;
-  align-items: center;
 }
 
-.ev-location:before {
-  content: "📍";
-  margin-right: 6px;
+/* Clone card styles */
+.ev-news-card.clone {
+  opacity: 1;
 }
 
-/* Section headers */
-.ev-section-header h2 {
-  color: var(--text-color);
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.ev-section-header h2:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  width: 60px;
-  background-color: var(--accent-color);
-  border-radius: 3px;
-}
-
-/* Responsive Design - keeping functionality */
+/* Responsive Design */
 @media (max-width: 968px) {
   .ev-container {
     grid-template-columns: 1fr;
   }
 
   .ev-news-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -2312,11 +2303,12 @@ h1 {
   .ev-news-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .ev-news-grid.carousel-mode .ev-news-card {
-    width: 220px; /* Slightly smaller on tablets */
+    width: 220px;
+    /* Slightly smaller on tablets */
   }
-  
+
   .ev-news-image {
     height: 180px;
   }
@@ -2328,7 +2320,8 @@ h1 {
 
 @media (max-width: 480px) {
   .ev-news-grid.carousel-mode .ev-news-card {
-    width: 200px; /* Even smaller on mobile */
+    width: 200px;
+    /* Even smaller on mobile */
   }
 }
 
@@ -2353,29 +2346,39 @@ body {
 
 /* Stylish Heading */
 .campus-heading {
-  font-size: 3rem; /* Stylish and bold */
+  font-size: 3rem;
+  /* Stylish and bold */
   font-weight: bold;
-  color: white; /* White font */
+  color: white;
+  /* White font */
   text-transform: uppercase;
-  margin-bottom: 40px; /* Increased margin */
-  font-family: 'Playfair Display', serif; /* Stylish font */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for emphasis */
+  margin-bottom: 40px;
+  /* Increased margin */
+  font-family: 'Playfair Display', serif;
+  /* Stylish font */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Text shadow for emphasis */
 }
 
 /* Gallery Grid */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly reduced size */
-  gap: 20px; /* Slightly reduced gap */
-  padding: 20px; /* Slightly reduced padding */
-  grid-auto-flow: dense; /* Ensures items fill gaps */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* Slightly reduced size */
+  gap: 20px;
+  /* Slightly reduced gap */
+  padding: 20px;
+  /* Slightly reduced padding */
+  grid-auto-flow: dense;
+  /* Ensures items fill gaps */
 }
 
 /* Gallery Items */
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px;
+  /* Rounded corners */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -2384,7 +2387,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 15px;
+  /* Rounded corners */
 }
 
 /* Hover Effect */
@@ -2395,13 +2399,31 @@ body {
 
 /* Specific Sizing for Videos */
 .video-landscape {
-  grid-column: span 2; /* Landscape videos span 2 columns */
+  grid-column: span 2;
+  /* Landscape videos span 2 columns */
   grid-row: span 1;
 }
 
 .video-portrait {
-  grid-column: span 1; /* Portrait videos span 1 column */
+  grid-column: span 1;
+  /* Portrait videos span 1 column */
   grid-row: span 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* Smaller for mobile */
+  }
+
+  .video-landscape {
+    grid-column: span 1;
+  }
+
+  .video-portrait {
+    grid-row: span 1;
+  }
 }
 
 /* Responsive Design */
