@@ -69,7 +69,7 @@ body {
 
 .top_head a:hover {
   transform: scale(1.1);
-  color: #ffd700;
+  color: white;
 }
 
 .top_head button {
@@ -233,7 +233,7 @@ section.director_section {
   border-radius: 20px;
   margin-right: 1vw;
   overflow: hidden;
-  background-color: #FFA500;
+  background-color: white;
 }
 
 section.director_section.appear {
@@ -938,7 +938,7 @@ section.director_section>div>a:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background-color: #FFA500; /* Background color */
+  background-color: white; /* Background color */
   cursor: pointer;
   overflow: hidden;
   scroll-snap-align: start;
@@ -979,7 +979,7 @@ section.director_section>div>a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #FFA500; /* Background color */
+  background: white; /* Background color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align text at the top */
