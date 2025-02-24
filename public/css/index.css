@@ -169,8 +169,6 @@ div#carouselExampleAutoplaying {
   /* Ensures the image covers the carousel area */
 }
 
-
-
 /* Get the news and Updates */
 .container_class {
   /* max-width: 1500px; Restored to 1200px to utilize more space */
@@ -185,12 +183,9 @@ div#carouselExampleAutoplaying {
   box-shadow: 10px 20px 5px rgba(0, 0, 0, 0.1),
     -10px 20px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.274);
-  display:flex;
-  justify-content: space-around; 
-    align-items: center;
-
-
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .section {
@@ -205,7 +200,8 @@ section.event_section.appear {
   animation: translate_appear 1s forwards ease-in-out;
 }
 
-.event-card > p.event-date, p.course-id {
+.event-card > p.event-date,
+p.course-id {
   color: white;
   font-size: 5vh;
 }
@@ -214,9 +210,9 @@ section.event_section.appear {
   display: none;
 }
 
-.event-card>p:nth-child(5) {
+.event-card > p:nth-child(5) {
   font-size: 3vh;
-  font-weight: 4  00 !important;
+  font-weight: 4 00 !important;
 }
 
 .event-card > img {
@@ -232,23 +228,22 @@ section.director_section {
   border-radius: 20px;
   margin-right: 1vw;
   overflow: hidden;
-  background-color: white;
+  background-color: #FFA500;
 }
 
 section.director_section.appear {
   animation: translate_appear 1s forwards ease-in-out;
 }
 
-section.director_section>h2 {
+section.director_section > h2 {
   height: 6vh;
   margin-top: 1vh;
   margin-left: 0.5vh;
   margin-bottom: 1vh;
   border-bottom: 1px solid black;
-
 }
 
-section.director_section>div>img {
+section.director_section > div > img {
   height: 35vh;
   width: 25vw;
   margin: 2vh;
@@ -258,7 +253,7 @@ section.director_section>div>img {
   border-radius: 20px;
 }
 
-section.director_section>div>p {
+section.director_section > div > p {
   font-size: 2.5vh;
   /* line-height: 3.5vh; */
   font-weight: 600;
@@ -267,7 +262,7 @@ section.director_section>div>p {
   margin: 0px;
 }
 
-section.director_section>div>a {
+section.director_section > div > a {
   font-size: 2.5vh;
   text-decoration: none;
   color: white;
@@ -275,11 +270,11 @@ section.director_section>div>a {
   margin-left: 2vh;
 }
 
-section.director_section>div>a:hover {
+section.director_section > div > a:hover {
   color: #007bff;
 }
 
-/* Events Section */
+/* Events Section
 .events-container {
   position: relative;
 }
@@ -292,7 +287,7 @@ section.director_section>div>a:hover {
 }
 
 .event-card {
-  background: white;
+  background: #FFA500;
   padding: 1.5rem;
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -619,7 +614,7 @@ section.director_section>div>a:hover {
     width: 36px;
     height: 36px;
   }
-}
+} */
 
 /*
 
@@ -937,9 +932,10 @@ section.director_section>div>a:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background-color: white; /* Background color */
+  background-color: #FFA500; /* Background color */
   cursor: pointer;
   overflow: hidden;
+  border: 4px solid #FFA500;
   scroll-snap-align: start;
   flex-shrink: 0; /* Prevent cards from shrinking */
   border-radius: 15px; /* Curved edges */
@@ -978,7 +974,7 @@ section.director_section>div>a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white; /* Background color */
+  background: #FFA500; /* Background color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align text at the top */
@@ -1035,7 +1031,7 @@ section.director_section>div>a:hover {
   align-items: center;
   justify-content: space-between;
   overflow: hidden; /* Add 30px padding to top and bottom */
-  background-color: black; /* Add white background for padding */
+  background-color: rgba(6, 19, 95, 0.922); /* Add white background for padding */
 }
 
 /* Video Background */
@@ -1413,9 +1409,6 @@ section.director_section>div>a:hover {
   }
 }
 
-
-
-
 /* Student and Faculty slots */
 
 .notice-container {
@@ -1684,7 +1677,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  width: 90vw; /* 90% of the viewport width */
+  margin-right: 8vw !important; 
+  background-color: rgba(5, 5, 3, 0.354);
+  width: 90vw !important; /* 90% of the parent container */
   margin: 50px auto;
   padding: 20px;
   gap: 20px; /* Spacing between columns */
@@ -1856,7 +1851,7 @@ body {
   background: white; /* White background */
   padding: 30px; /* Increased padding for larger size */
   border-radius: 15px;
-  border: 4px solid #FFA500; /* Orange border */
+  border: 4px solid #ffa500; /* Orange border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -1946,7 +1941,6 @@ body {
   }
 }
 
-
 .carousel-quote {
   position: absolute;
   top: 30%; /* Lifted slightly more */
@@ -1962,9 +1956,6 @@ body {
   text-shadow: 6px 6px 12px rgba(0, 0, 0, 1); /* Stronger shadow for visibility */
   letter-spacing: 1.2px;
 }
- 
-
-
 
 .d-container {
   background-color: #cb4f38;
@@ -1975,7 +1966,6 @@ body {
   align-items: center;
   height: 400px;
   width: 200px;
- 
 }
 
 .d-content {
@@ -2008,8 +1998,8 @@ h1 {
 .director-name {
   font-size: 1.5rem;
   font-weight: bold;
-  width:200px;
-  height:100px;
+  width: 200px;
+  height: 100px;
 }
 
 .learn-more {
@@ -2026,20 +2016,267 @@ h1 {
   margin-left: 0.5rem;
 }
 
-
 .director-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-
 @keyframes translate_appear {
   0% {
     opacity: 0;
     transform: translateY(12px);
-  } 100% {
+  }
+  100% {
     opacity: 1;
-      transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+:root {
+  --carousel-width: -1000px; /* Will be dynamically set by JS */
+  --animation-duration: 20s;
+  --card-gap: 20px;
+  --container-width: 100%;
+  --container-max-width: 800px;
+}
+
+/* Container adjustments to make it smaller */
+.ev-container {
+  //max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden; /* Critical: prevents content from going outside container */
+}
+
+/* Carousel specific styles */
+.ev-news-grid.carousel-mode {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--card-gap);
+  overflow: visible; /* Let cards overflow for continuous effect */
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+}
+
+.ev-news-grid.animate {
+  animation: scroll-left var(--animation-duration) linear infinite;
+}
+
+.ev-news-grid.paused {
+  animation-play-state: paused;
+}
+
+/* Animation keyframes */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--carousel-width));
+  }
+}
+
+/* Adjust card styles for carousel */
+.ev-news-grid.carousel-mode .ev-news-card {
+  flex: 0 0 auto;
+  width: 250px; /* Smaller fixed width for cards */
+  margin-right: var(--card-gap);
+  transform: translateX(0) rotate(0) !important; /* Override any existing transforms */
+  opacity: 1 !important; /* Ensure all cards are visible */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adjust hover effect for moving cards */
+.ev-news-grid.carousel-mode .ev-news-card:hover {
+  transform: translateY(-5px) !important;
+  z-index: 10; /* Bring hovered card to the front */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Make sure cloned cards look identical */
+.ev-news-card.clone {
+  opacity: 1;
+}
+
+/* Add a mask to create a fading effect at the edges */
+.ev-news-section {
+  position: relative;
+}
+
+.ev-news-section::before,
+.ev-news-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  z-index: 5;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.ev-news-section::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.ev-news-section::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --container-max-width: 600px;
+  }
+  
+  .ev-news-grid.carousel-mode .ev-news-card {
+    width: 220px; /* Slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-max-width: 320px;
+  }
+  
+  .ev-news-grid.carousel-mode .ev-news-card {
+    width: 200px; /* Even smaller on mobile */
+  }
+}
+/* News Section */
+.ev-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ev-news-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.ev-news-image {
+  width: 100%;
+  height: 200px;
+  border: 1px solid 
+}
+
+.ev-news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ev-news-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.ev-news-content h3 {
+  margin: 8px 0;
+}
+
+.ev-news-content h3 a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.ev-news-content h3 a:hover {
+  color: #2563eb;
+}
+
+.ev-date {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Events Section */
+.ev-events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ev-event-card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ev-event-date {
+  background: #002147;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  min-width: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ev-day {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ev-month {
+  font-size: 14px;
+}
+
+.ev-event-content h3 {
+  margin-bottom: 8px;
+}
+
+.ev-event-content h3 a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.ev-event-content h3 a:hover {
+  color: #2563eb;
+}
+
+.ev-location {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .ev-container {
+      grid-template-columns: 1fr;
+  }
+
+  .ev-news-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ev-news-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .ev-news-image {
+      height: 180px;
+  }
+
+  .ev-section-header h2 {
+      font-size: 20px;
   }
 }
