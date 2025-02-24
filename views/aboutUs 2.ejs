@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIIT Nagpur</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('/images/front.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .content {
+      position: relative;
+      top: 50%;
+      color: azure;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      margin-top:400px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    footer
+    {
+        width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+  <div class="content">
+    <h1>Institute Profile</h1>
+    <p>Indian Institute of Information Technology, Nagpur (IIITN) is one of the 20 Indian Institutes of Information Technology established under the Public-Private Partnership Scheme by the Ministry of Education (erstwhile Ministry of Human Resource Development), Government of India. IIITN has been declared as an “Institution of National Importance” under the provisions of the Indian Institute of Information Technology (Public-Private Partnership) Act, 2017. The Institute started functioning during the year 2016-17 and Shifted to its Permanent Campus in Butibori Nagpur under the Department of Higher Education, Ministry of Education, and is supported by the Department of Higher Education, Government of Maharashtra, and Tata Consultancy Services, Mumbai as Industry Partner.</p>
+</div>
+  <%- include('./partials/footer') %>
+</body>
+
+</html>
