@@ -233,7 +233,7 @@ section.director_section {
   border-radius: 20px;
   margin-right: 1vw;
   overflow: hidden;
-  background-color: rgb(255, 169, 126);
+  background-color: #FFA500;
 }
 
 section.director_section.appear {
@@ -276,7 +276,7 @@ section.director_section>div>a {
   margin-left: 2vh;
 }
 
-section.director_section>div>p>a:hover {
+section.director_section>div>a:hover {
   color: #007bff;
 }
 
@@ -293,7 +293,7 @@ section.director_section>div>p>a:hover {
 }
 
 .event-card {
-  background: rgb(255, 169, 126);
+  background: #FFA500;
   padding: 1.5rem;
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -876,6 +876,7 @@ section.director_section>div>p>a:hover {
 .researchSlider i {
   height: 50px;
   width: 50px;
+  visibility: hidden;
   background: #fff;
   text-align: center;
   line-height: 50px;
@@ -937,7 +938,7 @@ section.director_section>div>p>a:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background-color: rgb(255, 169, 126); /* Background color */
+  background-color: #FFA500; /* Background color */
   cursor: pointer;
   overflow: hidden;
   scroll-snap-align: start;
@@ -978,7 +979,7 @@ section.director_section>div>p>a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white; /* Background color */
+  background: #FFA500; /* Background color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align text at the top */

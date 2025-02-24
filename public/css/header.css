@@ -55,6 +55,14 @@ div.title {
     margin-top: 1.5vh;
 }
 
+
+
+
+
+
+
+
+
 nav#siteHead {
     position: absolute;
     height: 7vh;
@@ -193,22 +201,50 @@ nav#site_head>a.header_logo>img {
 
 div.header_images {
     display: flex;
+    align-items: end;
+    justify-content: end;
+    visibility: hidden;
+}
+
+div.header_images>.location {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2vw;
+    font-size: 2.5vh;
+    font-weight: 600;
+    height: 10vh;
+    width: 5vh;
+    margin-right: 1vw;
 }
 
-div.header_images>img {
-    height: 8vh;
-    width: 15vh;
-}
-
-div.header_images>img.emblem_image {
-    margin-top: 2vh;
+div.header_images > a>img {
+    position: relative;
+    height: 10vh;
     width: 5vw;
-    height: 8vh;
-    border-radius: 50%;
+    transform: translateY(0.5vh);
+    margin-right: 2vw;
 }
+
+/* div.header_images input.searchContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 3vh;
+    border-radius: 20px ;
+    height: 5vh;
+    width: 20vw;
+    background: transparent;
+    margin-bottom: 1.5vh;
+    /* margin-right: 1vw; */
+    /* border: 0.5vh solid rgba(255, 255, 255, 0.767);
+}
+
+div.header_images input.searchContent::placeholder {
+
+}  */
 
 
 
