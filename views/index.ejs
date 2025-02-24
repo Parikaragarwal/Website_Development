@@ -100,8 +100,8 @@
 
 
 
-    <div class="ev-body" style="display: flex; background-color: #ffd2a5; ">
-      <div class="ev-container" style="background-color: #ffd2a5;"> 
+    <div class="ev-body" style="display: flex; background-color: #FCF6F5; ">
+      <div class="ev-container" style="background-color: #FCF6F5;"> 
         <!-- News Section -->
         <div class="ev-news-section">
             <div class="ev-section-header">
@@ -263,7 +263,7 @@
    
     
 
-  
+<!--   
     <div class="notice-container">
       <div class="notice-header">
           <h2>Student Notices</h2>
@@ -272,7 +272,7 @@
       <div class="notice-board">
           <div class="notice-wrapper" id="noticeWrapper">
               <!-- Notices will be inserted here by JavaScript -->
-          </div>
+          <!-- </div>
       </div>
   </div>
   </div>
@@ -287,9 +287,75 @@
       <div class="faculty-notice-board">
         <div class="faculty-notice-wrapper" id="facultyNoticeWrapper">
           <!-- Notices will be inserted here by JavaScript -->
+      <!-- </div>
+    </div>
+  </div>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="campus-container">
+    <h2 class="campus-heading">IIITN at a Glance</h2>
+    <div class="gallery">
+      <!-- a1.mp4 (Landscape Video - Special) -->
+      <div class="gallery-item video-landscape">
+        <video src="/images/a1.mp4" autoplay loop muted></video>
       </div>
+  
+      <!-- Shuffled Videos and Images -->
+      <% 
+        const videos = ['b1.mp4', 'c1.mp4', 'd1.mp4', 'e1.mp4', 'f1.mp4', 'g1.mp4'];
+        const images = ['a2.jpg', 'b2.jpg', 'c2.jpg', 'd2.jpg', 'e2.jpg', 'f2.jpg', 'g2.jpg','i2.jpg', 'j2.jpg', 'k2.jpg', 'l2.jpg', 'm2.jpg', 'n2.jpg', 'o2.jpg', 'p2.jpg', 'r2.jpg'];
+        
+        // Shuffle items while ensuring no two videos are adjacent
+        const allItems = [];
+        let videoIndex = 0;
+        let imageIndex = 0;
+  
+        // Alternate between videos and images
+        while (videoIndex < videos.length || imageIndex < images.length) {
+          if (videoIndex < videos.length) {
+            allItems.push(videos[videoIndex]);
+            videoIndex++;
+          }
+          if (imageIndex < images.length) {
+            allItems.push(images[imageIndex]);
+            imageIndex++;
+          }
+        }
+  
+        // Shuffle the remaining items (if any)
+        const remainingItems = [...videos.slice(videoIndex), ...images.slice(imageIndex)];
+        allItems.push(...remainingItems.sort(() => Math.random() - 0.5));
+      %>
+  
+      <% allItems.forEach(item => { %>
+        <% if (item.endsWith('.mp4')) { %>
+          <!-- Portrait Videos -->
+          <div class="gallery-item video-portrait">
+            <video src="/images/<%= item %>" autoplay loop muted></video>
+          </div>
+        <% } else { %>
+          <!-- Images -->
+          <div class="gallery-item">
+            <img src="/images/<%= item %>" alt="Campus Image">
+          </div>
+        <% } %>
+      <% }); %>
     </div>
   </div>
+
+
+
 
   
   <div class="club-section">
