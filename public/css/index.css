@@ -1636,8 +1636,9 @@ body {
   align-items: stretch;
   margin-right: 8vw !important; 
   background-color: rgba(5, 5, 3, 0.354);
-  width: 90vw !important; /* 90% of the parent container */
+  width: 95vw !important; /* 90% of the parent container */
   margin: 50px auto;
+  margin-left: 1.5vw;
   padding: 20px;
   gap: 20px; /* Spacing between columns */
   background-color: rgba(5, 5, 3, 0.1); /* Subtle background */
@@ -1702,6 +1703,7 @@ body {
 /* Headlines Container - Card Design */
 .headlines-container {
   width: 100%; /* Full width of the merged column */
+  height: 100%;
   background: #091014; /* Dark background */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Soft shadow */
@@ -1789,7 +1791,7 @@ body {
 
 /* Column 3: Stats Section */
 .stats-container {
-  width: 50%; /* 50% of the combined section */
+  width: 60%; /* 50% of the combined section */
   display: flex;
   justify-content: center;
   align-items: center;
