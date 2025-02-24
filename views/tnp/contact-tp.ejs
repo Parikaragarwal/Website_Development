@@ -1,50 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IIIT Nagpur</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('/images/front.jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      position: relative;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIIT Nagpur</title>
+    <style>
+        /* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffd2a5 !important;
+    color: #333;
+}
+/* Background Image Behind Header */
+.header-background {
+    position: relative;
+    box-shadow: 0px 20px 20px,
+    0px 40px 50px inset;
+    width: 100%;
+    height: 60vh;/* Adjust height as needed */
+    background: url('/images/amphi.jpg') no-repeat center center/cover;
+}
+
+/* Push the actual header above the background */
+header {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, rgba(0, 51, 102, 0.809), rgba(255, 102, 0, 0.845)), 
+                url('/images/admin.jpg') no-repeat center center/cover;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+    padding: 200px 20px;
+    font-weight: bold;
+}
+.hero>h1{
+  display: block;
+}
+
+/* Content Sections */
+.content-section, .content-section_reverse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 1100px;
+    overflow: hidden;
+    gap: 20px;
+}
+
+/* Alternating Sections */
+.content-section_reverse {
+    flex-direction: row-reverse !important;
+}
+
+/* Text Styling */
+.text {
+    flex: 1;
+    padding: 30px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #003366;
+    text-align: left;
+}
+
+/* Image Styling */
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hover Effect */
+.image img:hover {
+    transform: scale(1.08);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-section, .content-section_reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
     }
 
-    .content {
-      position: relative;
-      top: 50%;
-      color: azure;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      margin-top:400px;
-      font-size: 18px;
-      line-height: 1.6;
+    .content-section_reverse {
+        flex-direction: column;
     }
-    footer
-    {
+
+    .image {
+        margin-top: 20px;
+    }
+
+    .image img {
         width: 100%;
     }
-  </style>
+
+    .hero {
+        padding: 60px 20px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 50px 15px;
+        font-size: 22px;
+    }
+
+    .content-section, .content-section_reverse {
+        padding: 30px 5%;
+    }
+
+    .text {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
-
 <body>
+ 
   <%- include('../partials/header.ejs') %>
-  <div class="content">
-    <h1>Contact Training and placement cell</h1>
-    
-</div>
-  <%- include('../partials/footer') %>
-</body>
 
+
+<main class="contact-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to IIIT Nagpur.</h1>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="text">
+            <h2>Our Vision</h2>
+            <p>IIITN is dedicated to excellence in education, innovation, and research, preparing students for the future.</p>
+        </div>
+        <div class="image">
+            <img src="/images/admin.jpg" alt="Our Vision">
+        </div>
+    </section>
+
+    <section class="content-section_reverse">
+        <div class="image">
+            <img src="/images/admin.jpg" alt="Our Campus">
+        </div>
+        <div class="text">
+            <h2>Our Campus</h2>
+            <p>Our state-of-the-art campus provides students with the resources and environment they need to succeed.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="text">
+            <h2>Contact Us</h2>
+            <p>Reach out to us for any queries or assistance. We're here to help you with any information you need.</p>
+        </div>
+        <div class="image">
+            <img src="/images/admin.jpg" alt="Contact Us">
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer.ejs') %>
+
+</body>
 </html>
