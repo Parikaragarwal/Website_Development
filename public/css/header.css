@@ -365,7 +365,7 @@ a.Admissions:hover + .Admissions_dropDown,
 .Academics_dropDown {
     display: none;
     grid-template: 1fr / 1fr 1fr 1fr;
-    height: 65vh;
+    height: 50vh;
     width: 85vw;
     padding: 1.5vh;
     overflow: hidden;
@@ -432,8 +432,8 @@ a.Academics:hover + .Academics_dropDown,
 .Faculty_dropDown
 {
     display: none;
-        grid-template: 1fr / 1fr 1fr 1fr 1fr;
-        height: 43vh;
+        grid-template: 1fr / 1fr 1fr 1fr;
+        height: 55vh;
         width: 85vw;
         padding: 1.5vh;
         overflow: hidden;
@@ -490,7 +490,7 @@ a.Academics:hover + .Academics_dropDown,
 a.Faculty:hover+.Faculty_dropDown,
 .Faculty_dropDown:hover {
     display: grid;
-    animation: dropDown_appear_mid 0.25s ease-in-out;
+    animation: dropDown_appear_mid_high 0.25s ease-in-out;
 }
 
 
@@ -611,7 +611,7 @@ a.Alumni:hover+.Alumni_dropDown,
     
         to {
             /* opacity: 1; */
-            height: 55vh;
+            height: 50vh;
         }
 }
 
@@ -632,7 +632,7 @@ a.Alumni:hover+.Alumni_dropDown,
     0% {
         height: 0vh;
     } 100% {
-        height: 58vh;
+        height: 55vh;
     }
     
 }

@@ -8,7 +8,7 @@ const cardWidth = document.querySelector(
   ".research_list > .research_item"
 ).offsetWidth;
 const carouselChildren = [...carousel.children];
-console.log("Events",events);
+console.log("Events", events);
 //getting all the cards that can fit on the screen at a time
 let cardPerView = Math.round(carousel.offsetWidth / cardWidth);
 
@@ -88,9 +88,7 @@ carousel.addEventListener("scroll", infiniteScroll);
 
 //updates
 document.addEventListener("DOMContentLoaded", function () {
- 
   // Awards Data
- 
 
   // Initialize Events Section
   function initializeEvents() {
@@ -104,35 +102,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Create event cards dynamically
     events.forEach((event, index) => {
-        const eventCard = document.createElement("div");
-        eventCard.className = "event-card";
-        eventCard.style.display = index === 0 ? "block" : "none"; // Show only first event
-        eventCard.innerHTML = `
+      const eventCard = document.createElement("div");
+      eventCard.className = "event-card";
+      eventCard.style.display = index === 0 ? "block" : "none"; // Show only first event
+      eventCard.innerHTML = `
             <img src="${event.image}" alt="${event.title}">
             <h3>${event.title}</h3>
             <p class="event-date">${event.date}</p>
             <p class="course-id">Course ID: ${event.courseId}</p>
             <p>${event.description}</p>
         `;
-        eventSlider.appendChild(eventCard);
+      eventSlider.appendChild(eventCard);
     });
 
     // Function to show a specific slide
     function showSlide(index) {
-        const slides = document.querySelectorAll(".event-card");
-        slides.forEach(slide => (slide.style.display = "none")); // Hide all events
-        slides[index].style.display = "block"; // Show the current event
-        slides[index].style.animation = "fadeIn 0.5s"; // Apply animation
+      const slides = document.querySelectorAll(".event-card");
+      slides.forEach((slide) => (slide.style.display = "none")); // Hide all events
+      slides[index].style.display = "block"; // Show the current event
+      slides[index].style.animation = "fadeIn 0.5s"; // Apply animation
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % events.length;
-        showSlide(currentSlide);
+      currentSlide = (currentSlide + 1) % events.length;
+      showSlide(currentSlide);
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + events.length) % events.length;
-        showSlide(currentSlide);
+      currentSlide = (currentSlide - 1 + events.length) % events.length;
+      showSlide(currentSlide);
     }
 
     // Auto-scroll events every 5 seconds
@@ -140,26 +138,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Event listeners for buttons
     prevBtn.addEventListener("click", () => {
-        clearInterval(autoScrollInterval);
-        prevSlide();
-        autoScrollInterval = setInterval(nextSlide, 5000);
+      clearInterval(autoScrollInterval);
+      prevSlide();
+      autoScrollInterval = setInterval(nextSlide, 5000);
     });
 
     nextBtn.addEventListener("click", () => {
-        clearInterval(autoScrollInterval);
-        nextSlide();
-        autoScrollInterval = setInterval(nextSlide, 5000);
+      clearInterval(autoScrollInterval);
+      nextSlide();
+      autoScrollInterval = setInterval(nextSlide, 5000);
     });
 
     // Pause auto-scroll on hover
-    eventSlider.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
+    eventSlider.addEventListener("mouseenter", () =>
+      clearInterval(autoScrollInterval)
+    );
     eventSlider.addEventListener("mouseleave", () => {
-        autoScrollInterval = setInterval(nextSlide, 5000);
+      autoScrollInterval = setInterval(nextSlide, 5000);
     });
-}
+  }
 
-// Initialize the events slider when the page loads
-initializeEvents();
+  // Initialize the events slider when the page loads
+  initializeEvents();
 });
 document.addEventListener("DOMContentLoaded", function () {
   const awardsScroll = document.querySelector(".awards-scroll");
@@ -202,68 +202,67 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const hoverItems = document.querySelectorAll(".hover-item");
   const displayImage = document.getElementById("display-image");
   const loadingLineImage = document.querySelector(".loading-line-image");
   const borderContainer = document.querySelector(".border-container");
 
-  hoverItems.forEach(item => {
-      item.addEventListener("mouseover", () => {
-          let newImage = item.getAttribute("data-img");
-          let color = item.getAttribute("data-color");
-          let loadingLine = item.querySelector(".loading-line");
+  hoverItems.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      let newImage = item.getAttribute("data-img");
+      let color = item.getAttribute("data-color");
+      let loadingLine = item.querySelector(".loading-line");
 
-          // Change border color instantly
-          borderContainer.style.backgroundColor = color;
+      // Change border color instantly
+      borderContainer.style.backgroundColor = color;
 
-          // Start loading animation for sentence (only filling the remaining space)
-          loadingLine.style.backgroundColor = color;
-          loadingLine.style.width = "calc(100% - 10px)"; // Leaves text uncovered
+      // Start loading animation for sentence (only filling the remaining space)
+      loadingLine.style.backgroundColor = color;
+      loadingLine.style.width = "calc(100% - 10px)"; // Leaves text uncovered
 
-          setTimeout(() => {
-              loadingLine.style.opacity = "0";
-              setTimeout(() => {
-                  loadingLine.style.width = "0%";
-                  loadingLine.style.opacity = "1";
-              }, 300);
-          }, 1000);
+      setTimeout(() => {
+        loadingLine.style.opacity = "0";
+        setTimeout(() => {
+          loadingLine.style.width = "0%";
+          loadingLine.style.opacity = "1";
+        }, 300);
+      }, 1000);
 
-          // Start loading animation for image
-          loadingLineImage.style.backgroundColor = color;
-          loadingLineImage.style.width = "100%";
-          setTimeout(() => {
-              displayImage.src = newImage;
-              loadingLineImage.style.opacity = "0";
-              setTimeout(() => {
-                  loadingLineImage.style.width = "0%";
-                  loadingLineImage.style.opacity = "1";
-              }, 300);
-          }, 1000);
-      });
+      // Start loading animation for image
+      loadingLineImage.style.backgroundColor = color;
+      loadingLineImage.style.width = "100%";
+      setTimeout(() => {
+        displayImage.src = newImage;
+        loadingLineImage.style.opacity = "0";
+        setTimeout(() => {
+          loadingLineImage.style.width = "0%";
+          loadingLineImage.style.opacity = "1";
+        }, 300);
+      }, 1000);
+    });
   });
 });
 
 // Function to animate the numbers
 function animateStats() {
-  const statNumbers = document.querySelectorAll('.stat-number');
+  const statNumbers = document.querySelectorAll(".stat-number");
 
   statNumbers.forEach((statNumber) => {
-    const target = +statNumber.getAttribute('data-target'); // Get the target number
+    const target = +statNumber.getAttribute("data-target"); // Get the target number
     const increment = target / 200; // Slower increment for smoother animation
     let current = 0;
 
     const updateNumber = () => {
       if (current < target) {
         current += increment;
-        statNumber.textContent = Math.ceil(current) + (statNumber.textContent.includes('%') ? '%' : ''); // Add % if applicable
+        statNumber.textContent =
+          Math.ceil(current) +
+          (statNumber.textContent.includes("%") ? "%" : ""); // Add % if applicable
         requestAnimationFrame(updateNumber); // Continue the animation
       } else {
-        statNumber.textContent = target + (statNumber.textContent.includes('%') ? '%' : ''); // Ensure it ends at the exact target
+        statNumber.textContent =
+          target + (statNumber.textContent.includes("%") ? "%" : ""); // Ensure it ends at the exact target
       }
     };
 
@@ -272,7 +271,7 @@ function animateStats() {
 }
 
 // Trigger the animation when the section comes into view
-const statsSection = document.querySelector('.stats-container');
+const statsSection = document.querySelector(".stats-container");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -288,15 +287,14 @@ const observer = new IntersectionObserver(
 
 observer.observe(statsSection);
 
-
 // Optional: Add JavaScript for additional interactivity
-document.querySelectorAll('.box').forEach(box => {
-  box.addEventListener('mouseenter', () => {
-    box.style.transform = 'rotateY(90deg)';
+document.querySelectorAll(".box").forEach((box) => {
+  box.addEventListener("mouseenter", () => {
+    box.style.transform = "rotateY(90deg)";
   });
 
-  box.addEventListener('mouseleave', () => {
-    box.style.transform = 'rotateY(0deg)';
+  box.addEventListener("mouseleave", () => {
+    box.style.transform = "rotateY(0deg)";
   });
 });
 
@@ -367,21 +365,21 @@ class NoticeBoard {
     this.startAnimation();
   }
 }
-function formatDate(isoString) 
-{
-    const date = new Date(isoString);
-    return date.toLocaleDateString('en-GB', 
-    { 
-        day: '2-digit', 
-        month: 'long', 
-        year: 'numeric' 
-    });
+function formatDate(isoString) {
+  const date = new Date(isoString);
+  return date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
 }
 
 // Initialize the notice board
 document.addEventListener("DOMContentLoaded", () => {
   const studentNoticesElement = document.getElementById("studentnotices-data");
-  const notices = JSON.parse(studentNoticesElement.dataset.studentnotices || "[]");
+  const notices = JSON.parse(
+    studentNoticesElement.dataset.studentnotices || "[]"
+  );
 
   class NoticeBoard {
     constructor() {
@@ -410,7 +408,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${notice.title}
                     ${notice.isNew ? '<span class="new-badge">NEW</span>' : ""}
                 </div>
-                <div class="notice-date">${new Date(notice.date).toLocaleDateString()}
+                <div class="notice-date">${new Date(
+                  notice.date
+                ).toLocaleDateString()}
                 </div>
             </a>
         `
@@ -457,158 +457,473 @@ document.addEventListener("DOMContentLoaded", () => {
   new NoticeBoard();
 });
 
-class FacultyNoticeBoard 
-{
-    constructor(facultyNotices) 
-    {
-        this.facultyNotices = facultyNotices;
-        this.currentFacultyIndex = 0;
-        this.facultyWrapper = document.getElementById("facultyNoticeWrapper");
-        this.facultyPauseBtn = document.getElementById("facultyPauseBtn");
-        this.facultyResumeBtn = document.getElementById("facultyResumeBtn");
-        this.isFacultyPaused = false;
-        this.facultyInterval = null;
+class FacultyNoticeBoard {
+  constructor(facultyNotices) {
+    this.facultyNotices = facultyNotices;
+    this.currentFacultyIndex = 0;
+    this.facultyWrapper = document.getElementById("facultyNoticeWrapper");
+    this.facultyPauseBtn = document.getElementById("facultyPauseBtn");
+    this.facultyResumeBtn = document.getElementById("facultyResumeBtn");
+    this.isFacultyPaused = false;
+    this.facultyInterval = null;
 
-        this.initFacultyBoard();
-    }
+    this.initFacultyBoard();
+  }
 
-    initFacultyBoard() 
-    {
-        this.renderFacultyNotices();
-        this.startFacultyAnimation();
-        this.setupFacultyEventListeners();
-    }
+  initFacultyBoard() {
+    this.renderFacultyNotices();
+    this.startFacultyAnimation();
+    this.setupFacultyEventListeners();
+  }
 
-    renderFacultyNotices() 
-    {
-        this.facultyWrapper.innerHTML = this.facultyNotices
-            .map(
-                (notice) => `
+  renderFacultyNotices() {
+    this.facultyWrapper.innerHTML = this.facultyNotices
+      .map(
+        (notice) => `
                 <a href="${notice.link}" class="faculty-notice-item">
                     <div class="faculty-notice-title">
                         ${notice.title}
-                        ${notice.isNew ? '<span class="faculty-new-badge">NEW</span>' : ""}
-                        <span class="faculty-department-tag">${notice.department}</span>
+                        ${
+                          notice.isNew
+                            ? '<span class="faculty-new-badge">NEW</span>'
+                            : ""
+                        }
+                        <span class="faculty-department-tag">${
+                          notice.department
+                        }</span>
                     </div>
-                    <div class="faculty-notice-date">${formatDate(notice.date)}</div>
+                    <div class="faculty-notice-date">${formatDate(
+                      notice.date
+                    )}</div>
                 </a>
             `
-            )
-            .join("");
-    }
+      )
+      .join("");
+  }
 
-    moveFacultyNotices() 
-    {
-        this.currentFacultyIndex =
-            (this.currentFacultyIndex + 1) % this.facultyNotices.length;
-        this.facultyWrapper.style.transform = `translateY(-${
-            this.currentFacultyIndex * 60
-        }px)`;
-    }
+  moveFacultyNotices() {
+    this.currentFacultyIndex =
+      (this.currentFacultyIndex + 1) % this.facultyNotices.length;
+    this.facultyWrapper.style.transform = `translateY(-${
+      this.currentFacultyIndex * 60
+    }px)`;
+  }
 
-    startFacultyAnimation() 
-    {
-        this.facultyInterval = setInterval(() => this.moveFacultyNotices(), 3000);
-    }
+  startFacultyAnimation() {
+    this.facultyInterval = setInterval(() => this.moveFacultyNotices(), 3000);
+  }
 
-    setupFacultyEventListeners() 
-    {
-        this.facultyPauseBtn.addEventListener("click", () =>
-            this.pauseFacultyAnimation()
-        );
-        this.facultyResumeBtn.addEventListener("click", () =>
-            this.resumeFacultyAnimation()
-        );
+  setupFacultyEventListeners() {
+    this.facultyPauseBtn.addEventListener("click", () =>
+      this.pauseFacultyAnimation()
+    );
+    this.facultyResumeBtn.addEventListener("click", () =>
+      this.resumeFacultyAnimation()
+    );
 
-        this.facultyWrapper.addEventListener("mouseenter", () =>
-            this.pauseFacultyAnimation()
-        );
-        this.facultyWrapper.addEventListener("mouseleave", () => {
-            if (!this.isFacultyPaused) {
-                this.resumeFacultyAnimation();
-            }
-        });
-    }
+    this.facultyWrapper.addEventListener("mouseenter", () =>
+      this.pauseFacultyAnimation()
+    );
+    this.facultyWrapper.addEventListener("mouseleave", () => {
+      if (!this.isFacultyPaused) {
+        this.resumeFacultyAnimation();
+      }
+    });
+  }
 
-    pauseFacultyAnimation() 
-    {
-        this.isFacultyPaused = true;
-        clearInterval(this.facultyInterval);
-    }
+  pauseFacultyAnimation() {
+    this.isFacultyPaused = true;
+    clearInterval(this.facultyInterval);
+  }
 
-    resumeFacultyAnimation() 
-    {
-        this.isFacultyPaused = false;
-        this.startFacultyAnimation();
-    }
+  resumeFacultyAnimation() {
+    this.isFacultyPaused = false;
+    this.startFacultyAnimation();
+  }
 }
 
-
 // Initialize the faculty notice board
-document.addEventListener("DOMContentLoaded", () => 
-  {
-      // Get faculty notices from EJS data
-      const facultyNoticesData = document.getElementById("facultynotices-data").dataset.facultynotices;
-      const facultyNotices = JSON.parse(facultyNoticesData);
-  
-      // Initialize the faculty notice board with fetched notices
-      new FacultyNoticeBoard(facultyNotices);
-  });
-  
+document.addEventListener("DOMContentLoaded", () => {
+  // Get faculty notices from EJS data
+  const facultyNoticesData = document.getElementById("facultynotices-data")
+    .dataset.facultynotices;
+  const facultyNotices = JSON.parse(facultyNoticesData);
 
+  // Initialize the faculty notice board with fetched notices
+  new FacultyNoticeBoard(facultyNotices);
+});
 
+// //Event
 
+//   document.addEventListener("DOMContentLoaded", function () {
+//     const headlines = document.querySelectorAll(".headline-item");
+//     const displayImage = document.getElementById("display-image");
 
+//     const images = ["/images/aa.jpg", "/images/bb.png",  "/images/dd.png", "/images/ee.png" , "/images/ff.png", "/images/gg.png", "/images/hh.png", "/images/ii.png"];
+//     const defaultImage = "/images/oo.png"; // Default image
 
+//     // Set default image on page load
+//     displayImage.src = defaultImage;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const gallery = document.querySelector(".gallery");
-  
-    // Add event listeners for videos to ensure they fit the grid
-    const videos = document.querySelectorAll(".gallery-item video");
-    videos.forEach((video) => {
-      video.onloadedmetadata = function () {
-        if (video.videoWidth > video.videoHeight) {
-          video.parentElement.classList.add("video-landscape");
-        } else {
-          video.parentElement.classList.add("video-portrait");
+//     headlines.forEach((headline, index) => {
+//       headline.addEventListener("mouseover", function () {
+//         displayImage.src = images[index % images.length];
+//       });
+
+//       headline.addEventListener("mouseout", function () {
+//         displayImage.src = defaultImage;
+//       });
+//     });
+//   });
+
+//   let currentIndex = 0;
+
+// function showSlide(index) {
+//     const slides = document.querySelectorAll('.carousel-item');
+//     const totalSlides = slides.length;
+
+//     if (index >= totalSlides) {
+//         currentIndex = 0;
+//     } else if (index < 0) {
+//         currentIndex = totalSlides - 1;
+//     } else {
+//         currentIndex = index;
+//     }
+
+//     const offset = -currentIndex * 100;
+//     document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+// }
+
+// function nextSlide() {
+//     showSlide(currentIndex + 1);
+// }
+
+// function prevSlide() {
+//     showSlide(currentIndex - 1);
+// }
+
+// // Optional: Auto-play the carousel
+// setInterval(nextSlide, 5000);
+
+// news-data.js
+// const newsData = [
+//   {
+//       id: 1,
+//       title: "Professor Sue Iversen (1940-2025)",
+//       date: "20 FEB 2025",
+//       image: "/api/placeholder/400/250",
+//       category: "Academic",
+//       description: "Remembering the life and contributions of Professor Sue Iversen..."
+//   },
+//   {
+//       id: 2,
+//       title: "Lifestyle and environmental factors affect health and ageing more than our genes",
+//       date: "20 FEB 2025",
+//       image: "/api/placeholder/400/250",
+//       category: "Research",
+//       description: "New study reveals the impact of lifestyle choices on aging..."
+//   },
+//   {
+//       id: 3,
+//       title: "Lord Hague's Chancellor admission speech",
+//       date: "20 FEB 2025",
+//       image: "/api/placeholder/400/250",
+//       category: "Events",
+//       description: "Highlights from the Chancellor's inspirational address..."
+//   },
+//   {
+//       id: 4,
+//       title: "New Research Center Opens",
+//       date: "21 FEB 2025",
+//       image: "/api/placeholder/400/250",
+//       category: "Facilities",
+//       description: "State-of-the-art research facility inaugurated..."
+//   },
+//   {
+//       id: 5,
+//       title: "Student Achievement Awards 2025",
+//       date: "22 FEB 2025",
+//       image: "/api/placeholder/400/250",
+//       category: "Students",
+//       description: "Celebrating outstanding student achievements..."
+//   },
+//   {
+//       id: 6,
+//       title: "International Conference on Climate Change",
+//       date: "23 FEB 2025",
+//       image: "/api/placeholder/400/250",
+//       category: "Events",
+//       description: "Global experts gather to discuss climate solutions..."
+//   }
+// ];
+
+// // Function to render news cards
+// function renderNewsCards() {
+//   const newsGrid = document.querySelector('.ev-news-grid');
+
+//   // Clear existing content
+//   newsGrid.innerHTML = '';
+
+//   // Create and append news cards
+//   newsData.forEach(news => {
+//       const newsCard = document.createElement('div');
+//       newsCard.className = 'ev-news-card';
+
+//       newsCard.innerHTML = `
+//           <div class="ev-news-image">
+//               <img src="${news.image}" alt="${news.title}">
+//               <span class="ev-category">${news.category}</span>
+//           </div>
+//           <div class="ev-news-content">
+//               <span class="ev-date">${news.date}</span>
+//               <h3><a href="#">${news.title}</a></h3>
+//               <p class="ev-description">${news.description}</p>
+//           </div>
+//       `;
+
+//       newsGrid.appendChild(newsCard);
+//   });
+
+//   // Initialize slider after rendering cards
+//   initializeSlider();
+// }
+
+// // Initialize slider functionality
+// function initializeSlider() {
+//   const totalSlides = Math.ceil(newsData.length / 3);
+//   updateSliderDots(totalSlides);
+//   setupSliderControls();
+// }
+
+// // Update slider dots based on total slides
+// function updateSliderDots(totalSlides) {
+//   const dotsContainer = document.querySelector('.ev-slider-dots');
+//   dotsContainer.innerHTML = '';
+
+//   for (let i = 0; i < totalSlides; i++) {
+//       const dot = document.createElement('button');
+//       dot.className = 'ev-dot';
+//       if (i === 0) dot.classList.add('active');
+//       dot.setAttribute('aria-label', `Slide ${i + 1}`);
+//       dotsContainer.appendChild(dot);
+//   }
+// }
+
+// // Set up event listeners for slider controls
+// function setupSliderControls() {
+//   const prevBtn = document.querySelector('.ev-prev-btn');
+//   const nextBtn = document.querySelector('.ev-next-btn');
+//   const dots = document.querySelectorAll('.ev-dot');
+//   let currentSlide = 0;
+
+//   prevBtn.addEventListener('click', () => {
+//       currentSlide = (currentSlide - 1 + dots.length) % dots.length;
+//       updateSlider(currentSlide);
+//   });
+
+//   nextBtn.addEventListener('click', () => {
+//       currentSlide = (currentSlide + 1) % dots.length;
+//       updateSlider(currentSlide);
+//   });
+
+//   dots.forEach((dot, index) => {
+//       dot.addEventListener('click', () => {
+//           currentSlide = index;
+//           updateSlider(currentSlide);
+//       });
+//   });
+// }
+
+// // Update slider position
+// function updateSlider(slideIndex) {
+//   const newsGrid = document.querySelector('.ev-news-grid');
+//   const dots = document.querySelectorAll('.ev-dot');
+
+//   newsGrid.style.transform = `translateX(-${slideIndex * 100}%)`;
+
+//   dots.forEach((dot, index) => {
+//       dot.classList.toggle('active', index === slideIndex);
+//   });
+// }
+
+// // Initialize when DOM is loaded
+// document.addEventListener('DOMContentLoaded', renderNewsCards);
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Function to animate cards as they enter the viewport
+//   function animateCards() {
+//     const cards = document.querySelectorAll(".ev-news-card");
+
+//     // Stagger the animations
+//     cards.forEach((card, index) => {
+//       setTimeout(() => {
+//         card.classList.add("visible");
+//       }, 150 * index); // 150ms delay between each card
+//     });
+//   }
+
+//   // Start animation when page is loaded
+//   // Small delay to ensure DOM is fully ready
+//   setTimeout(animateCards, 300);
+
+//   // Re-trigger animations when scrolling into view (for longer pages)
+//   function handleScroll() {
+//     const cards = document.querySelectorAll(".ev-news-card:not(.visible)");
+
+//     cards.forEach((card) => {
+//       const rect = card.getBoundingClientRect();
+//       const isInViewport =
+//         rect.top >= 0 &&
+//         rect.left >= 0 &&
+//         rect.bottom <=
+//           (window.innerHeight || document.documentElement.clientHeight) &&
+//         rect.right <=
+//           (window.innerWidth || document.documentElement.clientWidth);
+
+//       if (isInViewport) {
+//         card.classList.add("visible");
+//       }
+//     });
+//   }
+
+//   // Check for cards in viewport during scroll
+//   window.addEventListener("scroll", handleScroll);
+// });
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the news grid and all cards
+  const newsGrid = document.querySelector(".ev-news-grid");
+  const cards = Array.from(document.querySelectorAll(".ev-news-card"));
+
+  // We need enough clones to fill the viewport width
+  function createClones() {
+    // Remove any existing clones first
+    document
+      .querySelectorAll(".ev-news-card.clone")
+      .forEach((clone) => clone.remove());
+
+    // Clone the original cards multiple times to ensure we have enough
+    const viewportWidth = window.innerWidth;
+    const cardWidth = cards[0].offsetWidth;
+    const numCardsNeeded = Math.ceil(viewportWidth / cardWidth) * 2; // Multiply by 2 for safety
+
+    // Create enough clones to fill the screen multiple times
+    for (let i = 0; i < numCardsNeeded; i++) {
+      const originalIndex = i % cards.length;
+      const clone = cards[originalIndex].cloneNode(true);
+      clone.classList.add("clone");
+      clone.classList.add("visible"); // Make sure clones are visible
+      newsGrid.appendChild(clone);
+    }
+  }
+
+  // Set up initial positions and visibility
+  function initializeCarousel() {
+    // Update grid to horizontal layout
+    newsGrid.classList.add("carousel-mode");
+
+    // Make all original cards visible first
+    cards.forEach((card) => {
+      card.classList.add("visible");
+    });
+
+    // Create the clones
+    createClones();
+
+    // Start the animation
+    startCarouselAnimation();
+  }
+
+  // Function to animate the carousel
+  function startCarouselAnimation() {
+    // Get the width of a single card plus its margin
+    const card = cards[0];
+    const cardStyle = window.getComputedStyle(card);
+    const cardWidth = card.offsetWidth + parseInt(cardStyle.marginRight || 0);
+
+    // Calculate the width of one complete set of original cards
+    const totalWidth = cardWidth * cards.length;
+
+    // Set the animation CSS variable
+    document.documentElement.style.setProperty(
+      "--carousel-width",
+      `-${totalWidth}px`
+    );
+
+    // Restart animation when it completes one cycle
+    newsGrid.addEventListener("animationiteration", () => {
+      // Optional: you can add effects here when a cycle completes
+    });
+
+    // Start the animation
+    setTimeout(() => {
+      newsGrid.classList.add("animate");
+    }, 100);
+  }
+
+  // Make all cards interactive
+  function makeCardsInteractive() {
+    document.querySelectorAll(".ev-news-card").forEach((card) => {
+      card.addEventListener("click", function () {
+        const link = this.querySelector(".ev-news-content h3 a");
+        if (link) {
+          window.location.href = link.getAttribute("href");
         }
-      };
-    });
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const headlines = document.querySelectorAll(".headline-item");
-    const displayImage = document.getElementById("display-image");
-  
-    const images = ["/images/aa.jpg", "/images/bb.png",  "/images/dd.png", "/images/ee.png" , "/images/ff.png", "/images/gg.png", "/images/hh.png", "/images/ii.png"];
-    const defaultImage = "/images/oo.png"; // Default image
-  
-    // Set default image on page load
-    displayImage.src = defaultImage;
-  
-    headlines.forEach((headline, index) => {
-      headline.addEventListener("mouseover", function () {
-        displayImage.src = images[index % images.length];
-      });
-  
-      headline.addEventListener("mouseout", function () {
-        displayImage.src = defaultImage;
       });
     });
+  }
+
+  // Toggle pause on hover
+  function setupHoverPause() {
+    newsGrid.addEventListener("mouseenter", () => {
+      newsGrid.classList.add("paused");
+    });
+
+    newsGrid.addEventListener("mouseleave", () => {
+      newsGrid.classList.remove("paused");
+    });
+  }
+
+  // Initialize everything
+  initializeCarousel();
+  makeCardsInteractive();
+  setupHoverPause();
+
+  // Handle window resize to maintain proper clones and animation
+  window.addEventListener("resize", () => {
+    // Pause animation while we recalculate
+    newsGrid.classList.remove("animate");
+
+    // Re-create clones for the new viewport size
+    createClones();
+
+    // Restart animation
+    setTimeout(() => {
+      startCarouselAnimation();
+    }, 50);
   });
-  
+});
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const gallery = document.querySelector(".gallery");
+
+  // Add event listeners for videos to ensure they fit the grid
+  const videos = document.querySelectorAll(".gallery-item video");
+  videos.forEach((video) => {
+    video.onloadedmetadata = function () {
+      if (video.videoWidth > video.videoHeight) {
+        video.parentElement.classList.add("video-landscape");
+      } else {
+        video.parentElement.classList.add("video-portrait");
+      }
+    };
+  });
+});

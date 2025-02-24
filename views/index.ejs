@@ -33,7 +33,7 @@
     </script>
   </head>
   
-  <body style="background-color: black;">
+  <body style="background-color: #ffd2a5;">
 
     <div id="facultynotices-data" data-facultynotices='<%- JSON.stringify(facultynotices) %>' hidden></div>
     <div id="events-data" data-events='<%- JSON.stringify(events) %>' hidden></div>
@@ -98,60 +98,90 @@
 
 
 
-    <div class="container_class">
-        <!-- Upcoming Events Section -->
-<section class="events-section" style="margin-top: 2vh;border-radius: 20px;background-color: white;">
-  <h2 class="section-title" style="margin-top: 1vh;margin-left: 0.5vh;margin-bottom: 0.5vh;font-weight: 900;">Upcoming Events</h2>
-            <div class="event-container" style="border-top:1px solid black;">
-              
-                <div class="event-slider" style="width:30vw;height: max-content;padding: 20px;">
-                    <!-- Example Event Card -->
-                  <div class="event-card" style="background-color: white;">
-                      <img src="/api/placeholder/300/200" alt="Event">
-                      <h3 style="font-weight: 700 !important;">Sample Event</h3>
-                      <p class="event-date">February 24, 2025</p>
-                      <p class="course-id">Course ID: CS101</p>
-                      <p>Event description goes here...</p>
-                    </div>
-                    <!-- Add more event cards as needed -->
-                </div>
-                <div class="nav-btn-container" style="display: flex; justify-content:space-between;">
-                  <button class="nav-btn prev" style="position: relative;transform:translateY(-28vh)">❮</button>
-                  <button class="nav-btn next" style="position: relative;transform:translateY(-28vh)">❯</button>    
-                </div>
-        </section>
 
-        <!-- Director's Message Section -->
-        <section>
-          <section class="director_section">
-            <h2 style="font-weight: 700;">Director's Message</h2>
-            <div>
-              <img src="/images/director.jpg" alt="">
-              <p>A very warm greeting from Indian Institute of Information Technology, Nagpur.
-                <br> <br>
-                Professor Prem Lal Patel, Director, VNIT, Nagpur took over the additional charge as Director of IIIT, Nagpur on
-                1st
-                October, 2024. He is Professor (HAG) of Hydraulics and Water Resources in Department of Civil Engineering, Sardar
-                Vallabhbhai National Institute of Technology (SVNIT), Surat. He served as Deputy Director of the Institute (SVNIT)
-                during Sept 17, 2019 to Sept. 16, 2022. He worked as Dean (PG), Dean (R &C), Dean (Academic) and the Head, Dept.
-                of
-                Civil Engineering at SVNIT Surat. Prior to joining SVNIT in 2007, he served as Associate Professor, Civil
-                Engineering
-                Department in Delhi College of Engineering (now DTU) for eight years. Prior to working at DCE, he served as
-                Assistant
-                Executive Engineer (Civil) in Border Roads Organization (BRO), Ministry of Road Transport and Highways of India,
-                Govt.
-                of India from 1995-1999 <br>
-              </p>
-              <a href="" style="margin-top: 5px;">Read more</a>
+
+    <div class="ev-body" style="display: flex; background-color: #ffd2a5; ">
+      <div class="ev-container" style="background-color: #ffd2a5;"> 
+        <!-- News Section -->
+        <div class="ev-news-section">
+            <div class="ev-section-header">
+                <h2>EVENTS</h2>
+                <a href="#" class="ev-view-all">All News</a>
             </div>
-          </section>
-      </section>
+            
+            <div class="ev-news-grid">
+                <article class="ev-news-card">
+                    <div class="ev-news-image" style="border-radius: 20px;">
+                        <img src="/api/placeholder/400/250" alt="News 1">
+                    </div>
+                    <div class="ev-news-content">
+                        <span class="ev-date">20 FEB 2025</span>
+                        <h3><a href="#">Professor Sue Iversen (1940-2025)</a></h3>
+                    </div>
+                </article>
 
-      <!-- Seminars Section -->
-    
+                <article class="ev-news-card">
+                    <div class="ev-news-image" style="border-radius: 20px;">
+                        <img src="/api/placeholder/400/250" alt="News 2">
+                    </div>
+                    <div class="ev-news-content">
+                        <span class="ev-date">20 FEB 2025</span>
+                        <h3><a href="#">Lifestyle and environmental factors affect health and ageing more than our genes</a></h3>
+                    </div>
+                </article>
+
+                <article class="ev-news-card">
+                    <div class="ev-news-image" style="border-radius: 20px;">
+                        <img src="/api/placeholder/400/250" alt="News 3">
+                    </div>
+                    <div class="ev-news-content">
+                        <span class="ev-date">20 FEB 2025</span>
+                        <h3><a href="#">Lord Hague's Chancellor admission speech</a></h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Events Section -->
+        <div class="ev-events-section">
+            <div class="ev-section-header">
+                <h2 style="font-weight: 500;">NEWS</h2>
+                <a href="#" class="ev-view-all">All Events</a>
+            </div>
+
+            <div class="ev-events-grid">
+                <article class="ev-event-card">
+                    <div class="ev-event-date">
+                        <span class="ev-day">25</span>
+                        <span class="ev-month">FEB</span>
+                    </div>
+                    <div class="ev-event-content">
+                        <h3><a href="#">William, Mary and fossils from the Himalaya</a></h3>
+                        <p class="ev-location">Oxford University Museum of Natural History</p>
+                        <p class="ev-date">25 FEB 2025</p>
+                    </div>
+                </article>
+
+                <article class="ev-event-card">
+                    <div class="ev-event-date">
+                        <span class="ev-day">25</span>
+                        <span class="ev-month">FEB</span>
+                    </div>
+                    <div class="ev-event-content">
+                        <h3><a href="#">International financial institutions and legal reforms</a></h3>
+                        <p class="ev-location">Blavatnik School of Government</p>
+                        <p class="ev-date">25 FEB 2025</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
+    </div>
+    
 
+
+
+   
 
 
 
@@ -163,11 +193,11 @@
             <i class="fa-solid fa-angle-left" id="left"></i>
             <ul class="research_list">
                 <% researchItems.forEach(item => { %>
-                    <li class="research_item" onclick="window.location.href='/research?card=<%= item._id %>'">
+                    <li class="research_item" onclick="window.location.href='/research?card=<%= item._id %>'" style="background-color:#DEF2F1;border:2px solid black">
                         <div class="card-content">
                             <img src="<%= item.imageUrl %>" alt="<%= item.title %>" draggable="false">
                             <h3><%= item.title %></h3>
-                            <div class="hover-content">
+                            <div class="hover-content" style="background-color: #D2FDFF;">
                                 <p><%= item.description %></p>
                             </div>
                         </div>
@@ -436,6 +466,4 @@
 </html>
 
 
-
-//Director
 

@@ -72,12 +72,12 @@ body {
 }
 
 .top_head button {
-  background-color: #ff4500;
+  background-color: #ffffff;
   border-radius: 15px;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 6px 12px; /* Adjusted for height */
   border: none;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.2s;
 }
@@ -169,8 +169,6 @@ div#carouselExampleAutoplaying {
   /* Ensures the image covers the carousel area */
 }
 
-
-
 /* Get the news and Updates */
 .container_class {
   /* max-width: 1500px; Restored to 1200px to utilize more space */
@@ -185,12 +183,9 @@ div#carouselExampleAutoplaying {
   box-shadow: 10px 20px 5px rgba(0, 0, 0, 0.1),
     -10px 20px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.274);
-  display:flex;
-  justify-content: space-around; 
-    align-items: center;
-
-
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .section {
@@ -205,7 +200,8 @@ section.event_section.appear {
   animation: translate_appear 1s forwards ease-in-out;
 }
 
-.event-card > p.event-date, p.course-id {
+.event-card > p.event-date,
+p.course-id {
   color: white;
   font-size: 5vh;
 }
@@ -214,9 +210,9 @@ section.event_section.appear {
   display: none;
 }
 
-.event-card>p:nth-child(5) {
+.event-card > p:nth-child(5) {
   font-size: 3vh;
-  font-weight: 4  00 !important;
+  font-weight: 4 00 !important;
 }
 
 .event-card > img {
@@ -232,23 +228,22 @@ section.director_section {
   border-radius: 20px;
   margin-right: 1vw;
   overflow: hidden;
-  background-color: white;
+  background-color: #FFA500;
 }
 
 section.director_section.appear {
   animation: translate_appear 1s forwards ease-in-out;
 }
 
-section.director_section>h2 {
+section.director_section > h2 {
   height: 6vh;
   margin-top: 1vh;
   margin-left: 0.5vh;
   margin-bottom: 1vh;
   border-bottom: 1px solid black;
-
 }
 
-section.director_section>div>img {
+section.director_section > div > img {
   height: 35vh;
   width: 25vw;
   margin: 2vh;
@@ -258,7 +253,7 @@ section.director_section>div>img {
   border-radius: 20px;
 }
 
-section.director_section>div>p {
+section.director_section > div > p {
   font-size: 2.5vh;
   /* line-height: 3.5vh; */
   font-weight: 600;
@@ -267,7 +262,7 @@ section.director_section>div>p {
   margin: 0px;
 }
 
-section.director_section>div>a {
+section.director_section > div > a {
   font-size: 2.5vh;
   text-decoration: none;
   color: white;
@@ -275,51 +270,8 @@ section.director_section>div>a {
   margin-left: 2vh;
 }
 
-section.director_section>div>a:hover {
+section.director_section > div > a:hover {
   color: #007bff;
-}
-
-/* Events Section */
-.events-container {
-  position: relative;
-}
-
-.event-slider {
-  position: relative;
-  overflow: hidden;
-  min-height: 400px;
-  border-radius: 8px;
-}
-
-.event-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.event-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.event-content {
-  padding: 1rem 0;
-}
-
-.event-content h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #f3f3f3;
-}
-
-.event-date {
-  color: #63a4ff; /* Light blue */
-  font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
 .event-description {
@@ -619,7 +571,7 @@ section.director_section>div>a:hover {
     width: 36px;
     height: 36px;
   }
-}
+} */
 
 /*
 
@@ -937,9 +889,10 @@ section.director_section>div>a:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background-color: white; /* Background color */
+  background-color: #FFA500; /* Background color */
   cursor: pointer;
   overflow: hidden;
+  border: 4px solid #FFA500;
   scroll-snap-align: start;
   flex-shrink: 0; /* Prevent cards from shrinking */
   border-radius: 15px; /* Curved edges */
@@ -978,7 +931,7 @@ section.director_section>div>a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white; /* Background color */
+  background: #FFA500; /* Background color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align text at the top */
@@ -1035,7 +988,7 @@ section.director_section>div>a:hover {
   align-items: center;
   justify-content: space-between;
   overflow: hidden; /* Add 30px padding to top and bottom */
-  background-color: black; /* Add white background for padding */
+  background-color: rgba(6, 19, 95, 0.922); /* Add white background for padding */
 }
 
 /* Video Background */
@@ -1413,9 +1366,6 @@ section.director_section>div>a:hover {
   }
 }
 
-
-
-
 /* Student and Faculty slots */
 
 .notice-container {
@@ -1684,7 +1634,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  width: 90vw; /* 90% of the viewport width */
+  margin-right: 8vw !important; 
+  background-color: rgba(5, 5, 3, 0.354);
+  width: 90vw !important; /* 90% of the parent container */
   margin: 50px auto;
   padding: 20px;
   gap: 20px; /* Spacing between columns */
@@ -1856,7 +1808,7 @@ body {
   background: white; /* White background */
   padding: 30px; /* Increased padding for larger size */
   border-radius: 15px;
-  border: 4px solid #FFA500; /* Orange border */
+  border: 4px solid #ffa500; /* Orange border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -1946,7 +1898,6 @@ body {
   }
 }
 
-
 .carousel-quote {
   position: absolute;
   top: 30%; /* Lifted slightly more */
@@ -1962,9 +1913,6 @@ body {
   text-shadow: 6px 6px 12px rgba(0, 0, 0, 1); /* Stronger shadow for visibility */
   letter-spacing: 1.2px;
 }
- 
-
-
 
 .d-container {
   background-color: #cb4f38;
@@ -1975,7 +1923,6 @@ body {
   align-items: center;
   height: 400px;
   width: 200px;
- 
 }
 
 .d-content {
@@ -2008,8 +1955,8 @@ h1 {
 .director-name {
   font-size: 1.5rem;
   font-weight: bold;
-  width:200px;
-  height:100px;
+  width: 200px;
+  height: 100px;
 }
 
 .learn-more {
@@ -2026,21 +1973,361 @@ h1 {
   margin-left: 0.5rem;
 }
 
-
 .director-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-
 @keyframes translate_appear {
   0% {
     opacity: 0;
     transform: translateY(12px);
-  } 100% {
+  }
+  100% {
     opacity: 1;
-      transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+:root {
+  --carousel-width: -1000px; /* Will be dynamically set by JS */
+  --animation-duration: 20s;
+  --card-gap: 20px;
+  --container-width: 100%;
+  --container-max-width: 800px;
+  --primary-color: #ffd2a5; /* Light orange theme color */
+  --text-color: #4a3f35; /* Warm dark brown for text */
+  --accent-color: #ff9248; /* Darker orange for accents */
+  --card-shadow: 0 4px 12px rgba(210, 140, 80, 0.15); /* Warm shadow */
+  --hover-shadow: 0 8px 24px rgba(210, 140, 80, 0.25); /* Enhanced shadow for hover */
+}
+
+/* Container adjustments to make it smaller */
+.ev-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden; /* Critical: prevents content from going outside container */
+  background-color: var(--primary-color);
+  border-radius: 12px;
+}
+
+/* Carousel specific styles - keeping functionality intact */
+.ev-news-grid.carousel-mode {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--card-gap);
+  overflow: visible; /* Let cards overflow for continuous effect */
+  width: 100%;
+  padding: 15px 0;
+  position: relative;
+}
+
+.ev-news-grid.animate {
+  animation: scroll-left var(--animation-duration) linear infinite;
+}
+
+.ev-news-grid.paused {
+  animation-play-state: paused;
+}
+
+/* Animation keyframes */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--carousel-width));
+  }
+}
+
+/* Elegant card styles for carousel */
+.ev-news-grid.carousel-mode .ev-news-card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: var(--card-gap);
+  transform: translateX(0) rotate(0) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: linear-gradient(145deg, #ffffff, #fff6eb);
+}
+
+/* Adjust hover effect for moving cards */
+.ev-news-grid.carousel-mode .ev-news-card:hover {
+  transform: translateY(-5px) !important;
+  z-index: 10;
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-color);
+}
+
+/* Make sure cloned cards look identical */
+.ev-news-card.clone {
+  opacity: 1;
+}
+
+/* Refined gradient masks for elegant fading at edges */
+.ev-news-section {
+  position: relative;
+  padding: 10px 0;
+}
+
+.ev-news-section::before,
+.ev-news-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ev-news-grid.carousel-mode .ev-news-card:hover {
+  transform: translateY(-5px) !important;
+  z-index: 10;
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-color);
+}
+
+/* Make sure cloned cards look identical */
+.ev-news-card.clone {
+  opacity: 1;
+}
+
+/* Refined gradient masks for elegant fading at edges */
+.ev-news-section {
+  position: relative;
+  padding: 10px 0;
+}
+
+.ev-news-section::before,
+.ev-news-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ev-news-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--primary-color), rgba(255, 210, 165, 0));
+}
+
+.ev-news-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--primary-color), rgba(255, 210, 165, 0));
+}
+
+/* Elegant News Section */
+.ev-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.ev-news-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ev-news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.ev-news-image {
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid rgba(255, 210, 165, 0.3);
+  overflow: hidden;
+}
+
+.ev-news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ev-news-card:hover .ev-news-image img {
+  transform: scale(1.05);
+}
+
+.ev-news-content {
+  padding: 20px;
+  flex-grow: 1;
+  background: linear-gradient(145deg, #ffffff, #fff6eb);
+}
+
+.ev-news-content h3 {
+  margin: 8px 0 12px;
+}
+
+.ev-news-content h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.ev-news-content h3 a:hover {
+  color: var(--accent-color);
+}
+
+.ev-date {
+  color: #7d6e5d;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Events Section - Elegant styling */
+.ev-events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ev-event-card {
+  background: linear-gradient(145deg, #ffffff, #fff6eb);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.ev-event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-color);
+}
+
+.ev-event-date {
+  background: var(--accent-color);
+  color: white;
+  padding: 12px 8px;
+  border-radius: 10px;
+  min-width: 65px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(210, 140, 80, 0.2);
+}
+
+.ev-day {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ev-month {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ev-event-content {
+  flex-grow: 1;
+}
+
+.ev-event-content h3 {
+  margin-bottom: 10px;
+}
+
+.ev-event-content h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.ev-event-content h3 a:hover {
+  color: var(--accent-color);
+}
+
+.ev-location {
+  color: #7d6e5d;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.ev-location:before {
+  content: "📍";
+  margin-right: 6px;
+}
+
+/* Section headers */
+.ev-section-header h2 {
+  color: var(--text-color);
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.ev-section-header h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
+
+/* Responsive Design - keeping functionality */
+@media (max-width: 968px) {
+  .ev-container {
+    grid-template-columns: 1fr;
+  }
+
+  .ev-news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ev-news-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ev-news-grid.carousel-mode .ev-news-card {
+    width: 220px; /* Slightly smaller on tablets */
+  }
+  
+  .ev-news-image {
+    height: 180px;
+  }
+
+  .ev-section-header h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ev-news-grid.carousel-mode .ev-news-card {
+    width: 200px; /* Even smaller on mobile */
   }
 }
 
