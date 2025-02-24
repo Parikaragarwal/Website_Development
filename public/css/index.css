@@ -2005,7 +2005,6 @@ h1 {
 
 /* Container adjustments to make it smaller */
 .ev-container {
-  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 20px;
   overflow: hidden; /* Critical: prevents content from going outside container */
