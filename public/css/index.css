@@ -992,7 +992,7 @@ section.director_section > div > a:hover {
   align-items: center;
   justify-content: space-between;
   overflow: hidden; /* Add 30px padding to top and bottom */
-  background-color: whitesmoke; /* Add white background for padding */
+  background-color: #ffd2a5; /* Add white background for padding */
   box-shadow: 0px 20px 50px black;
 }
 
@@ -2117,12 +2117,12 @@ h1 {
 
 .ev-news-section::before {
   left: 0;
-  background: linear-gradient(to right, whitesmoke, rgba(255, 210, 165, 0));
+  background: linear-gradient(to right, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-news-section::after {
   right: 0;
-  background: linear-gradient(to left, whitesmoke, rgba(255, 210, 165, 0));
+  background: linear-gradient(to left, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 /* News Grid and Cards */
@@ -2356,7 +2356,7 @@ body {
   font-size: 3rem;
   /* Stylish and bold */
   font-weight: bold;
-  color: darkorange;
+  color: darkblue;
   /* White font */
   text-transform: uppercase;
   margin-bottom: 40px;
