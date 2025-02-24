@@ -988,7 +988,7 @@ section.director_section > div > a:hover {
   align-items: center;
   justify-content: space-between;
   overflow: hidden; /* Add 30px padding to top and bottom */
-  background-color: rgba(6, 19, 95, 0.922); /* Add white background for padding */
+  background-color: #ffd2a5; /* Add white background for padding */
 }
 
 /* Video Background */
