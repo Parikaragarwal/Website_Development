@@ -798,6 +798,9 @@ section.director_section > div > a:hover {
   background-size: cover; /* Cover full width and height */
   background-position: center; /* Center the image */
   background-attachment: fixed; /* Parallax scrolling effect */
+  box-shadow: 0px 1px 30px, 
+    0px -5px 50px, 
+    0px 40px 100px inset;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -984,11 +987,13 @@ section.director_section > div > a:hover {
   width: 100%;
   height: 80vh; /* Increased height (450px + 60px padding) */
   position: relative;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden; /* Add 30px padding to top and bottom */
   background-color: #ffd2a5; /* Add white background for padding */
+  box-shadow: 0px 20px 50px black;
 }
 
 /* Video Background */
@@ -1807,7 +1812,7 @@ body {
 
 .stat-item {
   text-align: center;
-  background: white; /* White background */
+  background: azure; /* White background */
   padding: 30px; /* Increased padding for larger size */
   border-radius: 15px;
   border: 4px solid #ffa500; /* Orange border */
@@ -2144,7 +2149,8 @@ h1 {
   transform: translateX(0) rotate(0) !important;
   opacity: 1 !important;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  background: white;
+  box-shadow: 3px 5px 20px ;
+  background: azure;
 }
 
 .ev-news-card:hover {
@@ -2155,7 +2161,7 @@ h1 {
 .ev-news-grid.carousel-mode .ev-news-card:hover {
   transform: translateY(-5px) !important;
   z-index: 10;
-  box-shadow: var(--hover-shadow);
+  box-shadow: 3px 5px 20px;
   border-color: var(--accent-color);
 }
 
@@ -2217,7 +2223,7 @@ h1 {
 }
 
 .ev-event-card {
-  background: white;
+  background: azure;
   border-radius: 12px;
   padding: 18px;
   display: flex;
@@ -2225,11 +2231,12 @@ h1 {
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 2px 3px 10px;
 }
 
 .ev-event-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--hover-shadow);
+  box-shadow: 2px 3px 10px;
   border-color: var(--accent-color);
 }
 
@@ -2349,7 +2356,7 @@ body {
   font-size: 3rem;
   /* Stylish and bold */
   font-weight: bold;
-  color: white;
+  color: darkorange;
   /* White font */
   text-transform: uppercase;
   margin-bottom: 40px;
