@@ -561,10 +561,21 @@ document.addEventListener("DOMContentLoaded", () =>
 
 
 
-
-
-
-
+  document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.querySelector(".gallery");
+  
+    // Add event listeners for videos to ensure they fit the grid
+    const videos = document.querySelectorAll(".gallery-item video");
+    videos.forEach((video) => {
+      video.onloadedmetadata = function () {
+        if (video.videoWidth > video.videoHeight) {
+          video.parentElement.classList.add("video-landscape");
+        } else {
+          video.parentElement.classList.add("video-portrait");
+        }
+      };
+    });
+  });
 
 
 
