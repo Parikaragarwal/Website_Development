@@ -2012,6 +2012,31 @@ h1 {
 
 /* Container adjustments to make it smaller */
 /* Body and container styles */
+/* Variables for the carousel and vertical scroll */
+:root {
+  --card-gap: 18px;
+  --carousel-width: 0px;
+  --scroll-height: 0px;
+  --horizontal-animation-duration: 30s;
+  --vertical-animation-duration: 15s;
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --text-color: #333;
+  --accent-color: #f7941d;
+  --animation-duration: 30s;
+}
+
+/* Reset defaults without breaking the layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
 .ev-body {
   display: flex;
   background-color: #ffd2a5;
@@ -2028,11 +2053,12 @@ h1 {
 
 /* Section headers */
 .ev-section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  position: relative;
+  z-index: 10; /* Ensures it appears above other content */
+  background-color: #ffd2a5; /* Match background */
+  padding: 10px 0;
 }
+
 
 .ev-section-header h2 {
   color: var(--text-color);
@@ -2149,7 +2175,7 @@ h1 {
   transform: translateX(0) rotate(0) !important;
   opacity: 1 !important;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 3px 5px 20px ;
+  box-shadow: 3px 5px 20px;
   background: azure;
 }
 
@@ -2213,6 +2239,8 @@ h1 {
 
 /* Events Section */
 .ev-events-section {
+  position: relative;
+  overflow: hidden;
   padding: 10px 0;
 }
 
@@ -2220,6 +2248,54 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+/* Vertical Scroll Styles for Events Section */
+.ev-events-grid.vertical-scroll {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  position: relative;
+  height: 300px; /* Set a fixed height for the container */
+}
+
+.ev-events-grid.vertical-scroll.animate {
+  animation: scroll-vertical var(--vertical-animation-duration) linear infinite;
+}
+
+.ev-events-grid.vertical-scroll.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(var(--scroll-height));
+  }
+}
+
+/* Edge gradients for fading effect on events section */
+.ev-events-section::before,
+.ev-events-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.ev-events-section::before {
+  top: 60px; /* Adjust based on your header height */
+  background: linear-gradient(to bottom, #ffd2a5, rgba(255, 210, 165, 0));
+}
+
+.ev-events-section::after {
+  bottom: 0;
+  background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-event-card {
@@ -2291,7 +2367,8 @@ h1 {
 }
 
 /* Clone card styles */
-.ev-news-card.clone {
+.ev-news-card.clone,
+.ev-event-card.clone {
   opacity: 1;
 }
 
@@ -2323,6 +2400,10 @@ h1 {
   .ev-section-header h2 {
     font-size: 20px;
   }
+  
+  .ev-events-grid.vertical-scroll {
+    height: 250px; /* Smaller height on mobile */
+  }
 }
 
 @media (max-width: 480px) {
@@ -2330,19 +2411,10 @@ h1 {
     width: 200px;
     /* Even smaller on mobile */
   }
-}
-
-
-
-/* Reset defaults without breaking the layout */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f8f8f8;
+  
+  .ev-events-grid.vertical-scroll {
+    height: 220px; /* Even smaller height on small mobile */
+  }
 }
 
 /* Main Container */
@@ -2422,21 +2494,6 @@ body {
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     /* Smaller for mobile */
-  }
-
-  .video-landscape {
-    grid-column: span 1;
-  }
-
-  .video-portrait {
-    grid-row: span 1;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Smaller for mobile */
   }
 
   .video-landscape {
