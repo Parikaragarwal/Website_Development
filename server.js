@@ -118,9 +118,9 @@ app.get("/academic/convocation", (req,res) => { res.render("academics/academic/c
 app.get("/academic/pmrf", (req,res) => { res.render("academics/academic/pmrf.ejs") })
 
 app.get("/departments/cse", (req,res) => { res.render("academics/departments/cse.ejs") })
-app.get("/departments/design", (req,res) => { res.render("academics/departments/design.ejs") })
+app.get("/departments/basic-sci", (req,res) => { res.render("academics/departments/basic-sci.ejs") })
 app.get("/departments/ece", (req,res) => { res.render("academics/departments/ece.ejs") })
-app.get("/departments/humanities", (req,res) => { res.render("academics/departments/humanities.ejs") })
+app.get("/departments/doctoral", (req,res) => { res.render("academics/departments/doctoral.ejs") })
 app.get("/departments/math", (req,res) => { res.render("academics/departments/math.ejs") })
 app.get("/departments/physics", (req,res) => { res.render("academics/departments/physics.ejs") })
 
@@ -195,7 +195,7 @@ app.get("/tnp/internships", (req, res) => { res.render("tnp/internships.ejs") })
 //Admisssions
 app.get("/admissions/ug", (req, res) => { res.render("admissions/ug.ejs") });
 app.get("/admissions/pg", (req, res) => { res.render("admissions/pg.ejs") });
-app.get("/admissions/ug-rule-book", (req, res) => { res.render("admissions/ug-rule-book.ejs") });
+app.get("/admissions/rule-book", (req, res) => { res.render("admissions/rule-book.ejs") });
 
 app.listen(port, () => {
     console.log(`🚀 Server is running at http://localhost:${port}`);

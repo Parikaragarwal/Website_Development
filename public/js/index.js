@@ -913,8 +913,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const gallery = document.querySelector(".gallery");
-
+  // Setup for horizontal carousel (news section)
+  const newsGrid = document.querySelector(".ev-news-grid");
+  if (newsGrid) {
+    // Add carousel-mode class to enable the carousel styles
+    newsGrid.classList.add("carousel-mode");
+    // Initialize the carousel
+    initCarousel(newsGrid);
+    // Set up pause on hover functionality
+    setupPauseOnHover(newsGrid);
+  }
+  
+  // Setup for vertical scrolling (events section)
+  const eventsGrid = document.querySelector(".ev-events-grid");
+  if (eventsGrid) {
+    // Add vertical-scroll class
+    eventsGrid.classList.add("vertical-scroll");
+    // Initialize vertical scroll
+    initVerticalScroll(eventsGrid);
+    // Setup pause on hover
+    setupPauseOnHover(eventsGrid);
+  }
+  
   // Add event listeners for videos to ensure they fit the grid
   const videos = document.querySelectorAll(".gallery-item video");
   videos.forEach((video) => {
@@ -930,3 +950,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+function initCarousel(carousel) {
+  // Get all original cards
+  const cards = Array.from(carousel.querySelectorAll(".ev-news-card"));
+  if (cards.length === 0) return;
+
+  // Calculate total width (all cards + gaps)
+  const cardWidth = cards[0].offsetWidth;
+  const cardGap = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") || "20px"
+  );
+  const totalWidth = cards.reduce(
+    (width, card) => width + card.offsetWidth + cardGap,
+    0
+  );
+
+  // Clone cards to create the continuous loop effect
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("clone");
+    carousel.appendChild(clone);
+  });
+
+  // Set animation width based on original cards
+  document.documentElement.style.setProperty(
+    "--carousel-width",
+    `-${totalWidth}px`
+  );
+
+  // Start the animation
+  setTimeout(() => {
+    carousel.classList.add("animate");
+  }, 100);
+}
+
+function initVerticalScroll(container) {
+  // Get all original cards
+  const cards = Array.from(container.querySelectorAll(".ev-event-card"));
+  if (cards.length === 0) return;
+
+  // Calculate total height (all cards + gaps)
+  const cardGap = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") || "18px"
+  );
+  const totalHeight = cards.reduce(
+    (height, card) => height + card.offsetHeight + cardGap,
+    0
+  );
+
+  // Clone cards to create the continuous loop effect
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("clone");
+    container.appendChild(clone);
+  });
+
+  // Set animation height based on original cards
+  document.documentElement.style.setProperty(
+    "--scroll-height",
+    `-${totalHeight}px`
+  );
+
+  // Start the animation
+  setTimeout(() => {
+    container.classList.add("animate");
+  }, 100);
+}
+
+function setupPauseOnHover(container) {
+  // Pause animation on hover
+  container.addEventListener("mouseenter", () => {
+    container.classList.add("paused");
+  });
+
+  // Resume animation when mouse leaves
+  container.addEventListener("mouseleave", () => {
+    container.classList.remove("paused");
+  });
+}

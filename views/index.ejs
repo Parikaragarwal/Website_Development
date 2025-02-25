@@ -100,82 +100,68 @@
 
 
 
-    <div class="ev-body" style="display: flex; background-color: #FCF6F5; ">
-      <div class="ev-container" style="background-color: #FCF6F5;"> 
-        <!-- News Section -->
-        <div class="ev-news-section">
-            <div class="ev-section-header">
-                <h2>EVENTS</h2>
-                <a href="#" class="ev-view-all">All News</a>
-            </div>
-            
-            <div class="ev-news-grid">
-                <article class="ev-news-card">
-                    <div class="ev-news-image" style="border-radius: 20px;">
-                        <img src="/api/placeholder/400/250" alt="News 1">
-                    </div>
-                    <div class="ev-news-content">
-                        <span class="ev-date">20 FEB 2025</span>
-                        <h3><a href="#">Professor Sue Iversen (1940-2025)</a></h3>
-                    </div>
-                </article>
+    <div class="ev-body" style="display: flex; background-color: #ffd2a5;">
 
-                <article class="ev-news-card">
-                    <div class="ev-news-image" style="border-radius: 20px;">
-                        <img src="/api/placeholder/400/250" alt="News 2">
+      <div class="ev-container" style="background-color: #ffd2a5;">
+        <!-- News Section (will be turned into carousel) -->
+        <div class="ev-news-section" style="padding: 20px;">
+          <div class="ev-section-header" style="display: flex; justify-content: space-between; ">
+            <h2>EVENTS</h2>
+            <a href="#" class="ev-view-all">All Events</a>
+          </div>
+    
+          <div class="ev-news-grid">
+            <% events.forEach(event => { %>
+                <article class="ev-news-card" style="width:500px">
+                    <div class="ev-news-image">
+                        <img src="<%= event.image %>" alt="<%= event.title %>">
                     </div>
                     <div class="ev-news-content">
-                        <span class="ev-date">20 FEB 2025</span>
-                        <h3><a href="#">Lifestyle and environmental factors affect health and ageing more than our genes</a></h3>
+                        <span class="ev-date"><%= event.date %></span>
+                        <h3><a href="<%= event.link %>"><%= event.title %></a></h3>
+                        <p><%= event.description %></p>
                     </div>
                 </article>
+            <% }); %>
 
-                <article class="ev-news-card">
-                    <div class="ev-news-image" style="border-radius: 20px;">
-                        <img src="/api/placeholder/400/250" alt="News 3">
-                    </div>
-                    <div class="ev-news-content">
-                        <span class="ev-date">20 FEB 2025</span>
-                        <h3><a href="#">Lord Hague's Chancellor admission speech</a></h3>
-                    </div>
-                </article>
-            </div>
         </div>
-
+        
+        </div>
+    
         <!-- Events Section -->
-        <div class="ev-events-section">
-            <div class="ev-section-header">
-                <h2 style="font-weight: 500;">NEWS</h2>
-                <a href="#" class="ev-view-all">All Events</a>
-            </div>
-
-            <div class="ev-events-grid">
-                <article class="ev-event-card">
-                    <div class="ev-event-date">
-                        <span class="ev-day">25</span>
-                        <span class="ev-month">FEB</span>
-                    </div>
-                    <div class="ev-event-content">
-                        <h3><a href="#">William, Mary and fossils from the Himalaya</a></h3>
-                        <p class="ev-location">Oxford University Museum of Natural History</p>
-                        <p class="ev-date">25 FEB 2025</p>
-                    </div>
-                </article>
-
-                <article class="ev-event-card">
-                    <div class="ev-event-date">
-                        <span class="ev-day">25</span>
-                        <span class="ev-month">FEB</span>
-                    </div>
-                    <div class="ev-event-content">
-                        <h3><a href="#">International financial institutions and legal reforms</a></h3>
-                        <p class="ev-location">Blavatnik School of Government</p>
-                        <p class="ev-date">25 FEB 2025</p>
-                    </div>
-                </article>
-            </div>
+        <div class="ev-events-section" style="padding:0px; margin-bottom: 30px; height: 500px;" >
+          <div class="ev-section-header events" style="display: flex; justify-content: space-between; ">
+            <h2 style="font-weight: 500;">NEWS</h2>
+            <a href="#" class="ev-view-all">All News</a>
+          </div>
+    
+          <div class="ev-events-grid">
+            <article class="ev-event-card">
+              <div class="ev-event-date">
+                <span class="ev-day">25</span>
+                <span class="ev-month">FEB</span>
+              </div>
+              <div class="ev-event-content">
+                <h3><a href="#">William, Mary and fossils from the Himalaya</a></h3>
+                <p class="ev-location">Oxford University Museum of Natural History</p>
+                <p class="ev-date">25 FEB 2025</p>
+              </div>
+            </article>
+    
+            <article class="ev-event-card">
+              <div class="ev-event-date">
+                <span class="ev-day">25</span>
+                <span class="ev-month">FEB</span>
+              </div>
+              <div class="ev-event-content">
+                <h3><a href="#">International financial institutions and legal reforms</a></h3>
+                <p class="ev-location">Blavatnik School of Government</p>
+                <p class="ev-date">25 FEB 2025</p>
+              </div>
+            </article>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
     
 
