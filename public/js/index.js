@@ -913,35 +913,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const gallery = document.querySelector(".gallery");
-
-  // Add event listeners for videos to ensure they fit the grid
-  const videos = document.querySelectorAll(".gallery-item video");
-  videos.forEach((video) => {
-    video.onloadedmetadata = function () {
-      if (video.videoWidth > video.videoHeight) {
-        video.parentElement.classList.add("video-landscape");
-      } else {
-        video.parentElement.classList.add("video-portrait");
-      }
-    };
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  // First, add the carousel-mode class to the news grid
+  // Setup horizontal carousel for the news grid
   const newsGrid = document.querySelector(".ev-news-grid");
-  if (!newsGrid) return;
-
-  // Add carousel-mode class to enable the carousel styles
-  newsGrid.classList.add("carousel-mode");
-
-  // Initialize the carousel
-  initCarousel(newsGrid);
-
-  // Set up pause on hover functionality
-  setupPauseOnHover(newsGrid);
+  if (newsGrid) {
+    // Add carousel-mode class to enable the carousel styles
+    newsGrid.classList.add("carousel-mode");
+    // Initialize the carousel
+    initCarousel(newsGrid);
+    // Set up pause on hover functionality
+    setupPauseOnHover(newsGrid);
+  }
+  
+  // Setup vertical scrolling for the events section
+  const eventsGrid = document.querySelector(".ev-events-grid");
+  if (eventsGrid) {
+    // Add vertical-scroll class to enable the vertical scroll styles
+    eventsGrid.classList.add("vertical-scroll");
+    // Initialize the vertical scroll
+    initVerticalScroll(eventsGrid);
+    // Set up pause on hover functionality
+    setupPauseOnHover(eventsGrid);
+  }
 });
 
 function initCarousel(carousel) {
@@ -952,8 +944,7 @@ function initCarousel(carousel) {
   // Calculate total width (all cards + gaps)
   const cardWidth = cards[0].offsetWidth;
   const cardGap = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") ||
-      "20px"
+    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") || "20px"
   );
   const totalWidth = cards.reduce(
     (width, card) => width + card.offsetWidth + cardGap,
@@ -979,15 +970,48 @@ function initCarousel(carousel) {
   }, 100);
 }
 
-function setupPauseOnHover(carousel) {
+function initVerticalScroll(container) {
+  // Get all original cards
+  const cards = Array.from(container.querySelectorAll(".ev-event-card"));
+  if (cards.length === 0) return;
+
+  // Calculate total height (all cards + gaps)
+  const cardGap = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") || "20px"
+  );
+  const totalHeight = cards.reduce(
+    (height, card) => height + card.offsetHeight + cardGap,
+    0
+  );
+
+  // Clone cards to create the continuous loop effect
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add("clone");
+    container.appendChild(clone);
+  });
+
+  // Set animation height based on original cards
+  document.documentElement.style.setProperty(
+    "--scroll-height",
+    `-${totalHeight}px`
+  );
+
+  // Start the animation
+  setTimeout(() => {
+    container.classList.add("animate");
+  }, 100);
+}
+
+function setupPauseOnHover(container) {
   // Pause animation on hover
-  carousel.addEventListener("mouseenter", () => {
-    carousel.classList.add("paused");
+  container.addEventListener("mouseenter", () => {
+    container.classList.add("paused");
   });
 
   // Resume animation when mouse leaves
-  carousel.addEventListener("mouseleave", () => {
-    carousel.classList.remove("paused");
+  container.addEventListener("mouseleave", () => {
+    container.classList.remove("paused");
   });
 }
 
