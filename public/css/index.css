@@ -56,8 +56,7 @@ body {
 .social-icons a {
   margin: 0; /* Remove margin from individual links */
 }
-bh
-.top_head > a {
+bh .top_head > a {
   text-decoration: none;
   margin: 0px 5px;
   display: flex;
@@ -118,8 +117,8 @@ div#backImage {
   justify-content: center;
   align-items: center;
 
-  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.5)/* Top shadow */,
-  0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.5) /* Top shadow */,
+    0 10px 10px -5px rgba(0, 0, 0, 0.5);
   /* Bottom shadow */
 }
 
@@ -161,8 +160,7 @@ div#carouselExampleAutoplaying {
   width: 100%;
   height: 100%;
   box-shadow: inset 5vh 5vh 80px rgba(0, 0, 0, 0.5),
-    inset -5vh 5vh 80px rgba(0, 0, 0, 0.5),
-    inset 0 -5vh 40px rgba(0, 0, 0, 0.5);
+    inset -5vh 5vh 80px rgba(0, 0, 0, 0.5), inset 0 -5vh 40px rgba(0, 0, 0, 0.5);
   pointer-events: none;
   /* Ensures the pseudo-element does not interfere with user interaction */
 }
@@ -233,7 +231,7 @@ section.director_section {
   border-radius: 20px;
   margin-right: 1vw;
   overflow: hidden;
-  background-color: #FFA500;
+  background-color: #ffa500;
 }
 
 section.director_section.appear {
@@ -576,7 +574,8 @@ section.director_section > div > a:hover {
     width: 36px;
     height: 36px;
   }
-} */
+}
+*/
 
 /*
 
@@ -803,9 +802,7 @@ section.director_section > div > a:hover {
   background-size: cover; /* Cover full width and height */
   background-position: center; /* Center the image */
   background-attachment: fixed; /* Parallax scrolling effect */
-  box-shadow: 0px 1px 30px, 
-    0px -5px 50px, 
-    0px 40px 100px inset;
+  box-shadow: 0px 1px 30px, 0px -5px 50px, 0px 40px 100px inset;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -897,10 +894,10 @@ section.director_section > div > a:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: black; /* Text color */
-  background-color: #FFA500; /* Background color */
+  background-color: #ffa500; /* Background color */
   cursor: pointer;
   overflow: hidden;
-  border: 4px solid #FFA500;
+  border: 4px solid #ffa500;
   scroll-snap-align: start;
   flex-shrink: 0; /* Prevent cards from shrinking */
   border-radius: 15px; /* Curved edges */
@@ -939,7 +936,7 @@ section.director_section > div > a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #FFA500; /* Background color */
+  background: #ffa500; /* Background color */
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align text at the top */
@@ -1629,8 +1626,8 @@ body {
   background-color: #324968; /* Dark blue background */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Raleway', sans-serif; /* Modern sans-serif font */
-  color: #DDDACB; /* Light text color */
+  font-family: "Raleway", sans-serif; /* Modern sans-serif font */
+  color: #dddacb; /* Light text color */
 }
 
 .main {
@@ -1644,7 +1641,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  margin-right: 8vw !important; 
+  margin-right: 8vw !important;
   background-color: rgba(5, 5, 3, 0.354);
   width: 95vw !important; /* 90% of the parent container */
   margin: 50px auto;
@@ -1699,12 +1696,16 @@ body {
   left: 0;
   width: 100%;
   padding: 20px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0) 100%); /* Gradient overlay */
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(0, 0, 0, 0) 100%
+  ); /* Gradient overlay */
   color: white;
 }
 
 .image-overlay-text {
-  font-family: 'Lobster', cursive; /* Elegant cursive font */
+  font-family: "Lobster", cursive; /* Elegant cursive font */
   font-size: 2rem; /* Larger font size */
   font-weight: 700; /* Bold text */
   text-align: center; /* Center-aligned */
@@ -1728,7 +1729,7 @@ body {
 }
 
 .headlines-title {
-  font-family: 'Lobster', cursive; /* Elegant cursive font */
+  font-family: "Lobster", cursive; /* Elegant cursive font */
   font-size: 2rem; /* Larger font size */
   font-weight: 700; /* Bold text */
   color: white; /* White text */
@@ -1745,7 +1746,7 @@ body {
   transform: translateX(-50%); /* Center the line */
   width: 50px; /* Line width */
   height: 3px; /* Line thickness */
-  background: #FFA500; /* Orange accent line */
+  background: #ffa500; /* Orange accent line */
 }
 
 /* Headlines List */
@@ -1756,9 +1757,9 @@ body {
 }
 
 .headline-item {
-  font-family: 'Raleway', sans-serif; /* Modern sans-serif font */
+  font-family: "Raleway", sans-serif; /* Modern sans-serif font */
   font-size: 1rem; /* Standard font size */
-  color: #DDDACB; /* Light text color */
+  color: #dddacb; /* Light text color */
   padding: 15px; /* Increased padding */
   margin-bottom: 10px; /* Spacing between items */
   background: rgba(255, 255, 255, 0.1); /* Light background */
@@ -1780,24 +1781,13 @@ body {
 }
 
 .headlines-list::-webkit-scrollbar-thumb {
-  background: #FFA500; /* Orange scrollbar thumb */
+  background: #ffa500; /* Orange scrollbar thumb */
   border-radius: 4px; /* Rounded corners */
 }
 
 .headlines-list::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1); /* Light scrollbar track */
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Column 3: Stats Section */
 .stats-container {
@@ -2003,22 +1993,6 @@ h1 {
 }
 
 :root {
-  --carousel-width: -1000px; /* Will be dynamically set by JS */
-  --animation-duration: 20s;
-  --card-gap: 20px;
-  --container-width: 100%;
-  --container-max-width: 800px;
-  --primary-color: #ffd2a5; /* Light orange theme color */
-  --text-color: #4a3f35; /* Warm dark brown for text */
-  --accent-color: #ff9248; /* Darker orange for accents */
-  --card-shadow: 0 4px 12px rgba(210, 140, 80, 0.15); /* Warm shadow */
-  --hover-shadow: 0 8px 24px rgba(210, 140, 80, 0.25); /* Enhanced shadow for hover */
-}
-
-/* Container adjustments to make it smaller */
-/* Body and container styles */
-/* Variables for the carousel and vertical scroll */
-:root {
   --card-gap: 18px;
   --carousel-width: 0px;
   --scroll-height: 0px;
@@ -2063,11 +2037,6 @@ body {
   background-color: #ffd2a5; /* Match background */
   padding: 10px 0;
 }
-
-.ev-section-header.events {
-  /* transform: translateY(5vh); */
-}
-
 
 .ev-section-header h2 {
   color: var(--text-color);
@@ -2268,7 +2237,7 @@ div.events a.ev-view-all {
 .ev-events-grid.vertical-scroll {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   height: 300px; /* Set a fixed height for the container */
 }
@@ -2304,12 +2273,12 @@ div.events a.ev-view-all {
 
 .ev-events-section::before {
   top: 60px; /* Adjust based on your header height */
-  background: linear-gradient(to bottom, #ffd2a5, rgba(255, 210, 165, 0));
+  // background: linear-gradient(to bottom, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-events-section::after {
   bottom: 0;
-  background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
+  //background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-event-card {
@@ -2414,7 +2383,7 @@ div.events a.ev-view-all {
   .ev-section-header h2 {
     font-size: 20px;
   }
-  
+
   .ev-events-grid.vertical-scroll {
     height: 250px; /* Smaller height on mobile */
   }
@@ -2425,7 +2394,7 @@ div.events a.ev-view-all {
     width: 200px;
     /* Even smaller on mobile */
   }
-  
+
   .ev-events-grid.vertical-scroll {
     height: 220px; /* Even smaller height on small mobile */
   }
@@ -2447,7 +2416,7 @@ div.events a.ev-view-all {
   text-transform: uppercase;
   margin-bottom: 40px;
   /* Increased margin */
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   /* Stylish font */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* Text shadow for emphasis */

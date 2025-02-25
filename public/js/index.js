@@ -913,7 +913,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Setup horizontal carousel for the news grid
+  // Setup for horizontal carousel (news section)
   const newsGrid = document.querySelector(".ev-news-grid");
   if (newsGrid) {
     // Add carousel-mode class to enable the carousel styles
@@ -924,16 +924,28 @@ document.addEventListener("DOMContentLoaded", function () {
     setupPauseOnHover(newsGrid);
   }
   
-  // Setup vertical scrolling for the events section
+  // Setup for vertical scrolling (events section)
   const eventsGrid = document.querySelector(".ev-events-grid");
   if (eventsGrid) {
-    // Add vertical-scroll class to enable the vertical scroll styles
+    // Add vertical-scroll class
     eventsGrid.classList.add("vertical-scroll");
-    // Initialize the vertical scroll
+    // Initialize vertical scroll
     initVerticalScroll(eventsGrid);
-    // Set up pause on hover functionality
+    // Setup pause on hover
     setupPauseOnHover(eventsGrid);
   }
+  
+  // Add event listeners for videos to ensure they fit the grid
+  const videos = document.querySelectorAll(".gallery-item video");
+  videos.forEach((video) => {
+    video.onloadedmetadata = function () {
+      if (video.videoWidth > video.videoHeight) {
+        video.parentElement.classList.add("video-landscape");
+      } else {
+        video.parentElement.classList.add("video-portrait");
+      }
+    };
+  });
 });
 
 function initCarousel(carousel) {
@@ -977,7 +989,7 @@ function initVerticalScroll(container) {
 
   // Calculate total height (all cards + gaps)
   const cardGap = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") || "20px"
+    getComputedStyle(document.documentElement).getPropertyValue("--card-gap") || "18px"
   );
   const totalHeight = cards.reduce(
     (height, card) => height + card.offsetHeight + cardGap,
@@ -1014,25 +1026,3 @@ function setupPauseOnHover(container) {
     container.classList.remove("paused");
   });
 }
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const headlines = document.querySelectorAll(".headline-item");
-  const displayImage = document.getElementById("display-image");
-
-  const images = ["/images/aa.jpg", "/images/bb.png",  "/images/dd.png", "/images/ee.png" , "/images/ff.png", "/images/gg.png", "/images/hh.png", "/images/ii.png"];
-  const defaultImage = "/images/oo.png"; // Default image
-
-  // Set default image on page load
-  displayImage.src = defaultImage;
-
-  headlines.forEach((headline, index) => {
-    headline.addEventListener("mouseover", function () {
-      displayImage.src = images[index % images.length];
-    });
-
-    headline.addEventListener("mouseout", function () {
-      displayImage.src = defaultImage;
-    });
-  });
-});
