@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,44 +11,286 @@
   <title>IIIT Nagpur</title>
   <style>
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('/images/front.jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      position: relative;
+        background-color: #FFF6E9;
+        font-family: Arial, sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
     }
 
-    .content {
-      position: relative;
-      top: 50%;
-      color: azure;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      margin-top:400px;
-      font-size: 18px;
-      line-height: 1.6;
+    .container {
+        width: 80%;
+        margin: 20px auto;
     }
-    footer
-    {
+
+    .main-heading {
+        color: #324960;
+        font-size: 2.5em;
+        /* Changed from margin: 40px 70px 70px; to use 0 for left/right */
+        margin: 40px 0 70px;
+    }
+
+    .sub-heading {
+        color: #444;
+        font-size: 1.8em;
+        margin: 20px 0;
+    }
+
+    .notices {
+        /* The original shorthand was intended as margin: 10px 70px 70px;
+           Now changed to margin: 10px 0 70px; so horizontal margins are removed */
+        margin: 10px 0 70px;
+        background-color: white;
+        padding: 20px;
+    }
+
+    .notice {
+        display: block;
+        color: #FF7F3E;
+        /* font-weight: bold; */
+        margin: 5px 0;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .notice.urgent {
+        color: #D32F2F;
+    }
+
+    .notice::after {
+        content: '⚡';
+        position: absolute;
+        right: -20px;
+        color: #D32F2F;
+        animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+
+    .table-wrapper {
+        /* Changed from margin: 10px 70px 70px; to margin: 10px 0 70px; */
+        margin: 10px 0 70px;
+        box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .fl-table {
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: normal;
+        border: none;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        background-color: white;
+    }
+
+    .fl-table td, .fl-table th {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .fl-table td {
+        border-right: 1px solid #f8f8f8;
+        font-size: 12px;
+    }
+
+    .fl-table thead th {
+        color: #ffffff;
+        background: #4FC3A1;
+    }
+
+    .fl-table thead th:nth-child(odd) {
+        color: #ffffff;
+        background: #324960;
+    }
+
+    .fl-table tr:nth-child(even) {
+        background: #F8F8F8;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 767px) {
+        .fl-table {
+            display: block;
+            width: 100%;
+        }
+        .table-wrapper:before{
+            content: "Scroll horizontally >";
+            display: block;
+            text-align: right;
+            font-size: 11px;
+            color: white;
+            padding: 0 0 10px;
+        }
+        .fl-table thead, .fl-table tbody, .fl-table thead th {
+            display: block;
+        }
+        .fl-table thead th:last-child{
+            border-bottom: none;
+        }
+        .fl-table thead {
+            float: left;
+        }
+        .fl-table tbody {
+            width: auto;
+            position: relative;
+            overflow-x: auto;
+        }
+        .fl-table td, .fl-table th {
+            padding: 20px .625em .625em .625em;
+            height: 60px;
+            vertical-align: middle;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 120px;
+            font-size: 13px;
+            text-overflow: ellipsis;
+        }
+        .fl-table thead th {
+            text-align: left;
+            border-bottom: 1px solid #f7f7f9;
+        }
+        .fl-table tbody tr {
+            display: table-cell;
+        }
+        .fl-table tbody tr:nth-child(odd) {
+            background: none;
+        }
+        .fl-table tr:nth-child(even) {
+            background: transparent;
+        }
+        .fl-table tr td:nth-child(odd) {
+            background: #F8F8F8;
+            border-right: 1px solid #E6E4E4;
+        }
+        .fl-table tr td:nth-child(even) {
+            border-right: 1px solid #E6E4E4;
+        }
+        .fl-table tbody td {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .additional-links a {
+        display: inline-block;
+        margin: 5px 10px 5px 0;
+        color: #FF7F3E;
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 1px solid #FF7F3E;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .additional-links a:hover {
+        background-color: #FF7F3E;
+        color: #fff;
+    }
+
+    footer {
         width: 100%;
     }
   </style>
 </head>
 
 <body>
-  <%- include('../partials/header.ejs') %>
-  <div class="content">
-    <h1>Undergraduate Btech</h1>
-    
-</div>
-  <%- include('../partials/footer') %>
-</body>
+  <header>
+    <link rel="stylesheet" href="/css/header_2.css">
+    <a class="logo" href="/">
+      <img src="/images/main-logo.png" alt="" hre>
+    </a>
+    <div class="container">
+      
+      <nav>
+        
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/admissions/pg">PG</a></li>
+          <li><a href="/admissions/rule-book">rule book</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
 
+  <!-- <div class="content"> -->
+
+  <div class="container">
+    <h1 class="main-heading">B.Tech Admission 2024-2025</h1>
+    <div class="notices">
+      <h3>Notices</h3>
+      <a href="#" class="notice urgent">Revised Institute Reporting Schedule 08.08.2024</a>
+      <a href="#" class="notice urgent">Notice for latest availability of Hostel Accommodation As on Date 08.08.2024 04:00 PM</a>
+      <a href="#" class="notice">Institute Reporting Schedule 2024-2025</a>
+      <a href="#" class="notice">Important Notice for Students with Pwd Status</a>
+      <a href="#" class="notice">Institute Details at a Glance 2024-25</a>
+    </div>
+
+
+    <h2>IIIT Nagpur Undergraduate Courses</h2>
+    <div class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Program Name</th>
+            <th>Total Seat Intake</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>B. Tech. Computer Science & Engineering</td>
+            <td>223</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>B. Tech. CSE (Artificial Intelligence & Machine Learning)</td>
+            <td>66</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>B. Tech. CSE (Data Science & Analytics)</td>
+            <td>66</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>B. Tech. CSE (Human Computer Interaction & Gaming Technology)</td>
+            <td>66</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>B. Tech. Electronics & Communication Engineering</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>B. Tech. ECE (Internet of Things)</td>
+            <td>66</td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Total</strong></td>
+            <td><strong>637</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="additional-links">
+      <a href="#">More Details About Courses</a>
+      <a href="#">Admission Cancellation & Fees Refund Policy</a>
+      <a href="#">How to Generate Academic Bank of Credits (ABC)/APPAR ID</a>
+      <a href="#">Antiragging Undertaking Guidelines</a>
+      <a href="#">Online Admission Portal Link</a>
+    </div>
+  </div>
+
+  <%- include('../partials/footer.ejs') %>
+</body>
 </html>
