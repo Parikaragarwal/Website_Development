@@ -1,50 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IIIT Nagpur</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('/images/front.jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      position: relative;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIIT Nagpur</title>
+    <style>
+        /* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffd2a5 !important;
+    color: #333;
+}
+
+/* Header stays at the top */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section appears below header */
+.hero {
+    margin-top: 22vh; /* Adjust based on header height */
+    background: linear-gradient(to right, rgba(255, 102, 0, 0.845), rgba(0, 51, 102, 0.809)), 
+                url('/images/admin.jpg') no-repeat center center/cover;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-align: center;
+    padding: 200px 20px;
+}
+
+.hero > h1 {
+    display: block;
+}
+
+/* Content Sections */
+.content-section, .content-section_reverse {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1300px;
+    overflow: hidden;
+}
+
+/* Alternating Sections */
+.content-section_reverse {
+    flex-direction: row-reverse !important;
+}
+
+/* Text Styling */
+.text {
+    flex:1;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-right:100px !important;
+    color: #003366;
+    text-align: left;
+}
+
+/* Image Styling */
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hover Effect */
+.image img:hover {
+    transform: scale(1.08);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-section, .content-section_reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
     }
 
-    .content {
-      position: relative;
-      top: 50%;
-      color: azure;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      margin-top:400px;
-      font-size: 18px;
-      line-height: 1.6;
+    .content-section_reverse {
+        flex-direction: column;
     }
-    footer
-    {
+
+    .image {
+        margin-top: 20px;
+    }
+
+    .image img {
         width: 100%;
     }
-  </style>
+
+    .hero {
+        padding: 60px 20px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 50px 15px;
+        font-size: 22px;
+    }
+
+    .content-section, .content-section_reverse {
+        padding: 30px 5%;
+    }
+
+    .text {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
-
 <body>
-  <%- include('./partials/header.ejs') %>
-  <div class="content">
-    <h1>Institute Profile</h1>
-    <p>Indian Institute of Information Technology, Nagpur (IIITN) is one of the 20 Indian Institutes of Information Technology established under the Public-Private Partnership Scheme by the Ministry of Education (erstwhile Ministry of Human Resource Development), Government of India. IIITN has been declared as an “Institution of National Importance” under the provisions of the Indian Institute of Information Technology (Public-Private Partnership) Act, 2017. The Institute started functioning during the year 2016-17 and Shifted to its Permanent Campus in Butibori Nagpur under the Department of Higher Education, Ministry of Education, and is supported by the Department of Higher Education, Government of Maharashtra, and Tata Consultancy Services, Mumbai as Industry Partner.</p>
-</div>
-  <%- include('./partials/footer') %>
-</body>
 
+<%- include('./partials/header.ejs') %>
+
+<main class="contact-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to IIIT Nagpur.</h1>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section_reverse">
+        <div class="image">
+            <img src="/images/photo.jpg" alt="Our Campus">
+        </div>
+        <div class="text">
+            <h2>Our Campus</h2>
+            <p>
+            Indian Institute of Information Technology, Nagpur (IIITN) is one of the 20 Indian Institutes of Information Technology established under the Public-Private Partnership Scheme by the Ministry of Education (erstwhile Ministry of Human Resource Development), Government of India. IIITN has been declared as an “Institution of National Importance” under the provisions of the Indian Institute of Information Technology (Public-Private Partnership) Act, 2017. The Institute started functioning during the year 2016-17 and Shifted to its Permanent Campus in Butibori Nagpur under the Department of Higher Education, Ministry of Education, and is supported by the Department of Higher Education, Government of Maharashtra, and Tata Consultancy Services, Mumbai as Industry Partner.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<%- include('./partials/footer.ejs') %>
+
+</body>
 </html>
