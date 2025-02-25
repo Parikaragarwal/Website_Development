@@ -2094,6 +2094,11 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
+  /* margin-right: 2vw; */
+}
+
+div.events a.ev-view-all {
+  margin-right: 3vw;
 }
 
 .ev-view-all:hover {
