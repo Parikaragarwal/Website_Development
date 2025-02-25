@@ -2067,7 +2067,7 @@ body {
 }
 
 div.events a.ev-view-all {
-  margin-right: 3vw;
+  margin-right: 2vw;
 }
 
 .ev-view-all:hover {
@@ -2273,12 +2273,12 @@ div.events a.ev-view-all {
 
 .ev-events-section::before {
   top: 60px; /* Adjust based on your header height */
-  // background: linear-gradient(to bottom, #ffd2a5, rgba(255, 210, 165, 0));
+  background: linear-gradient(to bottom, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-events-section::after {
   bottom: 0;
-  //background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
+  background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-event-card {
