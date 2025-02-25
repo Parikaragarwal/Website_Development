@@ -2036,6 +2036,7 @@ body {
   z-index: 10; /* Ensures it appears above other content */
   background-color: #ffd2a5; /* Match background */
   padding: 10px 0;
+  /* height: 500px; */
 }
 
 .ev-section-header h2 {
@@ -2222,6 +2223,7 @@ div.events a.ev-view-all {
 
 /* Events Section */
 .ev-events-section {
+  height: 500px;
   position: relative;
   overflow: hidden;
   padding: 10px 0;
