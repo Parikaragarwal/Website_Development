@@ -575,93 +575,9 @@ section.director_section > div > a:hover {
     height: 36px;
   }
 }
-*/
-
-/*
-
- Reasearch and Development slider 
-.research {
-  padding-left: 2.5vw;
-  padding-right: 2.5vw;
-  background: rgb(28, 121, 218);
-  background: linear-gradient(
-    277deg,
-    rgba(28, 121, 218, 0.7170517865349264) 0%,
-    rgba(136, 194, 240, 0.8094887613248425) 46%,
-  );
-}
-
-.research > .researchSlider {
-  width: 90vw;
-  height: 50vh;
-  padding: 0px 1vw;
-  position: relative;
-}
-
-/* Scroll Buttons 
-.researchSlider i {
-  height: 50px;
-  width: 50px;
-  background: #fff;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: absolute;
-  font-size: 1.75rem;
-  top: 50%;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.researchSlider i:first-child {
-  left: -0px;
-}
-
-.researchSlider i:last-child {
-  right: -15px;
-}
-
-.research > .researchSlider > .research_list {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(100% / 3);
-  list-style: none;
-  gap: 1.5vw;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.researchSlider::-webkit-scrollbar {
-  display: none;
-}
-
-.research > .researchSlider > .research_list > li {
-  height: 50vh;
-  width: 25vw;
-}
-
-.carousel.no-transition {
-  scroll-behavior: auto;
-}
-
-.research_list.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-
-.research_list.dragging > li {
-  cursor: grab;
-  user-select: none;
-}
-
-.research_list > li {
-  scroll-snap-align: start;
-}
 
 
-*/
+
 
 /* Testimonials Section */
 .testimonials-section {
@@ -756,43 +672,7 @@ section.director_section > div > a:hover {
   bottom: 0;
 }
 
-/*
 
-
-/* Stats Section Styling 
-.stats-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px; /* Reduced padding to minimize white space 
-  background: #002147; /* Dark blue background 
-  min-height: 30vh; /* Reduced height to fit content better 
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 6rem; /* Large size for impact 
-  font-weight: bold;
-  position: relative;
-  margin-bottom: 10px;
-  color: #ff8c00; /* Orange color for the front face 
-  text-shadow: 
-    3px 3px 0 #007bff, /* Blue shadow for 3D effect 
-    6px 6px 0 rgba(0, 123, 255, 0.5); /* Lighter blue for depth 
-}
-
-.stat-text {
-  font-size: 1.5rem;
-  color: white; /* White text for better contrast on dark blue 
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 20px; /* Adjusted margin for better spacing 
-}
-
-*/
 
 /* Research Section Styling */
 /* Research Section Styling */
@@ -994,7 +874,7 @@ section.director_section > div > a:hover {
   align-items: center;
   justify-content: space-between;
   overflow: hidden; /* Add 30px padding to top and bottom */
-  background-color: #ffd2a5; /* Add white background for padding */
+  background-color: #EFFAFD; /* Add white background for padding */
   box-shadow: 0px 20px 50px black;
 }
 
@@ -1090,101 +970,9 @@ section.director_section > div > a:hover {
   }
 }
 
-/* Section Container 
-.side-image-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-  margin: auto;
-  padding: 50px 0;
-}
-
-/* Left Side: Sentences 
-.text-container {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.hover-item {
-  font-size: 1.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 20px;
-  position: relative;
-}
-
-/* Loading Line 
-/* Loading Line (Now Only Covers the Complementary Space) 
-.loading-line {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: 0%;
-  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: -1; /* Moves behind text 
-  padding-left: 10px;  Ensures text remains fully visible 
-}
-
-
-/* Right Side: Image 
-.image-container {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Outer Border (Changes Color Instantly) 
-.border-container {
-  width: 90%;
-  height: 100%;
-  padding: 10px;
-  transition: background-color 0.2s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Inner White Border 
-.inner-border {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Image 
-#display-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Loading Animation on Image 
-.loading-line-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  transition: width 1s ease-in-out, opacity 0.3s ease-in-out;
-}
 
 
 
-
-*/
 
 /* Club Section */
 .club-section {
@@ -2034,7 +1822,7 @@ body {
 .ev-section-header {
   position: relative;
   z-index: 10; /* Ensures it appears above other content */
-  background-color: #ffd2a5; /* Match background */
+  background-color: Azure; /* Match background */
   padding: 10px 0;
   /* height: 500px; */
 }
@@ -2127,12 +1915,12 @@ div.events a.ev-view-all {
 
 .ev-news-section::before {
   left: 0;
-  background: linear-gradient(to right, #ffd2a5, rgba(255, 210, 165, 0));
+  background: linear-gradient(to right, azure, rgba(255, 210, 165, 0));
 }
 
 .ev-news-section::after {
   right: 0;
-  background: linear-gradient(to left, #ffd2a5, rgba(255, 210, 165, 0));
+  background: linear-gradient(to left, azure, rgba(255, 210, 165, 0));
 }
 
 /* News Grid and Cards */
@@ -2172,7 +1960,7 @@ div.events a.ev-view-all {
   transform: translateY(-5px) !important;
   z-index: 10;
   box-shadow: 3px 5px 20px;
-  border-color: var(--accent-color);
+  border-color: black;
 }
 
 .ev-news-image {
@@ -2227,6 +2015,7 @@ div.events a.ev-view-all {
   position: relative;
   overflow: hidden;
   padding: 10px 0;
+  box-shadow: 0px 5px 40px;
 }
 
 .ev-events-grid {
@@ -2275,12 +2064,12 @@ div.events a.ev-view-all {
 
 .ev-events-section::before {
   top: 60px; /* Adjust based on your header height */
-  background: linear-gradient(to bottom, #ffd2a5, rgba(255, 210, 165, 0));
+  background: linear-gradient(to bottom, azure, rgba(255, 210, 165, 0));
 }
 
 .ev-events-section::after {
   bottom: 0;
-  background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
+  background: linear-gradient(to top, azure, rgba(255, 210, 165, 0));
 }
 
 .ev-event-card {
