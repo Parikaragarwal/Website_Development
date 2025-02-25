@@ -201,12 +201,10 @@
     <section class="combined-section">
       <!-- Merged Column (Stacked Image + Headlines) -->
       <div class="merged-column">
-        <!-- Column 2: Image (Now on Top) -->
         <div class="square-box image-container">
           <img id="display-image" src="/images/oo.png" alt="Hover Image">
         </div>
         
-        <!-- Column 1: Headlines (Now Below Image) -->
         <div class="square-box headlines-container">
           <h2 class="headlines-title">Latest Updates</h2>
           <div class="headlines-list">
@@ -222,7 +220,6 @@
         </div>
       </div>
     
-      <!-- Column 3: Stats Section -->
       <div class="stats-container">
         <div class="stats-grid">
           <div class="stat-item">
@@ -290,19 +287,17 @@
           }
         }
   
-        // Shuffle the remaining items (if any)
+        // Shuffle the remaining items
         const remainingItems = [...videos.slice(videoIndex), ...images.slice(imageIndex)];
         allItems.push(...remainingItems.sort(() => Math.random() - 0.5));
       %>
   
       <% allItems.forEach(item => { %>
         <% if (item.endsWith('.mp4')) { %>
-          <!-- Portrait Videos -->
           <div class="gallery-item video-portrait">
             <video src="/images/<%= item %>" autoplay loop muted></video>
           </div>
         <% } else { %>
-          <!-- Images -->
           <div class="gallery-item">
             <img src="/images/<%= item %>" alt="Campus Image">
           </div>
@@ -392,7 +387,6 @@
 
 <!-- Video Slogan Section -->
 <section class="video-slogan-section">
-  <!-- Video Background -->
   <div class="video-background">
     <video autoplay muted loop class="video-strip">
       <source src="/images/p1.mp4" type="video/mp4">
@@ -400,12 +394,10 @@
     </video>
   </div>
 
-  <!-- Left Side: Slogan -->
   <div class="slogan-container">
     <h2 class="slogan">Empowering Innovation, Inspiring Excellence, Where Technology Meets Vision.</h2>
   </div>
 
-  <!-- Right Side: Button -->
   <div class="button-container">
     <button class="experience-button" onclick="window.open(`https:/youtu.be/eOnJjASnSY0?si=jlkR43cl-7vvI5pL`, '_blank')">
       Experience IIITN
