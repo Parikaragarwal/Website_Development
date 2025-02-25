@@ -5,7 +5,7 @@ div#college_name {
     display: grid;
     grid-template: 1fr/ 1fr 0.5fr;
     top: 0vh;
-    left: 7.25vw;
+    left: 7vw;
     z-index: 12;
     /* height: 8vh; */
     width: 85vw;
@@ -71,7 +71,7 @@ nav#siteHead {
     /* left: 50; */
     z-index: 9999;
     top: 11.5vh;
-    left: 7.25vw;
+    left: 7vw;
     margin-top: 2.5vh;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     float: none;
