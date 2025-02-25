@@ -2259,7 +2259,7 @@ body {
 .ev-events-grid.vertical-scroll {
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   height: 300px; /* Set a fixed height for the container */
 }
