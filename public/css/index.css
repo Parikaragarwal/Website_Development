@@ -2273,7 +2273,7 @@ body {
 
 .ev-events-section::after {
   bottom: 0;
-  background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
+  //background: linear-gradient(to top, #ffd2a5, rgba(255, 210, 165, 0));
 }
 
 .ev-event-card {
