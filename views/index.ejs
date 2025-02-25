@@ -33,7 +33,7 @@
     </script>
   </head>
   
-  <body style="background-color: #ffd2a5;">
+  <body style="background-color: #EFFAFD;">
 
     <div id="facultynotices-data" data-facultynotices='<%- JSON.stringify(facultynotices) %>' hidden></div>
     <div id="events-data" data-events='<%- JSON.stringify(events) %>' hidden></div>
@@ -100,9 +100,9 @@
 
 
 
-    <div class="ev-body" style="display: flex; background-color: #ffd2a5;">
+    <div class="ev-body" style="display: flex; background-color: #EFFAFD;">
 
-      <div class="ev-container" style="background-color: #ffd2a5;">
+      <div class="ev-container" style="background-color: #EFFAFD;">
         <!-- News Section (will be turned into carousel) -->
         <div class="ev-news-section" style="padding: 20px;">
           <div class="ev-section-header" style="display: flex; justify-content: space-between; ">
@@ -212,12 +212,10 @@
     <section class="combined-section">
       <!-- Merged Column (Stacked Image + Headlines) -->
       <div class="merged-column">
-        <!-- Column 2: Image (Now on Top) -->
         <div class="square-box image-container">
           <img id="display-image" src="/images/oo.png" alt="Hover Image">
         </div>
         
-        <!-- Column 1: Headlines (Now Below Image) -->
         <div class="square-box headlines-container">
           <h2 class="headlines-title">Latest Updates</h2>
           <div class="headlines-list">
@@ -233,7 +231,6 @@
         </div>
       </div>
     
-      <!-- Column 3: Stats Section -->
       <div class="stats-container">
         <div class="stats-grid">
           <div class="stat-item">
@@ -259,35 +256,6 @@
   
    
     
-
-<!--   
-    <div class="notice-container">
-      <div class="notice-header">
-          <h2>Student Notices</h2>
-          <a href="#" class="all-notices-link">All Notices</a>
-      </div>
-      <div class="notice-board">
-          <div class="notice-wrapper" id="noticeWrapper">
-              <!-- Notices will be inserted here by JavaScript -->
-          <!-- </div>
-      </div>
-  </div>
-  </div>
-
-
-  <div class="Notice-Box">
-    <div class="faculty-notice-container">
-      <div class="faculty-notice-header">
-        <h2>Faculty Notices</h2>
-        <a href="#" class="faculty-all-notices-link">All Notices</a>
-      </div>
-      <div class="faculty-notice-board">
-        <div class="faculty-notice-wrapper" id="facultyNoticeWrapper">
-          <!-- Notices will be inserted here by JavaScript -->
-      <!-- </div>
-    </div>
-  </div>  -->
-
 
 
 
@@ -330,19 +298,17 @@
           }
         }
   
-        // Shuffle the remaining items (if any)
+        // Shuffle the remaining items
         const remainingItems = [...videos.slice(videoIndex), ...images.slice(imageIndex)];
         allItems.push(...remainingItems.sort(() => Math.random() - 0.5));
       %>
   
       <% allItems.forEach(item => { %>
         <% if (item.endsWith('.mp4')) { %>
-          <!-- Portrait Videos -->
           <div class="gallery-item video-portrait">
             <video src="/images/<%= item %>" autoplay loop muted></video>
           </div>
         <% } else { %>
-          <!-- Images -->
           <div class="gallery-item">
             <img src="/images/<%= item %>" alt="Campus Image">
           </div>
@@ -432,7 +398,6 @@
 
 <!-- Video Slogan Section -->
 <section class="video-slogan-section">
-  <!-- Video Background -->
   <div class="video-background">
     <video autoplay muted loop class="video-strip">
       <source src="/images/p1.mp4" type="video/mp4">
@@ -440,12 +405,10 @@
     </video>
   </div>
 
-  <!-- Left Side: Slogan -->
   <div class="slogan-container">
     <h2 class="slogan">Empowering Innovation, Inspiring Excellence, Where Technology Meets Vision.</h2>
   </div>
 
-  <!-- Right Side: Button -->
   <div class="button-container">
     <button class="experience-button" onclick="window.open(`https:/youtu.be/eOnJjASnSY0?si=jlkR43cl-7vvI5pL`, '_blank')">
       Experience IIITN
